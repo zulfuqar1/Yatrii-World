@@ -14,11 +14,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\zulfu\\OneDrive\\Desktop\\Z's\\Code\\projects\\FIanlProject\\YatriiWorld\\YatriiWorldAPI\\src\\Core\\YatriiWorld.Domain\\YatriiWorld.Domain.csproj",
+      "projectUniqueName": "C:\\Users\\zulfu\\OneDrive\\Desktop\\Z's\\Code\\projects\\Final_Project\\YatriiWorldAPI\\Yatrii-World\\YatriiWorldAPI\\src\\Core\\YatriiWorld.Domain\\YatriiWorld.Domain.csproj",
       "projectName": "YatriiWorld.Domain",
-      "projectPath": "C:\\Users\\zulfu\\OneDrive\\Desktop\\Z's\\Code\\projects\\FIanlProject\\YatriiWorld\\YatriiWorldAPI\\src\\Core\\YatriiWorld.Domain\\YatriiWorld.Domain.csproj",
+      "projectPath": "C:\\Users\\zulfu\\OneDrive\\Desktop\\Z's\\Code\\projects\\Final_Project\\YatriiWorldAPI\\Yatrii-World\\YatriiWorldAPI\\src\\Core\\YatriiWorld.Domain\\YatriiWorld.Domain.csproj",
       "packagesPath": "C:\\Users\\zulfu\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\zulfu\\OneDrive\\Desktop\\Z's\\Code\\projects\\FIanlProject\\YatriiWorld\\YatriiWorldAPI\\src\\Core\\YatriiWorld.Domain\\obj\\",
+      "outputPath": "C:\\Users\\zulfu\\OneDrive\\Desktop\\Z's\\Code\\projects\\Final_Project\\YatriiWorldAPI\\Yatrii-World\\YatriiWorldAPI\\src\\Core\\YatriiWorld.Domain\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"

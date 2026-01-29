@@ -1,0 +1,12 @@
+C:\Users\zulfu\OneDrive\Desktop\Z's\Code\projects\Final_Project\YatriiWorldAPI\Yatrii-World\YatriiWorldAPI\src\Infrastructure\YatriiWolrd.Infrastructure\bin\Debug\net8.0\YatriiWolrd.Infrastructure.deps.json
+C:\Users\zulfu\OneDrive\Desktop\Z's\Code\projects\Final_Project\YatriiWorldAPI\Yatrii-World\YatriiWorldAPI\src\Infrastructure\YatriiWolrd.Infrastructure\bin\Debug\net8.0\YatriiWolrd.Infrastructure.dll
+C:\Users\zulfu\OneDrive\Desktop\Z's\Code\projects\Final_Project\YatriiWorldAPI\Yatrii-World\YatriiWorldAPI\src\Infrastructure\YatriiWolrd.Infrastructure\bin\Debug\net8.0\YatriiWolrd.Infrastructure.pdb
+C:\Users\zulfu\OneDrive\Desktop\Z's\Code\projects\Final_Project\YatriiWorldAPI\Yatrii-World\YatriiWorldAPI\src\Infrastructure\YatriiWolrd.Infrastructure\obj\Debug\net8.0\YatriiWolrd.Infrastructure.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\zulfu\OneDrive\Desktop\Z's\Code\projects\Final_Project\YatriiWorldAPI\Yatrii-World\YatriiWorldAPI\src\Infrastructure\YatriiWolrd.Infrastructure\obj\Debug\net8.0\YatriiWolrd.Infrastructure.AssemblyInfoInputs.cache
+C:\Users\zulfu\OneDrive\Desktop\Z's\Code\projects\Final_Project\YatriiWorldAPI\Yatrii-World\YatriiWorldAPI\src\Infrastructure\YatriiWolrd.Infrastructure\obj\Debug\net8.0\YatriiWolrd.Infrastructure.AssemblyInfo.cs
+C:\Users\zulfu\OneDrive\Desktop\Z's\Code\projects\Final_Project\YatriiWorldAPI\Yatrii-World\YatriiWorldAPI\src\Infrastructure\YatriiWolrd.Infrastructure\obj\Debug\net8.0\YatriiWolrd.Infrastructure.csproj.CoreCompileInputs.cache
+C:\Users\zulfu\OneDrive\Desktop\Z's\Code\projects\Final_Project\YatriiWorldAPI\Yatrii-World\YatriiWorldAPI\src\Infrastructure\YatriiWolrd.Infrastructure\obj\Debug\net8.0\YatriiWolrd.Infrastructure.sourcelink.json
+C:\Users\zulfu\OneDrive\Desktop\Z's\Code\projects\Final_Project\YatriiWorldAPI\Yatrii-World\YatriiWorldAPI\src\Infrastructure\YatriiWolrd.Infrastructure\obj\Debug\net8.0\YatriiWolrd.Infrastructure.dll
+C:\Users\zulfu\OneDrive\Desktop\Z's\Code\projects\Final_Project\YatriiWorldAPI\Yatrii-World\YatriiWorldAPI\src\Infrastructure\YatriiWolrd.Infrastructure\obj\Debug\net8.0\refint\YatriiWolrd.Infrastructure.dll
+C:\Users\zulfu\OneDrive\Desktop\Z's\Code\projects\Final_Project\YatriiWorldAPI\Yatrii-World\YatriiWorldAPI\src\Infrastructure\YatriiWolrd.Infrastructure\obj\Debug\net8.0\YatriiWolrd.Infrastructure.pdb
+C:\Users\zulfu\OneDrive\Desktop\Z's\Code\projects\Final_Project\YatriiWorldAPI\Yatrii-World\YatriiWorldAPI\src\Infrastructure\YatriiWolrd.Infrastructure\obj\Debug\net8.0\ref\YatriiWolrd.Infrastructure.dll

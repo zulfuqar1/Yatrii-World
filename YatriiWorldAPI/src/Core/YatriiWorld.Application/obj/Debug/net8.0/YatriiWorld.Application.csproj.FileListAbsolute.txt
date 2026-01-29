@@ -1,0 +1,12 @@
+C:\Users\zulfu\OneDrive\Desktop\Z's\Code\projects\Final_Project\YatriiWorldAPI\Yatrii-World\YatriiWorldAPI\src\Core\YatriiWorld.Application\bin\Debug\net8.0\YatriiWorld.Application.deps.json
+C:\Users\zulfu\OneDrive\Desktop\Z's\Code\projects\Final_Project\YatriiWorldAPI\Yatrii-World\YatriiWorldAPI\src\Core\YatriiWorld.Application\bin\Debug\net8.0\YatriiWorld.Application.dll
+C:\Users\zulfu\OneDrive\Desktop\Z's\Code\projects\Final_Project\YatriiWorldAPI\Yatrii-World\YatriiWorldAPI\src\Core\YatriiWorld.Application\bin\Debug\net8.0\YatriiWorld.Application.pdb
+C:\Users\zulfu\OneDrive\Desktop\Z's\Code\projects\Final_Project\YatriiWorldAPI\Yatrii-World\YatriiWorldAPI\src\Core\YatriiWorld.Application\obj\Debug\net8.0\YatriiWorld.Application.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\zulfu\OneDrive\Desktop\Z's\Code\projects\Final_Project\YatriiWorldAPI\Yatrii-World\YatriiWorldAPI\src\Core\YatriiWorld.Application\obj\Debug\net8.0\YatriiWorld.Application.AssemblyInfoInputs.cache
+C:\Users\zulfu\OneDrive\Desktop\Z's\Code\projects\Final_Project\YatriiWorldAPI\Yatrii-World\YatriiWorldAPI\src\Core\YatriiWorld.Application\obj\Debug\net8.0\YatriiWorld.Application.AssemblyInfo.cs
+C:\Users\zulfu\OneDrive\Desktop\Z's\Code\projects\Final_Project\YatriiWorldAPI\Yatrii-World\YatriiWorldAPI\src\Core\YatriiWorld.Application\obj\Debug\net8.0\YatriiWorld.Application.csproj.CoreCompileInputs.cache
+C:\Users\zulfu\OneDrive\Desktop\Z's\Code\projects\Final_Project\YatriiWorldAPI\Yatrii-World\YatriiWorldAPI\src\Core\YatriiWorld.Application\obj\Debug\net8.0\YatriiWorld.Application.sourcelink.json
+C:\Users\zulfu\OneDrive\Desktop\Z's\Code\projects\Final_Project\YatriiWorldAPI\Yatrii-World\YatriiWorldAPI\src\Core\YatriiWorld.Application\obj\Debug\net8.0\YatriiWorld.Application.dll
+C:\Users\zulfu\OneDrive\Desktop\Z's\Code\projects\Final_Project\YatriiWorldAPI\Yatrii-World\YatriiWorldAPI\src\Core\YatriiWorld.Application\obj\Debug\net8.0\refint\YatriiWorld.Application.dll
+C:\Users\zulfu\OneDrive\Desktop\Z's\Code\projects\Final_Project\YatriiWorldAPI\Yatrii-World\YatriiWorldAPI\src\Core\YatriiWorld.Application\obj\Debug\net8.0\YatriiWorld.Application.pdb
+C:\Users\zulfu\OneDrive\Desktop\Z's\Code\projects\Final_Project\YatriiWorldAPI\Yatrii-World\YatriiWorldAPI\src\Core\YatriiWorld.Application\obj\Debug\net8.0\ref\YatriiWorld.Application.dll

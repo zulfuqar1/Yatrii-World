@@ -1,0 +1,12 @@
+C:\Users\zulfu\OneDrive\Desktop\Z's\Code\projects\Final_Project\YatriiWorldAPI\Yatrii-World\YatriiWorldAPI\src\Infrastructure\YatriiWorld.Persistance\bin\Debug\net8.0\YatriiWorld.Persistance.deps.json
+C:\Users\zulfu\OneDrive\Desktop\Z's\Code\projects\Final_Project\YatriiWorldAPI\Yatrii-World\YatriiWorldAPI\src\Infrastructure\YatriiWorld.Persistance\bin\Debug\net8.0\YatriiWorld.Persistance.dll
+C:\Users\zulfu\OneDrive\Desktop\Z's\Code\projects\Final_Project\YatriiWorldAPI\Yatrii-World\YatriiWorldAPI\src\Infrastructure\YatriiWorld.Persistance\bin\Debug\net8.0\YatriiWorld.Persistance.pdb
+C:\Users\zulfu\OneDrive\Desktop\Z's\Code\projects\Final_Project\YatriiWorldAPI\Yatrii-World\YatriiWorldAPI\src\Infrastructure\YatriiWorld.Persistance\obj\Debug\net8.0\YatriiWorld.Persistance.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\zulfu\OneDrive\Desktop\Z's\Code\projects\Final_Project\YatriiWorldAPI\Yatrii-World\YatriiWorldAPI\src\Infrastructure\YatriiWorld.Persistance\obj\Debug\net8.0\YatriiWorld.Persistance.AssemblyInfoInputs.cache
+C:\Users\zulfu\OneDrive\Desktop\Z's\Code\projects\Final_Project\YatriiWorldAPI\Yatrii-World\YatriiWorldAPI\src\Infrastructure\YatriiWorld.Persistance\obj\Debug\net8.0\YatriiWorld.Persistance.AssemblyInfo.cs
+C:\Users\zulfu\OneDrive\Desktop\Z's\Code\projects\Final_Project\YatriiWorldAPI\Yatrii-World\YatriiWorldAPI\src\Infrastructure\YatriiWorld.Persistance\obj\Debug\net8.0\YatriiWorld.Persistance.csproj.CoreCompileInputs.cache
+C:\Users\zulfu\OneDrive\Desktop\Z's\Code\projects\Final_Project\YatriiWorldAPI\Yatrii-World\YatriiWorldAPI\src\Infrastructure\YatriiWorld.Persistance\obj\Debug\net8.0\YatriiWorld.Persistance.sourcelink.json
+C:\Users\zulfu\OneDrive\Desktop\Z's\Code\projects\Final_Project\YatriiWorldAPI\Yatrii-World\YatriiWorldAPI\src\Infrastructure\YatriiWorld.Persistance\obj\Debug\net8.0\YatriiWorld.Persistance.dll
+C:\Users\zulfu\OneDrive\Desktop\Z's\Code\projects\Final_Project\YatriiWorldAPI\Yatrii-World\YatriiWorldAPI\src\Infrastructure\YatriiWorld.Persistance\obj\Debug\net8.0\refint\YatriiWorld.Persistance.dll
+C:\Users\zulfu\OneDrive\Desktop\Z's\Code\projects\Final_Project\YatriiWorldAPI\Yatrii-World\YatriiWorldAPI\src\Infrastructure\YatriiWorld.Persistance\obj\Debug\net8.0\YatriiWorld.Persistance.pdb
+C:\Users\zulfu\OneDrive\Desktop\Z's\Code\projects\Final_Project\YatriiWorldAPI\Yatrii-World\YatriiWorldAPI\src\Infrastructure\YatriiWorld.Persistance\obj\Debug\net8.0\ref\YatriiWorld.Persistance.dll
