@@ -1,0 +1,6 @@
+@YatriiWorld.API_HostAddress = http://localhost:5048
+
+GET {{YatriiWorld.API_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
