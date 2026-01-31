@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace YatriiWorld.Domain.Entities.Base
 {
-    internal class BaseNameableEntitiy:BaseAccountableEntity
+    public abstract class BaseNameableEntitiy:BaseAccountableEntity
     {
         public string Name { get; set; } = string.Empty;
     }

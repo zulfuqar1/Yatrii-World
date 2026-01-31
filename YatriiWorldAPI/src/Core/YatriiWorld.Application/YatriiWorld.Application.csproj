@@ -6,4 +6,8 @@
     <Nullable>enable</Nullable>
   </PropertyGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\YatriiWorld.Domain\YatriiWorld.Domain.csproj" />
+  </ItemGroup>
+
 </Project>

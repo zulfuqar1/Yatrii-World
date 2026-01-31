@@ -6,7 +6,8 @@ using System.Threading.Tasks;
 
 namespace YatriiWorld.Domain.Entities
 {
-    internal class Reviw
+    public class Review : Base.BaseNameableEntitiy
     {
+    
     }
 }

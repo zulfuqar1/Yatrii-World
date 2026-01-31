@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace YatriiWorld.Domain.Entities
 {
-    internal class Operator
+    public class Operator:Base.BaseNameableEntitiy
     {
     }
 }

@@ -6,4 +6,8 @@
     <Nullable>enable</Nullable>
   </PropertyGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\..\Core\YatriiWorld.Application\YatriiWorld.Application.csproj" />
+  </ItemGroup>
+
 </Project>

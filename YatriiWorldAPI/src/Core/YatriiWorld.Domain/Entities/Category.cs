@@ -6,8 +6,10 @@ using System.Threading.Tasks;
 
 namespace YatriiWorld.Domain.Entities
 {
-    internal class Category:Base.BaseNameableEntitiy
+    public class Category:Base.BaseNameableEntitiy
     {
-
+        public string Name { get; set; }
+       
+        public ICollection<Tour> Tours { get; set; }
     }
 }
