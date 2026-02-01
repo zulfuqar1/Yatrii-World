@@ -11,3 +11,6 @@ C:\Users\zulfu\OneDrive\Desktop\Z's\Code\projects\Final_Project\YatriiWorldAPI\Y
 C:\Users\zulfu\OneDrive\Desktop\Z's\Code\projects\Final_Project\YatriiWorldAPI\Yatrii-World\YatriiWorldAPI\src\Core\YatriiWorld.Application\obj\Debug\net8.0\YatriiWorld.Application.pdb
 C:\Users\zulfu\OneDrive\Desktop\Z's\Code\projects\Final_Project\YatriiWorldAPI\Yatrii-World\YatriiWorldAPI\src\Core\YatriiWorld.Application\obj\Debug\net8.0\ref\YatriiWorld.Application.dll
 C:\Users\zulfu\OneDrive\Desktop\Z's\Code\projects\Final_Project\YatriiWorldAPI\Yatrii-World\YatriiWorldAPI\src\Core\YatriiWorld.Application\obj\Debug\net8.0\YatriiWorld.Application.csproj.AssemblyReference.cache
+C:\Users\zulfu\OneDrive\Desktop\Z's\Code\projects\Final_Project\YatriiWorldAPI\Yatrii-World\YatriiWorldAPI\src\Core\YatriiWorld.Application\bin\Debug\net8.0\YatriiWorld.Domain.dll
+C:\Users\zulfu\OneDrive\Desktop\Z's\Code\projects\Final_Project\YatriiWorldAPI\Yatrii-World\YatriiWorldAPI\src\Core\YatriiWorld.Application\bin\Debug\net8.0\YatriiWorld.Domain.pdb
+C:\Users\zulfu\OneDrive\Desktop\Z's\Code\projects\Final_Project\YatriiWorldAPI\Yatrii-World\YatriiWorldAPI\src\Core\YatriiWorld.Application\obj\Debug\net8.0\YatriiWo.1FD5D169.Up2Date

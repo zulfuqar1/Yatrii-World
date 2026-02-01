@@ -13,3 +13,8 @@ C:\Users\zulfu\OneDrive\Desktop\Z's\Code\projects\Final_Project\YatriiWorldAPI\Y
 C:\Users\zulfu\OneDrive\Desktop\Z's\Code\projects\Final_Project\YatriiWorldAPI\Yatrii-World\YatriiWorldAPI\src\Infrastructure\YatriiWorld.Persistance\bin\Debug\net8.0\YatriiWorld.Persistance.runtimeconfig.json
 C:\Users\zulfu\OneDrive\Desktop\Z's\Code\projects\Final_Project\YatriiWorldAPI\Yatrii-World\YatriiWorldAPI\src\Infrastructure\YatriiWorld.Persistance\obj\Debug\net8.0\YatriiWorld.Persistance.csproj.AssemblyReference.cache
 C:\Users\zulfu\OneDrive\Desktop\Z's\Code\projects\Final_Project\YatriiWorldAPI\Yatrii-World\YatriiWorldAPI\src\Infrastructure\YatriiWorld.Persistance\obj\Debug\net8.0\YatriiWorld.Persistance.genruntimeconfig.cache
+C:\Users\zulfu\OneDrive\Desktop\Z's\Code\projects\Final_Project\YatriiWorldAPI\Yatrii-World\YatriiWorldAPI\src\Infrastructure\YatriiWorld.Persistance\bin\Debug\net8.0\YatriiWorld.Application.dll
+C:\Users\zulfu\OneDrive\Desktop\Z's\Code\projects\Final_Project\YatriiWorldAPI\Yatrii-World\YatriiWorldAPI\src\Infrastructure\YatriiWorld.Persistance\bin\Debug\net8.0\YatriiWorld.Domain.dll
+C:\Users\zulfu\OneDrive\Desktop\Z's\Code\projects\Final_Project\YatriiWorldAPI\Yatrii-World\YatriiWorldAPI\src\Infrastructure\YatriiWorld.Persistance\bin\Debug\net8.0\YatriiWorld.Application.pdb
+C:\Users\zulfu\OneDrive\Desktop\Z's\Code\projects\Final_Project\YatriiWorldAPI\Yatrii-World\YatriiWorldAPI\src\Infrastructure\YatriiWorld.Persistance\bin\Debug\net8.0\YatriiWorld.Domain.pdb
+C:\Users\zulfu\OneDrive\Desktop\Z's\Code\projects\Final_Project\YatriiWorldAPI\Yatrii-World\YatriiWorldAPI\src\Infrastructure\YatriiWorld.Persistance\obj\Debug\net8.0\YatriiWo.E554EEB7.Up2Date

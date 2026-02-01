@@ -10,7 +10,8 @@
         "dependencies": {
           "Microsoft.EntityFrameworkCore": "8.0.23",
           "Microsoft.EntityFrameworkCore.SqlServer": "8.0.23",
-          "Microsoft.EntityFrameworkCore.Tools": "8.0.23"
+          "Microsoft.EntityFrameworkCore.Tools": "8.0.23",
+          "YatriiWorld.Application": "1.0.0"
         },
         "runtime": {
           "YatriiWorld.Persistance.dll": {}
@@ -919,6 +920,25 @@
             "fileVersion": "6.0.21.52210"
           }
         }
+      },
+      "YatriiWorld.Application/1.0.0": {
+        "dependencies": {
+          "YatriiWorld.Domain": "1.0.0"
+        },
+        "runtime": {
+          "YatriiWorld.Application.dll": {
+            "assemblyVersion": "1.0.0.0",
+            "fileVersion": "1.0.0.0"
+          }
+        }
+      },
+      "YatriiWorld.Domain/1.0.0": {
+        "runtime": {
+          "YatriiWorld.Domain.dll": {
+            "assemblyVersion": "1.0.0.0",
+            "fileVersion": "1.0.0.0"
+          }
+        }
       }
     }
   },
@@ -1459,6 +1479,16 @@
       "sha512": "sha512-IXoJOXIqc39AIe+CIR7koBtRGMiCt/LPM3lI+PELtDIy9XdyeSrwXFdWV9dzJ2Awl0paLWUaknLxFQ5HpHZUog==",
       "path": "system.windows.extensions/6.0.0",
       "hashPath": "system.windows.extensions.6.0.0.nupkg.sha512"
+    },
+    "YatriiWorld.Application/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "YatriiWorld.Domain/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
     }
   }
 }

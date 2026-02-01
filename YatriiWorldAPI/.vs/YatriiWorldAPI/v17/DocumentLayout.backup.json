@@ -3,48 +3,64 @@
   "WorkspaceRootPath": "C:\\Users\\zulfu\\OneDrive\\Desktop\\Z\u0027s\\Code\\projects\\Final_Project\\YatriiWorldAPI\\Yatrii-World\\YatriiWorldAPI\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{E11B2D94-1B4C-46A7-ACAA-381682996176}|src\\Core\\YatriiWorld.Application\\YatriiWorld.Application.csproj|c:\\users\\zulfu\\onedrive\\desktop\\z\u0027s\\code\\projects\\final_project\\yatriiworldapi\\yatrii-world\\yatriiworldapi\\src\\core\\yatriiworld.application\\dtos\\tour\\tourupdatedto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{E11B2D94-1B4C-46A7-ACAA-381682996176}|src\\Core\\YatriiWorld.Application\\YatriiWorld.Application.csproj|solutionrelative:src\\core\\yatriiworld.application\\dtos\\tour\\tourupdatedto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{BBA5DE48-BA9D-4E62-A228-DB34C8249B8A}|src\\Infrastructure\\YatriiWorld.Persistance\\YatriiWorld.Persistance.csproj|c:\\users\\zulfu\\onedrive\\desktop\\z\u0027s\\code\\projects\\final_project\\yatriiworldapi\\yatrii-world\\yatriiworldapi\\src\\infrastructure\\yatriiworld.persistance\\configurations\\tourconfiguration.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{BBA5DE48-BA9D-4E62-A228-DB34C8249B8A}|src\\Infrastructure\\YatriiWorld.Persistance\\YatriiWorld.Persistance.csproj|solutionrelative:src\\infrastructure\\yatriiworld.persistance\\configurations\\tourconfiguration.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{E11B2D94-1B4C-46A7-ACAA-381682996176}|src\\Core\\YatriiWorld.Application\\YatriiWorld.Application.csproj|c:\\users\\zulfu\\onedrive\\desktop\\z\u0027s\\code\\projects\\final_project\\yatriiworldapi\\yatrii-world\\yatriiworldapi\\src\\core\\yatriiworld.application\\dtos\\categories\\categorywithtoursdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{E11B2D94-1B4C-46A7-ACAA-381682996176}|src\\Core\\YatriiWorld.Application\\YatriiWorld.Application.csproj|solutionrelative:src\\core\\yatriiworld.application\\dtos\\categories\\categorywithtoursdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{E11B2D94-1B4C-46A7-ACAA-381682996176}|src\\Core\\YatriiWorld.Application\\YatriiWorld.Application.csproj|c:\\users\\zulfu\\onedrive\\desktop\\z\u0027s\\code\\projects\\final_project\\yatriiworldapi\\yatrii-world\\yatriiworldapi\\src\\core\\yatriiworld.application\\dtos\\tour\\tourlistdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{E11B2D94-1B4C-46A7-ACAA-381682996176}|src\\Core\\YatriiWorld.Application\\YatriiWorld.Application.csproj|solutionrelative:src\\core\\yatriiworld.application\\dtos\\tour\\tourlistdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{E11B2D94-1B4C-46A7-ACAA-381682996176}|src\\Core\\YatriiWorld.Application\\YatriiWorld.Application.csproj|c:\\users\\zulfu\\onedrive\\desktop\\z\u0027s\\code\\projects\\final_project\\yatriiworldapi\\yatrii-world\\yatriiworldapi\\src\\core\\yatriiworld.application\\dtos\\tour\\tourgetdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{E11B2D94-1B4C-46A7-ACAA-381682996176}|src\\Core\\YatriiWorld.Application\\YatriiWorld.Application.csproj|solutionrelative:src\\core\\yatriiworld.application\\dtos\\tour\\tourgetdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{E11B2D94-1B4C-46A7-ACAA-381682996176}|src\\Core\\YatriiWorld.Application\\YatriiWorld.Application.csproj|c:\\users\\zulfu\\onedrive\\desktop\\z\u0027s\\code\\projects\\final_project\\yatriiworldapi\\yatrii-world\\yatriiworldapi\\src\\core\\yatriiworld.application\\dtos\\tour\\tourcreatedto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{E11B2D94-1B4C-46A7-ACAA-381682996176}|src\\Core\\YatriiWorld.Application\\YatriiWorld.Application.csproj|solutionrelative:src\\core\\yatriiworld.application\\dtos\\tour\\tourcreatedto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{BBA5DE48-BA9D-4E62-A228-DB34C8249B8A}|src\\Infrastructure\\YatriiWorld.Persistance\\YatriiWorld.Persistance.csproj|c:\\users\\zulfu\\onedrive\\desktop\\z\u0027s\\code\\projects\\final_project\\yatriiworldapi\\yatrii-world\\yatriiworldapi\\src\\infrastructure\\yatriiworld.persistance\\configurations\\categoryconfiguration.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{BBA5DE48-BA9D-4E62-A228-DB34C8249B8A}|src\\Infrastructure\\YatriiWorld.Persistance\\YatriiWorld.Persistance.csproj|solutionrelative:src\\infrastructure\\yatriiworld.persistance\\configurations\\categoryconfiguration.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{BBA5DE48-BA9D-4E62-A228-DB34C8249B8A}|src\\Infrastructure\\YatriiWorld.Persistance\\YatriiWorld.Persistance.csproj|c:\\users\\zulfu\\onedrive\\desktop\\z\u0027s\\code\\projects\\final_project\\yatriiworldapi\\yatrii-world\\yatriiworldapi\\src\\infrastructure\\yatriiworld.persistance\\data\\appdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{BBA5DE48-BA9D-4E62-A228-DB34C8249B8A}|src\\Infrastructure\\YatriiWorld.Persistance\\YatriiWorld.Persistance.csproj|solutionrelative:src\\infrastructure\\yatriiworld.persistance\\data\\appdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{E11B2D94-1B4C-46A7-ACAA-381682996176}|src\\Core\\YatriiWorld.Application\\YatriiWorld.Application.csproj|c:\\users\\zulfu\\onedrive\\desktop\\z\u0027s\\code\\projects\\final_project\\yatriiworldapi\\yatrii-world\\yatriiworldapi\\src\\core\\yatriiworld.application\\dtos\\categories\\categoryupdatedto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{E11B2D94-1B4C-46A7-ACAA-381682996176}|src\\Core\\YatriiWorld.Application\\YatriiWorld.Application.csproj|solutionrelative:src\\core\\yatriiworld.application\\dtos\\categories\\categoryupdatedto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{928BA80C-D02E-46CE-B9E1-FBA7C727996F}|src\\Core\\YatriiWorld.Domain\\YatriiWorld.Domain.csproj|c:\\users\\zulfu\\onedrive\\desktop\\z\u0027s\\code\\projects\\final_project\\yatriiworldapi\\yatrii-world\\yatriiworldapi\\src\\core\\yatriiworld.domain\\entities\\review.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{928BA80C-D02E-46CE-B9E1-FBA7C727996F}|src\\Core\\YatriiWorld.Domain\\YatriiWorld.Domain.csproj|solutionrelative:src\\core\\yatriiworld.domain\\entities\\review.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{E11B2D94-1B4C-46A7-ACAA-381682996176}|src\\Core\\YatriiWorld.Application\\YatriiWorld.Application.csproj|c:\\users\\zulfu\\onedrive\\desktop\\z\u0027s\\code\\projects\\final_project\\yatriiworldapi\\yatrii-world\\yatriiworldapi\\src\\core\\yatriiworld.application\\dtos\\categories\\categorygetdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{E11B2D94-1B4C-46A7-ACAA-381682996176}|src\\Core\\YatriiWorld.Application\\YatriiWorld.Application.csproj|solutionrelative:src\\core\\yatriiworld.application\\dtos\\categories\\categorygetdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{928BA80C-D02E-46CE-B9E1-FBA7C727996F}|src\\Core\\YatriiWorld.Domain\\YatriiWorld.Domain.csproj|c:\\users\\zulfu\\onedrive\\desktop\\z\u0027s\\code\\projects\\final_project\\yatriiworldapi\\yatrii-world\\yatriiworldapi\\src\\core\\yatriiworld.domain\\entities\\operator.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{928BA80C-D02E-46CE-B9E1-FBA7C727996F}|src\\Core\\YatriiWorld.Domain\\YatriiWorld.Domain.csproj|solutionrelative:src\\core\\yatriiworld.domain\\entities\\operator.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{E11B2D94-1B4C-46A7-ACAA-381682996176}|src\\Core\\YatriiWorld.Application\\YatriiWorld.Application.csproj|c:\\users\\zulfu\\onedrive\\desktop\\z\u0027s\\code\\projects\\final_project\\yatriiworldapi\\yatrii-world\\yatriiworldapi\\src\\core\\yatriiworld.application\\dtos\\categories\\categorycreatedto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{E11B2D94-1B4C-46A7-ACAA-381682996176}|src\\Core\\YatriiWorld.Application\\YatriiWorld.Application.csproj|solutionrelative:src\\core\\yatriiworld.application\\dtos\\categories\\categorycreatedto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{E11B2D94-1B4C-46A7-ACAA-381682996176}|src\\Core\\YatriiWorld.Application\\YatriiWorld.Application.csproj|c:\\users\\zulfu\\onedrive\\desktop\\z\u0027s\\code\\projects\\final_project\\yatriiworldapi\\yatrii-world\\yatriiworldapi\\src\\core\\yatriiworld.application\\interfaces\\services\\itourservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E11B2D94-1B4C-46A7-ACAA-381682996176}|src\\Core\\YatriiWorld.Application\\YatriiWorld.Application.csproj|solutionrelative:src\\core\\yatriiworld.application\\interfaces\\services\\itourservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{E11B2D94-1B4C-46A7-ACAA-381682996176}|src\\Core\\YatriiWorld.Application\\YatriiWorld.Application.csproj|c:\\users\\zulfu\\onedrive\\desktop\\z\u0027s\\code\\projects\\final_project\\yatriiworldapi\\yatrii-world\\yatriiworldapi\\src\\core\\yatriiworld.application\\interfaces\\services\\icategoryservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{E11B2D94-1B4C-46A7-ACAA-381682996176}|src\\Core\\YatriiWorld.Application\\YatriiWorld.Application.csproj|solutionrelative:src\\core\\yatriiworld.application\\interfaces\\services\\icategoryservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{E11B2D94-1B4C-46A7-ACAA-381682996176}|src\\Core\\YatriiWorld.Application\\YatriiWorld.Application.csproj|c:\\users\\zulfu\\onedrive\\desktop\\z\u0027s\\code\\projects\\final_project\\yatriiworldapi\\yatrii-world\\yatriiworldapi\\src\\core\\yatriiworld.application\\interfaces\\services\\itourservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{E11B2D94-1B4C-46A7-ACAA-381682996176}|src\\Core\\YatriiWorld.Application\\YatriiWorld.Application.csproj|solutionrelative:src\\core\\yatriiworld.application\\interfaces\\services\\itourservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{E11B2D94-1B4C-46A7-ACAA-381682996176}|src\\Core\\YatriiWorld.Application\\YatriiWorld.Application.csproj|c:\\users\\zulfu\\onedrive\\desktop\\z\u0027s\\code\\projects\\final_project\\yatriiworldapi\\yatrii-world\\yatriiworldapi\\src\\core\\yatriiworld.application\\dtos\\categories\\categorycreatedto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E11B2D94-1B4C-46A7-ACAA-381682996176}|src\\Core\\YatriiWorld.Application\\YatriiWorld.Application.csproj|solutionrelative:src\\core\\yatriiworld.application\\dtos\\categories\\categorycreatedto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E11B2D94-1B4C-46A7-ACAA-381682996176}|src\\Core\\YatriiWorld.Application\\YatriiWorld.Application.csproj|c:\\users\\zulfu\\onedrive\\desktop\\z\u0027s\\code\\projects\\final_project\\yatriiworldapi\\yatrii-world\\yatriiworldapi\\src\\core\\yatriiworld.application\\dtos\\categories\\categorygetdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E11B2D94-1B4C-46A7-ACAA-381682996176}|src\\Core\\YatriiWorld.Application\\YatriiWorld.Application.csproj|solutionrelative:src\\core\\yatriiworld.application\\dtos\\categories\\categorygetdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E11B2D94-1B4C-46A7-ACAA-381682996176}|src\\Core\\YatriiWorld.Application\\YatriiWorld.Application.csproj|c:\\users\\zulfu\\onedrive\\desktop\\z\u0027s\\code\\projects\\final_project\\yatriiworldapi\\yatrii-world\\yatriiworldapi\\src\\core\\yatriiworld.application\\dtos\\categories\\categorywithtoursdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E11B2D94-1B4C-46A7-ACAA-381682996176}|src\\Core\\YatriiWorld.Application\\YatriiWorld.Application.csproj|solutionrelative:src\\core\\yatriiworld.application\\dtos\\categories\\categorywithtoursdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E11B2D94-1B4C-46A7-ACAA-381682996176}|src\\Core\\YatriiWorld.Application\\YatriiWorld.Application.csproj|c:\\users\\zulfu\\onedrive\\desktop\\z\u0027s\\code\\projects\\final_project\\yatriiworldapi\\yatrii-world\\yatriiworldapi\\src\\core\\yatriiworld.application\\dtos\\categories\\categoryupdatedto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E11B2D94-1B4C-46A7-ACAA-381682996176}|src\\Core\\YatriiWorld.Application\\YatriiWorld.Application.csproj|solutionrelative:src\\core\\yatriiworld.application\\dtos\\categories\\categoryupdatedto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E11B2D94-1B4C-46A7-ACAA-381682996176}|src\\Core\\YatriiWorld.Application\\YatriiWorld.Application.csproj|c:\\users\\zulfu\\onedrive\\desktop\\z\u0027s\\code\\projects\\final_project\\yatriiworldapi\\yatrii-world\\yatriiworldapi\\src\\core\\yatriiworld.application\\dtos\\tours\\tourupdatedto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E11B2D94-1B4C-46A7-ACAA-381682996176}|src\\Core\\YatriiWorld.Application\\YatriiWorld.Application.csproj|solutionrelative:src\\core\\yatriiworld.application\\dtos\\tours\\tourupdatedto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E11B2D94-1B4C-46A7-ACAA-381682996176}|src\\Core\\YatriiWorld.Application\\YatriiWorld.Application.csproj|c:\\users\\zulfu\\onedrive\\desktop\\z\u0027s\\code\\projects\\final_project\\yatriiworldapi\\yatrii-world\\yatriiworldapi\\src\\core\\yatriiworld.application\\dtos\\tours\\tourlistdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E11B2D94-1B4C-46A7-ACAA-381682996176}|src\\Core\\YatriiWorld.Application\\YatriiWorld.Application.csproj|solutionrelative:src\\core\\yatriiworld.application\\dtos\\tours\\tourlistdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E11B2D94-1B4C-46A7-ACAA-381682996176}|src\\Core\\YatriiWorld.Application\\YatriiWorld.Application.csproj|c:\\users\\zulfu\\onedrive\\desktop\\z\u0027s\\code\\projects\\final_project\\yatriiworldapi\\yatrii-world\\yatriiworldapi\\src\\core\\yatriiworld.application\\dtos\\tours\\tourgetdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E11B2D94-1B4C-46A7-ACAA-381682996176}|src\\Core\\YatriiWorld.Application\\YatriiWorld.Application.csproj|solutionrelative:src\\core\\yatriiworld.application\\dtos\\tours\\tourgetdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E11B2D94-1B4C-46A7-ACAA-381682996176}|src\\Core\\YatriiWorld.Application\\YatriiWorld.Application.csproj|c:\\users\\zulfu\\onedrive\\desktop\\z\u0027s\\code\\projects\\final_project\\yatriiworldapi\\yatrii-world\\yatriiworldapi\\src\\core\\yatriiworld.application\\dtos\\tours\\tourcreatedto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E11B2D94-1B4C-46A7-ACAA-381682996176}|src\\Core\\YatriiWorld.Application\\YatriiWorld.Application.csproj|solutionrelative:src\\core\\yatriiworld.application\\dtos\\tours\\tourcreatedto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{E11B2D94-1B4C-46A7-ACAA-381682996176}|src\\Core\\YatriiWorld.Application\\YatriiWorld.Application.csproj|c:\\users\\zulfu\\onedrive\\desktop\\z\u0027s\\code\\projects\\final_project\\yatriiworldapi\\yatrii-world\\yatriiworldapi\\src\\core\\yatriiworld.application\\interfaces\\repositories\\generic\\irepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -53,14 +69,6 @@
     {
       "AbsoluteMoniker": "D:0:0:{928BA80C-D02E-46CE-B9E1-FBA7C727996F}|src\\Core\\YatriiWorld.Domain\\YatriiWorld.Domain.csproj|c:\\users\\zulfu\\onedrive\\desktop\\z\u0027s\\code\\projects\\final_project\\yatriiworldapi\\yatrii-world\\yatriiworldapi\\src\\core\\yatriiworld.domain\\entities\\category.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{928BA80C-D02E-46CE-B9E1-FBA7C727996F}|src\\Core\\YatriiWorld.Domain\\YatriiWorld.Domain.csproj|solutionrelative:src\\core\\yatriiworld.domain\\entities\\category.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{928BA80C-D02E-46CE-B9E1-FBA7C727996F}|src\\Core\\YatriiWorld.Domain\\YatriiWorld.Domain.csproj|c:\\users\\zulfu\\onedrive\\desktop\\z\u0027s\\code\\projects\\final_project\\yatriiworldapi\\yatrii-world\\yatriiworldapi\\src\\core\\yatriiworld.domain\\entities\\operator.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{928BA80C-D02E-46CE-B9E1-FBA7C727996F}|src\\Core\\YatriiWorld.Domain\\YatriiWorld.Domain.csproj|solutionrelative:src\\core\\yatriiworld.domain\\entities\\operator.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{928BA80C-D02E-46CE-B9E1-FBA7C727996F}|src\\Core\\YatriiWorld.Domain\\YatriiWorld.Domain.csproj|c:\\users\\zulfu\\onedrive\\desktop\\z\u0027s\\code\\projects\\final_project\\yatriiworldapi\\yatrii-world\\yatriiworldapi\\src\\core\\yatriiworld.domain\\entities\\review.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{928BA80C-D02E-46CE-B9E1-FBA7C727996F}|src\\Core\\YatriiWorld.Domain\\YatriiWorld.Domain.csproj|solutionrelative:src\\core\\yatriiworld.domain\\entities\\review.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{928BA80C-D02E-46CE-B9E1-FBA7C727996F}|src\\Core\\YatriiWorld.Domain\\YatriiWorld.Domain.csproj|c:\\users\\zulfu\\onedrive\\desktop\\z\u0027s\\code\\projects\\final_project\\yatriiworldapi\\yatrii-world\\yatriiworldapi\\src\\core\\yatriiworld.domain\\entities\\ticket.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -107,136 +115,32 @@
             {
               "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "TourUpdateDto.cs",
-              "DocumentMoniker": "C:\\Users\\zulfu\\OneDrive\\Desktop\\Z\u0027s\\Code\\projects\\Final_Project\\YatriiWorldAPI\\Yatrii-World\\YatriiWorldAPI\\src\\Core\\YatriiWorld.Application\\DTOs\\Tour\\TourUpdateDto.cs",
-              "RelativeDocumentMoniker": "src\\Core\\YatriiWorld.Application\\DTOs\\Tour\\TourUpdateDto.cs",
-              "ToolTip": "C:\\Users\\zulfu\\OneDrive\\Desktop\\Z\u0027s\\Code\\projects\\Final_Project\\YatriiWorldAPI\\Yatrii-World\\YatriiWorldAPI\\src\\Core\\YatriiWorld.Application\\DTOs\\Tour\\TourUpdateDto.cs",
-              "RelativeToolTip": "src\\Core\\YatriiWorld.Application\\DTOs\\Tour\\TourUpdateDto.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAAAAAAAAAAAAA==",
+              "Title": "TourConfiguration.cs",
+              "DocumentMoniker": "C:\\Users\\zulfu\\OneDrive\\Desktop\\Z\u0027s\\Code\\projects\\Final_Project\\YatriiWorldAPI\\Yatrii-World\\YatriiWorldAPI\\src\\Infrastructure\\YatriiWorld.Persistance\\Configurations\\TourConfiguration.cs",
+              "RelativeDocumentMoniker": "src\\Infrastructure\\YatriiWorld.Persistance\\Configurations\\TourConfiguration.cs",
+              "ToolTip": "C:\\Users\\zulfu\\OneDrive\\Desktop\\Z\u0027s\\Code\\projects\\Final_Project\\YatriiWorldAPI\\Yatrii-World\\YatriiWorldAPI\\src\\Infrastructure\\YatriiWorld.Persistance\\Configurations\\TourConfiguration.cs*",
+              "RelativeToolTip": "src\\Infrastructure\\YatriiWorld.Persistance\\Configurations\\TourConfiguration.cs*",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABkAAAAyAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-01-31T17:52:41.748Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "TourGetDto.cs",
-              "DocumentMoniker": "C:\\Users\\zulfu\\OneDrive\\Desktop\\Z\u0027s\\Code\\projects\\Final_Project\\YatriiWorldAPI\\Yatrii-World\\YatriiWorldAPI\\src\\Core\\YatriiWorld.Application\\DTOs\\Tour\\TourGetDto.cs",
-              "RelativeDocumentMoniker": "src\\Core\\YatriiWorld.Application\\DTOs\\Tour\\TourGetDto.cs",
-              "ToolTip": "C:\\Users\\zulfu\\OneDrive\\Desktop\\Z\u0027s\\Code\\projects\\Final_Project\\YatriiWorldAPI\\Yatrii-World\\YatriiWorldAPI\\src\\Core\\YatriiWorld.Application\\DTOs\\Tour\\TourGetDto.cs",
-              "RelativeToolTip": "src\\Core\\YatriiWorld.Application\\DTOs\\Tour\\TourGetDto.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA8AAAAwAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-01-31T17:52:28.479Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "TourListDto.cs",
-              "DocumentMoniker": "C:\\Users\\zulfu\\OneDrive\\Desktop\\Z\u0027s\\Code\\projects\\Final_Project\\YatriiWorldAPI\\Yatrii-World\\YatriiWorldAPI\\src\\Core\\YatriiWorld.Application\\DTOs\\Tour\\TourListDto.cs",
-              "RelativeDocumentMoniker": "src\\Core\\YatriiWorld.Application\\DTOs\\Tour\\TourListDto.cs",
-              "ToolTip": "C:\\Users\\zulfu\\OneDrive\\Desktop\\Z\u0027s\\Code\\projects\\Final_Project\\YatriiWorldAPI\\Yatrii-World\\YatriiWorldAPI\\src\\Core\\YatriiWorld.Application\\DTOs\\Tour\\TourListDto.cs",
-              "RelativeToolTip": "src\\Core\\YatriiWorld.Application\\DTOs\\Tour\\TourListDto.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABEAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-01-31T17:52:03.479Z",
+              "WhenOpened": "2026-02-01T19:46:48.177Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 1,
-              "Title": "CategoryWithToursDto.cs",
-              "DocumentMoniker": "C:\\Users\\zulfu\\OneDrive\\Desktop\\Z\u0027s\\Code\\projects\\Final_Project\\YatriiWorldAPI\\Yatrii-World\\YatriiWorldAPI\\src\\Core\\YatriiWorld.Application\\DTOs\\Categories\\CategoryWithToursDto.cs",
-              "RelativeDocumentMoniker": "src\\Core\\YatriiWorld.Application\\DTOs\\Categories\\CategoryWithToursDto.cs",
-              "ToolTip": "C:\\Users\\zulfu\\OneDrive\\Desktop\\Z\u0027s\\Code\\projects\\Final_Project\\YatriiWorldAPI\\Yatrii-World\\YatriiWorldAPI\\src\\Core\\YatriiWorld.Application\\DTOs\\Categories\\CategoryWithToursDto.cs",
-              "RelativeToolTip": "src\\Core\\YatriiWorld.Application\\DTOs\\Categories\\CategoryWithToursDto.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABAAAAAAAAAAAAAAAA==",
+              "Title": "CategoryConfiguration.cs",
+              "DocumentMoniker": "C:\\Users\\zulfu\\OneDrive\\Desktop\\Z\u0027s\\Code\\projects\\Final_Project\\YatriiWorldAPI\\Yatrii-World\\YatriiWorldAPI\\src\\Infrastructure\\YatriiWorld.Persistance\\Configurations\\CategoryConfiguration.cs",
+              "RelativeDocumentMoniker": "src\\Infrastructure\\YatriiWorld.Persistance\\Configurations\\CategoryConfiguration.cs",
+              "ToolTip": "C:\\Users\\zulfu\\OneDrive\\Desktop\\Z\u0027s\\Code\\projects\\Final_Project\\YatriiWorldAPI\\Yatrii-World\\YatriiWorldAPI\\src\\Infrastructure\\YatriiWorld.Persistance\\Configurations\\CategoryConfiguration.cs*",
+              "RelativeToolTip": "src\\Infrastructure\\YatriiWorld.Persistance\\Configurations\\CategoryConfiguration.cs*",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABoAAAAyAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-01-31T17:18:06.458Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "TourCreateDto.cs",
-              "DocumentMoniker": "C:\\Users\\zulfu\\OneDrive\\Desktop\\Z\u0027s\\Code\\projects\\Final_Project\\YatriiWorldAPI\\Yatrii-World\\YatriiWorldAPI\\src\\Core\\YatriiWorld.Application\\DTOs\\Tour\\TourCreateDto.cs",
-              "RelativeDocumentMoniker": "src\\Core\\YatriiWorld.Application\\DTOs\\Tour\\TourCreateDto.cs",
-              "ToolTip": "C:\\Users\\zulfu\\OneDrive\\Desktop\\Z\u0027s\\Code\\projects\\Final_Project\\YatriiWorldAPI\\Yatrii-World\\YatriiWorldAPI\\src\\Core\\YatriiWorld.Application\\DTOs\\Tour\\TourCreateDto.cs",
-              "RelativeToolTip": "src\\Core\\YatriiWorld.Application\\DTOs\\Tour\\TourCreateDto.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA8AAAArAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-01-31T17:50:15.489Z",
+              "WhenOpened": "2026-02-01T19:39:01.45Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 5,
-              "Title": "AppDbContext.cs",
-              "DocumentMoniker": "C:\\Users\\zulfu\\OneDrive\\Desktop\\Z\u0027s\\Code\\projects\\Final_Project\\YatriiWorldAPI\\Yatrii-World\\YatriiWorldAPI\\src\\Infrastructure\\YatriiWorld.Persistance\\Data\\AppDbContext.cs",
-              "RelativeDocumentMoniker": "src\\Infrastructure\\YatriiWorld.Persistance\\Data\\AppDbContext.cs",
-              "ToolTip": "C:\\Users\\zulfu\\OneDrive\\Desktop\\Z\u0027s\\Code\\projects\\Final_Project\\YatriiWorldAPI\\Yatrii-World\\YatriiWorldAPI\\src\\Infrastructure\\YatriiWorld.Persistance\\Data\\AppDbContext.cs",
-              "RelativeToolTip": "src\\Infrastructure\\YatriiWorld.Persistance\\Data\\AppDbContext.cs",
-              "ViewState": "AgIAAAMAAAAAAAAAAAAAABQAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-01-31T17:29:29.163Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 7,
-              "Title": "CategoryGetDto.cs",
-              "DocumentMoniker": "C:\\Users\\zulfu\\OneDrive\\Desktop\\Z\u0027s\\Code\\projects\\Final_Project\\YatriiWorldAPI\\Yatrii-World\\YatriiWorldAPI\\src\\Core\\YatriiWorld.Application\\DTOs\\Categories\\CategoryGetDto.cs",
-              "RelativeDocumentMoniker": "src\\Core\\YatriiWorld.Application\\DTOs\\Categories\\CategoryGetDto.cs",
-              "ToolTip": "C:\\Users\\zulfu\\OneDrive\\Desktop\\Z\u0027s\\Code\\projects\\Final_Project\\YatriiWorldAPI\\Yatrii-World\\YatriiWorldAPI\\src\\Core\\YatriiWorld.Application\\DTOs\\Categories\\CategoryGetDto.cs",
-              "RelativeToolTip": "src\\Core\\YatriiWorld.Application\\DTOs\\Categories\\CategoryGetDto.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAAFAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-01-31T17:18:37.474Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 6,
-              "Title": "CategoryUpdateDto.cs",
-              "DocumentMoniker": "C:\\Users\\zulfu\\OneDrive\\Desktop\\Z\u0027s\\Code\\projects\\Final_Project\\YatriiWorldAPI\\Yatrii-World\\YatriiWorldAPI\\src\\Core\\YatriiWorld.Application\\DTOs\\Categories\\CategoryUpdateDto.cs",
-              "RelativeDocumentMoniker": "src\\Core\\YatriiWorld.Application\\DTOs\\Categories\\CategoryUpdateDto.cs",
-              "ToolTip": "C:\\Users\\zulfu\\OneDrive\\Desktop\\Z\u0027s\\Code\\projects\\Final_Project\\YatriiWorldAPI\\Yatrii-World\\YatriiWorldAPI\\src\\Core\\YatriiWorld.Application\\DTOs\\Categories\\CategoryUpdateDto.cs",
-              "RelativeToolTip": "src\\Core\\YatriiWorld.Application\\DTOs\\Categories\\CategoryUpdateDto.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAAoAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-01-31T17:17:57.445Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 8,
-              "Title": "CategoryCreateDto.cs",
-              "DocumentMoniker": "C:\\Users\\zulfu\\OneDrive\\Desktop\\Z\u0027s\\Code\\projects\\Final_Project\\YatriiWorldAPI\\Yatrii-World\\YatriiWorldAPI\\src\\Core\\YatriiWorld.Application\\DTOs\\Categories\\CategoryCreateDto.cs",
-              "RelativeDocumentMoniker": "src\\Core\\YatriiWorld.Application\\DTOs\\Categories\\CategoryCreateDto.cs",
-              "ToolTip": "C:\\Users\\zulfu\\OneDrive\\Desktop\\Z\u0027s\\Code\\projects\\Final_Project\\YatriiWorldAPI\\Yatrii-World\\YatriiWorldAPI\\src\\Core\\YatriiWorld.Application\\DTOs\\Categories\\CategoryCreateDto.cs",
-              "RelativeToolTip": "src\\Core\\YatriiWorld.Application\\DTOs\\Categories\\CategoryCreateDto.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAAFAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-01-31T17:17:39.047Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 9,
-              "Title": "ICategoryService.cs",
-              "DocumentMoniker": "C:\\Users\\zulfu\\OneDrive\\Desktop\\Z\u0027s\\Code\\projects\\Final_Project\\YatriiWorldAPI\\Yatrii-World\\YatriiWorldAPI\\src\\Core\\YatriiWorld.Application\\Interfaces\\Services\\ICategoryService.cs",
-              "RelativeDocumentMoniker": "src\\Core\\YatriiWorld.Application\\Interfaces\\Services\\ICategoryService.cs",
-              "ToolTip": "C:\\Users\\zulfu\\OneDrive\\Desktop\\Z\u0027s\\Code\\projects\\Final_Project\\YatriiWorldAPI\\Yatrii-World\\YatriiWorldAPI\\src\\Core\\YatriiWorld.Application\\Interfaces\\Services\\ICategoryService.cs",
-              "RelativeToolTip": "src\\Core\\YatriiWorld.Application\\Interfaces\\Services\\ICategoryService.cs",
-              "ViewState": "AgIAAAMAAAAAAAAAAAAAAA8AAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-01-31T14:42:37.913Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 10,
               "Title": "ITourService.cs",
               "DocumentMoniker": "C:\\Users\\zulfu\\OneDrive\\Desktop\\Z\u0027s\\Code\\projects\\Final_Project\\YatriiWorldAPI\\Yatrii-World\\YatriiWorldAPI\\src\\Core\\YatriiWorld.Application\\Interfaces\\Services\\ITourService.cs",
               "RelativeDocumentMoniker": "src\\Core\\YatriiWorld.Application\\Interfaces\\Services\\ITourService.cs",
@@ -249,59 +153,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 11,
-              "Title": "IRepository.cs",
-              "DocumentMoniker": "C:\\Users\\zulfu\\OneDrive\\Desktop\\Z\u0027s\\Code\\projects\\Final_Project\\YatriiWorldAPI\\Yatrii-World\\YatriiWorldAPI\\src\\Core\\YatriiWorld.Application\\Interfaces\\Repositories\\Generic\\IRepository.cs",
-              "RelativeDocumentMoniker": "src\\Core\\YatriiWorld.Application\\Interfaces\\Repositories\\Generic\\IRepository.cs",
-              "ToolTip": "C:\\Users\\zulfu\\OneDrive\\Desktop\\Z\u0027s\\Code\\projects\\Final_Project\\YatriiWorldAPI\\Yatrii-World\\YatriiWorldAPI\\src\\Core\\YatriiWorld.Application\\Interfaces\\Repositories\\Generic\\IRepository.cs",
-              "RelativeToolTip": "src\\Core\\YatriiWorld.Application\\Interfaces\\Repositories\\Generic\\IRepository.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-01-31T14:11:53.748Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 16,
-              "Title": "Tour.cs",
-              "DocumentMoniker": "C:\\Users\\zulfu\\OneDrive\\Desktop\\Z\u0027s\\Code\\projects\\Final_Project\\YatriiWorldAPI\\Yatrii-World\\YatriiWorldAPI\\src\\Core\\YatriiWorld.Domain\\Entities\\Tour.cs",
-              "RelativeDocumentMoniker": "src\\Core\\YatriiWorld.Domain\\Entities\\Tour.cs",
-              "ToolTip": "C:\\Users\\zulfu\\OneDrive\\Desktop\\Z\u0027s\\Code\\projects\\Final_Project\\YatriiWorldAPI\\Yatrii-World\\YatriiWorldAPI\\src\\Core\\YatriiWorld.Domain\\Entities\\Tour.cs",
-              "RelativeToolTip": "src\\Core\\YatriiWorld.Domain\\Entities\\Tour.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-01-29T18:36:53.831Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 14,
-              "Title": "Review.cs",
-              "DocumentMoniker": "C:\\Users\\zulfu\\OneDrive\\Desktop\\Z\u0027s\\Code\\projects\\Final_Project\\YatriiWorldAPI\\Yatrii-World\\YatriiWorldAPI\\src\\Core\\YatriiWorld.Domain\\Entities\\Review.cs",
-              "RelativeDocumentMoniker": "src\\Core\\YatriiWorld.Domain\\Entities\\Review.cs",
-              "ToolTip": "C:\\Users\\zulfu\\OneDrive\\Desktop\\Z\u0027s\\Code\\projects\\Final_Project\\YatriiWorldAPI\\Yatrii-World\\YatriiWorldAPI\\src\\Core\\YatriiWorld.Domain\\Entities\\Review.cs",
-              "RelativeToolTip": "src\\Core\\YatriiWorld.Domain\\Entities\\Review.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAAFAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-01-29T18:37:21.615Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 12,
-              "Title": "Category.cs",
-              "DocumentMoniker": "C:\\Users\\zulfu\\OneDrive\\Desktop\\Z\u0027s\\Code\\projects\\Final_Project\\YatriiWorldAPI\\Yatrii-World\\YatriiWorldAPI\\src\\Core\\YatriiWorld.Domain\\Entities\\Category.cs",
-              "RelativeDocumentMoniker": "src\\Core\\YatriiWorld.Domain\\Entities\\Category.cs",
-              "ToolTip": "C:\\Users\\zulfu\\OneDrive\\Desktop\\Z\u0027s\\Code\\projects\\Final_Project\\YatriiWorldAPI\\Yatrii-World\\YatriiWorldAPI\\src\\Core\\YatriiWorld.Domain\\Entities\\Category.cs",
-              "RelativeToolTip": "src\\Core\\YatriiWorld.Domain\\Entities\\Category.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAAHAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-01-29T18:25:38.322Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 13,
+              "DocumentIndex": 4,
               "Title": "Operator.cs",
               "DocumentMoniker": "C:\\Users\\zulfu\\OneDrive\\Desktop\\Z\u0027s\\Code\\projects\\Final_Project\\YatriiWorldAPI\\Yatrii-World\\YatriiWorldAPI\\src\\Core\\YatriiWorld.Domain\\Entities\\Operator.cs",
               "RelativeDocumentMoniker": "src\\Core\\YatriiWorld.Domain\\Entities\\Operator.cs",
@@ -314,7 +166,186 @@
             },
             {
               "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "AppDbContext.cs",
+              "DocumentMoniker": "C:\\Users\\zulfu\\OneDrive\\Desktop\\Z\u0027s\\Code\\projects\\Final_Project\\YatriiWorldAPI\\Yatrii-World\\YatriiWorldAPI\\src\\Infrastructure\\YatriiWorld.Persistance\\Data\\AppDbContext.cs",
+              "RelativeDocumentMoniker": "src\\Infrastructure\\YatriiWorld.Persistance\\Data\\AppDbContext.cs",
+              "ToolTip": "C:\\Users\\zulfu\\OneDrive\\Desktop\\Z\u0027s\\Code\\projects\\Final_Project\\YatriiWorldAPI\\Yatrii-World\\YatriiWorldAPI\\src\\Infrastructure\\YatriiWorld.Persistance\\Data\\AppDbContext.cs*",
+              "RelativeToolTip": "src\\Infrastructure\\YatriiWorld.Persistance\\Data\\AppDbContext.cs*",
+              "ViewState": "AgIAAAYAAAAAAAAAAAAAABEAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-01-31T17:29:29.163Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "ICategoryService.cs",
+              "DocumentMoniker": "C:\\Users\\zulfu\\OneDrive\\Desktop\\Z\u0027s\\Code\\projects\\Final_Project\\YatriiWorldAPI\\Yatrii-World\\YatriiWorldAPI\\src\\Core\\YatriiWorld.Application\\Interfaces\\Services\\ICategoryService.cs",
+              "RelativeDocumentMoniker": "src\\Core\\YatriiWorld.Application\\Interfaces\\Services\\ICategoryService.cs",
+              "ToolTip": "C:\\Users\\zulfu\\OneDrive\\Desktop\\Z\u0027s\\Code\\projects\\Final_Project\\YatriiWorldAPI\\Yatrii-World\\YatriiWorldAPI\\src\\Core\\YatriiWorld.Application\\Interfaces\\Services\\ICategoryService.cs",
+              "RelativeToolTip": "src\\Core\\YatriiWorld.Application\\Interfaces\\Services\\ICategoryService.cs",
+              "ViewState": "AgIAAAMAAAAAAAAAAAAAAA8AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-01-31T14:42:37.913Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "Review.cs",
+              "DocumentMoniker": "C:\\Users\\zulfu\\OneDrive\\Desktop\\Z\u0027s\\Code\\projects\\Final_Project\\YatriiWorldAPI\\Yatrii-World\\YatriiWorldAPI\\src\\Core\\YatriiWorld.Domain\\Entities\\Review.cs",
+              "RelativeDocumentMoniker": "src\\Core\\YatriiWorld.Domain\\Entities\\Review.cs",
+              "ToolTip": "C:\\Users\\zulfu\\OneDrive\\Desktop\\Z\u0027s\\Code\\projects\\Final_Project\\YatriiWorldAPI\\Yatrii-World\\YatriiWorldAPI\\src\\Core\\YatriiWorld.Domain\\Entities\\Review.cs",
+              "RelativeToolTip": "src\\Core\\YatriiWorld.Domain\\Entities\\Review.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAAEAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-01-29T18:37:21.615Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "CategoryCreateDto.cs",
+              "DocumentMoniker": "C:\\Users\\zulfu\\OneDrive\\Desktop\\Z\u0027s\\Code\\projects\\Final_Project\\YatriiWorldAPI\\Yatrii-World\\YatriiWorldAPI\\src\\Core\\YatriiWorld.Application\\DTOs\\Categories\\CategoryCreateDto.cs",
+              "RelativeDocumentMoniker": "src\\Core\\YatriiWorld.Application\\DTOs\\Categories\\CategoryCreateDto.cs",
+              "ToolTip": "C:\\Users\\zulfu\\OneDrive\\Desktop\\Z\u0027s\\Code\\projects\\Final_Project\\YatriiWorldAPI\\Yatrii-World\\YatriiWorldAPI\\src\\Core\\YatriiWorld.Application\\DTOs\\Categories\\CategoryCreateDto.cs",
+              "RelativeToolTip": "src\\Core\\YatriiWorld.Application\\DTOs\\Categories\\CategoryCreateDto.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAAFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-01-31T17:17:39.047Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "CategoryGetDto.cs",
+              "DocumentMoniker": "C:\\Users\\zulfu\\OneDrive\\Desktop\\Z\u0027s\\Code\\projects\\Final_Project\\YatriiWorldAPI\\Yatrii-World\\YatriiWorldAPI\\src\\Core\\YatriiWorld.Application\\DTOs\\Categories\\CategoryGetDto.cs",
+              "RelativeDocumentMoniker": "src\\Core\\YatriiWorld.Application\\DTOs\\Categories\\CategoryGetDto.cs",
+              "ToolTip": "C:\\Users\\zulfu\\OneDrive\\Desktop\\Z\u0027s\\Code\\projects\\Final_Project\\YatriiWorldAPI\\Yatrii-World\\YatriiWorldAPI\\src\\Core\\YatriiWorld.Application\\DTOs\\Categories\\CategoryGetDto.cs",
+              "RelativeToolTip": "src\\Core\\YatriiWorld.Application\\DTOs\\Categories\\CategoryGetDto.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAAFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-01-31T17:18:37.474Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "CategoryWithToursDto.cs",
+              "DocumentMoniker": "C:\\Users\\zulfu\\OneDrive\\Desktop\\Z\u0027s\\Code\\projects\\Final_Project\\YatriiWorldAPI\\Yatrii-World\\YatriiWorldAPI\\src\\Core\\YatriiWorld.Application\\DTOs\\Categories\\CategoryWithToursDto.cs",
+              "RelativeDocumentMoniker": "src\\Core\\YatriiWorld.Application\\DTOs\\Categories\\CategoryWithToursDto.cs",
+              "ToolTip": "C:\\Users\\zulfu\\OneDrive\\Desktop\\Z\u0027s\\Code\\projects\\Final_Project\\YatriiWorldAPI\\Yatrii-World\\YatriiWorldAPI\\src\\Core\\YatriiWorld.Application\\DTOs\\Categories\\CategoryWithToursDto.cs",
+              "RelativeToolTip": "src\\Core\\YatriiWorld.Application\\DTOs\\Categories\\CategoryWithToursDto.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-01-31T17:18:06.458Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "CategoryUpdateDto.cs",
+              "DocumentMoniker": "C:\\Users\\zulfu\\OneDrive\\Desktop\\Z\u0027s\\Code\\projects\\Final_Project\\YatriiWorldAPI\\Yatrii-World\\YatriiWorldAPI\\src\\Core\\YatriiWorld.Application\\DTOs\\Categories\\CategoryUpdateDto.cs",
+              "RelativeDocumentMoniker": "src\\Core\\YatriiWorld.Application\\DTOs\\Categories\\CategoryUpdateDto.cs",
+              "ToolTip": "C:\\Users\\zulfu\\OneDrive\\Desktop\\Z\u0027s\\Code\\projects\\Final_Project\\YatriiWorldAPI\\Yatrii-World\\YatriiWorldAPI\\src\\Core\\YatriiWorld.Application\\DTOs\\Categories\\CategoryUpdateDto.cs",
+              "RelativeToolTip": "src\\Core\\YatriiWorld.Application\\DTOs\\Categories\\CategoryUpdateDto.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAAoAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-01-31T17:17:57.445Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "TourUpdateDto.cs",
+              "DocumentMoniker": "C:\\Users\\zulfu\\OneDrive\\Desktop\\Z\u0027s\\Code\\projects\\Final_Project\\YatriiWorldAPI\\Yatrii-World\\YatriiWorldAPI\\src\\Core\\YatriiWorld.Application\\DTOs\\Tours\\TourUpdateDto.cs",
+              "RelativeDocumentMoniker": "src\\Core\\YatriiWorld.Application\\DTOs\\Tours\\TourUpdateDto.cs",
+              "ToolTip": "C:\\Users\\zulfu\\OneDrive\\Desktop\\Z\u0027s\\Code\\projects\\Final_Project\\YatriiWorldAPI\\Yatrii-World\\YatriiWorldAPI\\src\\Core\\YatriiWorld.Application\\DTOs\\Tours\\TourUpdateDto.cs",
+              "RelativeToolTip": "src\\Core\\YatriiWorld.Application\\DTOs\\Tours\\TourUpdateDto.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-01-31T17:52:41.748Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
+              "Title": "TourListDto.cs",
+              "DocumentMoniker": "C:\\Users\\zulfu\\OneDrive\\Desktop\\Z\u0027s\\Code\\projects\\Final_Project\\YatriiWorldAPI\\Yatrii-World\\YatriiWorldAPI\\src\\Core\\YatriiWorld.Application\\DTOs\\Tours\\TourListDto.cs",
+              "RelativeDocumentMoniker": "src\\Core\\YatriiWorld.Application\\DTOs\\Tours\\TourListDto.cs",
+              "ToolTip": "C:\\Users\\zulfu\\OneDrive\\Desktop\\Z\u0027s\\Code\\projects\\Final_Project\\YatriiWorldAPI\\Yatrii-World\\YatriiWorldAPI\\src\\Core\\YatriiWorld.Application\\DTOs\\Tours\\TourListDto.cs",
+              "RelativeToolTip": "src\\Core\\YatriiWorld.Application\\DTOs\\Tours\\TourListDto.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABEAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-01-31T17:52:03.479Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 13,
+              "Title": "TourGetDto.cs",
+              "DocumentMoniker": "C:\\Users\\zulfu\\OneDrive\\Desktop\\Z\u0027s\\Code\\projects\\Final_Project\\YatriiWorldAPI\\Yatrii-World\\YatriiWorldAPI\\src\\Core\\YatriiWorld.Application\\DTOs\\Tours\\TourGetDto.cs",
+              "RelativeDocumentMoniker": "src\\Core\\YatriiWorld.Application\\DTOs\\Tours\\TourGetDto.cs",
+              "ToolTip": "C:\\Users\\zulfu\\OneDrive\\Desktop\\Z\u0027s\\Code\\projects\\Final_Project\\YatriiWorldAPI\\Yatrii-World\\YatriiWorldAPI\\src\\Core\\YatriiWorld.Application\\DTOs\\Tours\\TourGetDto.cs",
+              "RelativeToolTip": "src\\Core\\YatriiWorld.Application\\DTOs\\Tours\\TourGetDto.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA8AAAAwAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-01-31T17:52:28.479Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 14,
+              "Title": "TourCreateDto.cs",
+              "DocumentMoniker": "C:\\Users\\zulfu\\OneDrive\\Desktop\\Z\u0027s\\Code\\projects\\Final_Project\\YatriiWorldAPI\\Yatrii-World\\YatriiWorldAPI\\src\\Core\\YatriiWorld.Application\\DTOs\\Tours\\TourCreateDto.cs",
+              "RelativeDocumentMoniker": "src\\Core\\YatriiWorld.Application\\DTOs\\Tours\\TourCreateDto.cs",
+              "ToolTip": "C:\\Users\\zulfu\\OneDrive\\Desktop\\Z\u0027s\\Code\\projects\\Final_Project\\YatriiWorldAPI\\Yatrii-World\\YatriiWorldAPI\\src\\Core\\YatriiWorld.Application\\DTOs\\Tours\\TourCreateDto.cs",
+              "RelativeToolTip": "src\\Core\\YatriiWorld.Application\\DTOs\\Tours\\TourCreateDto.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA8AAAArAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-01-31T17:50:15.489Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
               "DocumentIndex": 15,
+              "Title": "IRepository.cs",
+              "DocumentMoniker": "C:\\Users\\zulfu\\OneDrive\\Desktop\\Z\u0027s\\Code\\projects\\Final_Project\\YatriiWorldAPI\\Yatrii-World\\YatriiWorldAPI\\src\\Core\\YatriiWorld.Application\\Interfaces\\Repositories\\Generic\\IRepository.cs",
+              "RelativeDocumentMoniker": "src\\Core\\YatriiWorld.Application\\Interfaces\\Repositories\\Generic\\IRepository.cs",
+              "ToolTip": "C:\\Users\\zulfu\\OneDrive\\Desktop\\Z\u0027s\\Code\\projects\\Final_Project\\YatriiWorldAPI\\Yatrii-World\\YatriiWorldAPI\\src\\Core\\YatriiWorld.Application\\Interfaces\\Repositories\\Generic\\IRepository.cs",
+              "RelativeToolTip": "src\\Core\\YatriiWorld.Application\\Interfaces\\Repositories\\Generic\\IRepository.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-01-31T14:11:53.748Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 18,
+              "Title": "Tour.cs",
+              "DocumentMoniker": "C:\\Users\\zulfu\\OneDrive\\Desktop\\Z\u0027s\\Code\\projects\\Final_Project\\YatriiWorldAPI\\Yatrii-World\\YatriiWorldAPI\\src\\Core\\YatriiWorld.Domain\\Entities\\Tour.cs",
+              "RelativeDocumentMoniker": "src\\Core\\YatriiWorld.Domain\\Entities\\Tour.cs",
+              "ToolTip": "C:\\Users\\zulfu\\OneDrive\\Desktop\\Z\u0027s\\Code\\projects\\Final_Project\\YatriiWorldAPI\\Yatrii-World\\YatriiWorldAPI\\src\\Core\\YatriiWorld.Domain\\Entities\\Tour.cs",
+              "RelativeToolTip": "src\\Core\\YatriiWorld.Domain\\Entities\\Tour.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-01-29T18:36:53.831Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 16,
+              "Title": "Category.cs",
+              "DocumentMoniker": "C:\\Users\\zulfu\\OneDrive\\Desktop\\Z\u0027s\\Code\\projects\\Final_Project\\YatriiWorldAPI\\Yatrii-World\\YatriiWorldAPI\\src\\Core\\YatriiWorld.Domain\\Entities\\Category.cs",
+              "RelativeDocumentMoniker": "src\\Core\\YatriiWorld.Domain\\Entities\\Category.cs",
+              "ToolTip": "C:\\Users\\zulfu\\OneDrive\\Desktop\\Z\u0027s\\Code\\projects\\Final_Project\\YatriiWorldAPI\\Yatrii-World\\YatriiWorldAPI\\src\\Core\\YatriiWorld.Domain\\Entities\\Category.cs",
+              "RelativeToolTip": "src\\Core\\YatriiWorld.Domain\\Entities\\Category.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAAHAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-01-29T18:25:38.322Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 17,
               "Title": "Ticket.cs",
               "DocumentMoniker": "C:\\Users\\zulfu\\OneDrive\\Desktop\\Z\u0027s\\Code\\projects\\Final_Project\\YatriiWorldAPI\\Yatrii-World\\YatriiWorldAPI\\src\\Core\\YatriiWorld.Domain\\Entities\\Ticket.cs",
               "RelativeDocumentMoniker": "src\\Core\\YatriiWorld.Domain\\Entities\\Ticket.cs",
@@ -322,25 +353,23 @@
               "RelativeToolTip": "src\\Core\\YatriiWorld.Domain\\Entities\\Ticket.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAAuAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-01-29T18:37:32.408Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-01-29T18:37:32.408Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 17,
-              "Title": "YatriiWorld.Application",
+              "DocumentIndex": 19,
+              "Title": "YatriiWorld.Application.csproj",
               "DocumentMoniker": "C:\\Users\\zulfu\\OneDrive\\Desktop\\Z\u0027s\\Code\\projects\\Final_Project\\YatriiWorldAPI\\Yatrii-World\\YatriiWorldAPI\\src\\Core\\YatriiWorld.Application\\YatriiWorld.Application.csproj",
               "RelativeDocumentMoniker": "src\\Core\\YatriiWorld.Application\\YatriiWorld.Application.csproj",
               "ToolTip": "C:\\Users\\zulfu\\OneDrive\\Desktop\\Z\u0027s\\Code\\projects\\Final_Project\\YatriiWorldAPI\\Yatrii-World\\YatriiWorldAPI\\src\\Core\\YatriiWorld.Application\\YatriiWorld.Application.csproj",
               "RelativeToolTip": "src\\Core\\YatriiWorld.Application\\YatriiWorld.Application.csproj",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
-              "WhenOpened": "2026-01-31T14:30:27.625Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-01-31T14:30:27.625Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 19,
+              "DocumentIndex": 21,
               "Title": "BaseEntitiy.cs",
               "DocumentMoniker": "C:\\Users\\zulfu\\OneDrive\\Desktop\\Z\u0027s\\Code\\projects\\Final_Project\\YatriiWorldAPI\\Yatrii-World\\YatriiWorldAPI\\src\\Core\\YatriiWorld.Domain\\Entities\\Base\\BaseEntitiy.cs",
               "RelativeDocumentMoniker": "src\\Core\\YatriiWorld.Domain\\Entities\\Base\\BaseEntitiy.cs",
@@ -348,12 +377,11 @@
               "RelativeToolTip": "src\\Core\\YatriiWorld.Domain\\Entities\\Base\\BaseEntitiy.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAArAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-01-29T18:03:11.471Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-01-29T18:03:11.471Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 20,
+              "DocumentIndex": 22,
               "Title": "BaseNameableEntitiy.cs",
               "DocumentMoniker": "C:\\Users\\zulfu\\OneDrive\\Desktop\\Z\u0027s\\Code\\projects\\Final_Project\\YatriiWorldAPI\\Yatrii-World\\YatriiWorldAPI\\src\\Core\\YatriiWorld.Domain\\Entities\\Base\\BaseNameableEntitiy.cs",
               "RelativeDocumentMoniker": "src\\Core\\YatriiWorld.Domain\\Entities\\Base\\BaseNameableEntitiy.cs",
@@ -361,12 +389,11 @@
               "RelativeToolTip": "src\\Core\\YatriiWorld.Domain\\Entities\\Base\\BaseNameableEntitiy.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-01-29T18:18:27.05Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-01-29T18:18:27.05Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 18,
+              "DocumentIndex": 20,
               "Title": "BaseAccountableEntity.cs",
               "DocumentMoniker": "C:\\Users\\zulfu\\OneDrive\\Desktop\\Z\u0027s\\Code\\projects\\Final_Project\\YatriiWorldAPI\\Yatrii-World\\YatriiWorldAPI\\src\\Core\\YatriiWorld.Domain\\Entities\\Base\\BaseAccountableEntity.cs",
               "RelativeDocumentMoniker": "src\\Core\\YatriiWorld.Domain\\Entities\\Base\\BaseAccountableEntity.cs",
@@ -374,12 +401,11 @@
               "RelativeToolTip": "src\\Core\\YatriiWorld.Domain\\Entities\\Base\\BaseAccountableEntity.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAAAEAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-01-29T18:07:51.132Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-01-29T18:07:51.132Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 21,
+              "DocumentIndex": 23,
               "Title": "Class1.cs",
               "DocumentMoniker": "C:\\Users\\zulfu\\OneDrive\\Desktop\\Z\u0027s\\Code\\projects\\Final_Project\\YatriiWorldAPI\\Yatrii-World\\YatriiWorldAPI\\src\\Infrastructure\\YatriiWolrd.Infrastructure\\Class1.cs",
               "RelativeDocumentMoniker": "src\\Infrastructure\\YatriiWolrd.Infrastructure\\Class1.cs",
@@ -387,8 +413,7 @@
               "RelativeToolTip": "src\\Infrastructure\\YatriiWolrd.Infrastructure\\Class1.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-01-28T22:13:36.143Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-01-28T22:13:36.143Z"
             }
           ]
         }
