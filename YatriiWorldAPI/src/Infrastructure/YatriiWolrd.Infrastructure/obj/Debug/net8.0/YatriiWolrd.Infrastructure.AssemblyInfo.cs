@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("YatriiWolrd.Infrastructure")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+4471cc522768541d29db2da19fc4a681c49935fc")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+f480c4f314d735886141b1edc5ab4a227d73cbe4")]
 [assembly: System.Reflection.AssemblyProductAttribute("YatriiWolrd.Infrastructure")]
 [assembly: System.Reflection.AssemblyTitleAttribute("YatriiWolrd.Infrastructure")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
