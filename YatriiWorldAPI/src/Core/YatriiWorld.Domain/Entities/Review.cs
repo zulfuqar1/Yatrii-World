@@ -8,6 +8,10 @@ namespace YatriiWorld.Domain.Entities
 {
     public class Review : Base.BaseNameableEntitiy
     {
-    
+        public string CustomerName { get; set; }
+        public string Comment { get; set; }
+        public int Rating { get; set; }// 1-5 arası
+        public int TourId { get; set; }
+        public Tour Tour { get; set; }
     }
 }
