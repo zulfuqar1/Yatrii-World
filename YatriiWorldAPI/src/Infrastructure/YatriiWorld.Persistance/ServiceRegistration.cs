@@ -16,7 +16,8 @@ namespace YatriiWorld.Persistance
         {
             services.AddDbContext<AppDbContext>
                 (opt=>opt.UseSqlServer(config.GetConnectionString("DefaultConnection")));
-          
         }
+
+
     }
 }

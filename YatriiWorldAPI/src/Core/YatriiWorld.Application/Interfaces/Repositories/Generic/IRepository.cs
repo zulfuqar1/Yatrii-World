@@ -18,3 +18,4 @@ namespace YatriiWorld.Application.Interfaces.Repositories
     }
 
 }
+ 

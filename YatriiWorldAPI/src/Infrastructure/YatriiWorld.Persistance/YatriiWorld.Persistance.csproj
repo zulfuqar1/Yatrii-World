@@ -19,4 +19,8 @@
     <ProjectReference Include="..\..\Core\YatriiWorld.Application\YatriiWorld.Application.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="Implementations\Services\" />
+  </ItemGroup>
+
 </Project>
