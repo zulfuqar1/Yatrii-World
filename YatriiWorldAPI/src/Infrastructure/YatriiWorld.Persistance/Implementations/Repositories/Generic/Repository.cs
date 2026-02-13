@@ -1,10 +1,12 @@
-﻿using System;
+﻿using Microsoft.EntityFrameworkCore;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using YatriiWorld.Application.Interfaces.Repositories;
 using YatriiWorld.Domain.Entities.Base;
+using YatriiWorld.Persistance.Data;
 
 namespace YatriiWorld.Persistance.Implementations.Repositories.Generic
 {

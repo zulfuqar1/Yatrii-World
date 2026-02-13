@@ -1,0 +1,15 @@
+[
+  {
+    "Name": "New Profile",
+    "Projects": [
+      {
+        "Path": "Presentation\\YatriiWorld.API\\YatriiWorld.API.csproj",
+        "Action": "Start"
+      },
+      {
+        "Path": "Presentation\\YatriiWorld.MVC\\YatriiWorld.MVC.csproj",
+        "Action": "Start"
+      }
+    ]
+  }
+]

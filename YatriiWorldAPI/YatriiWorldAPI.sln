@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
-VisualStudioVersion = 17.14.36301.6 d17.14
+VisualStudioVersion = 17.14.36301.6
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{02EA681E-C7D8-13C7-8484-4AC65E1B71E8}"
 EndProject
@@ -20,6 +20,8 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "YatriiWolrd.Infrastructure", "src\Infrastructure\YatriiWolrd.Infrastructure\YatriiWolrd.Infrastructure.csproj", "{8949627B-D98A-4626-8F04-711261B984C4}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "YatriiWorld.API", "Presentation\YatriiWorld.API\YatriiWorld.API.csproj", "{9A25EBDF-39E6-4DE0-B383-2C2E7E8ACEB4}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "YatriiWorld.MVC", "Presentation\YatriiWorld.MVC\YatriiWorld.MVC.csproj", "{D75341EC-510D-4431-879E-61014C02BF1E}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -47,6 +49,10 @@ Global
 		{9A25EBDF-39E6-4DE0-B383-2C2E7E8ACEB4}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{9A25EBDF-39E6-4DE0-B383-2C2E7E8ACEB4}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{9A25EBDF-39E6-4DE0-B383-2C2E7E8ACEB4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D75341EC-510D-4431-879E-61014C02BF1E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D75341EC-510D-4431-879E-61014C02BF1E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D75341EC-510D-4431-879E-61014C02BF1E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D75341EC-510D-4431-879E-61014C02BF1E}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -59,6 +65,7 @@ Global
 		{BBA5DE48-BA9D-4E62-A228-DB34C8249B8A} = {9319552D-FD17-43F5-A9A2-730CC86EE0B6}
 		{8949627B-D98A-4626-8F04-711261B984C4} = {9319552D-FD17-43F5-A9A2-730CC86EE0B6}
 		{9A25EBDF-39E6-4DE0-B383-2C2E7E8ACEB4} = {08BEF459-2AAA-4241-8206-E5B7A43496E7}
+		{D75341EC-510D-4431-879E-61014C02BF1E} = {08BEF459-2AAA-4241-8206-E5B7A43496E7}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {92839FF7-D838-4A9F-9570-85056FD3515A}

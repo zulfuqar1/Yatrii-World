@@ -1,0 +1,9 @@
+C:\Users\zulfu\OneDrive\Desktop\Z's\Code\projects\Final_Project\YatriiWorldAPI\Yatrii-World\YatriiWorldAPI\Presentation\YatriiWorld.MVC\obj\Debug\net8.0\rpswa.dswa.cache.json
+C:\Users\zulfu\OneDrive\Desktop\Z's\Code\projects\Final_Project\YatriiWorldAPI\Yatrii-World\YatriiWorldAPI\Presentation\YatriiWorld.MVC\obj\Debug\net8.0\YatriiWorld.MVC.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\zulfu\OneDrive\Desktop\Z's\Code\projects\Final_Project\YatriiWorldAPI\Yatrii-World\YatriiWorldAPI\Presentation\YatriiWorld.MVC\obj\Debug\net8.0\YatriiWorld.MVC.AssemblyInfoInputs.cache
+C:\Users\zulfu\OneDrive\Desktop\Z's\Code\projects\Final_Project\YatriiWorldAPI\Yatrii-World\YatriiWorldAPI\Presentation\YatriiWorld.MVC\obj\Debug\net8.0\YatriiWorld.MVC.AssemblyInfo.cs
+C:\Users\zulfu\OneDrive\Desktop\Z's\Code\projects\Final_Project\YatriiWorldAPI\Yatrii-World\YatriiWorldAPI\Presentation\YatriiWorld.MVC\obj\Debug\net8.0\YatriiWorld.MVC.csproj.CoreCompileInputs.cache
+C:\Users\zulfu\OneDrive\Desktop\Z's\Code\projects\Final_Project\YatriiWorldAPI\Yatrii-World\YatriiWorldAPI\Presentation\YatriiWorld.MVC\obj\Debug\net8.0\YatriiWorld.MVC.MvcApplicationPartsAssemblyInfo.cache
+C:\Users\zulfu\OneDrive\Desktop\Z's\Code\projects\Final_Project\YatriiWorldAPI\Yatrii-World\YatriiWorldAPI\Presentation\YatriiWorld.MVC\obj\Debug\net8.0\YatriiWorld.MVC.RazorAssemblyInfo.cache
+C:\Users\zulfu\OneDrive\Desktop\Z's\Code\projects\Final_Project\YatriiWorldAPI\Yatrii-World\YatriiWorldAPI\Presentation\YatriiWorld.MVC\obj\Debug\net8.0\YatriiWorld.MVC.RazorAssemblyInfo.cs
+C:\Users\zulfu\OneDrive\Desktop\Z's\Code\projects\Final_Project\YatriiWorldAPI\Yatrii-World\YatriiWorldAPI\Presentation\YatriiWorld.MVC\obj\Debug\net8.0\YatriiWorld.MVC.sourcelink.json

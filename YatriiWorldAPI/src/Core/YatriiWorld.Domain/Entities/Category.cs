@@ -9,7 +9,7 @@ namespace YatriiWorld.Domain.Entities
     public class Category:Base.BaseNameableEntitiy
     {
         public string Name { get; set; }
-       
+
         public ICollection<Tour> Tours { get; set; }
     }
 }
