@@ -12,6 +12,14 @@ namespace YatriiWorld.Persistance.Implementations.Repositories.Generic
 {
     internal class Repository<T> : IRepository<T> where T : BaseEntitiy, new()
     {
+        protected readonly DbSet<T> _dbSet;
+        protected readonly AppDbContext _context;
+        public Repository(AppDbContext context)
+        {
+            _context = context;
+            _dbSet = context.Set<T>();
+        }
+
         public Task AddAsync(T entity)
         {
             throw new NotImplementedException();

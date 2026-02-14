@@ -1,8 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "g0dmkhzHP40=",
+  "dgSpecHash": "UZTDDlrH9zc=",
   "success": true,
   "projectFilePath": "C:\\Users\\zulfu\\OneDrive\\Desktop\\Z's\\Code\\projects\\Final_Project\\YatriiWorldAPI\\Yatrii-World\\YatriiWorldAPI\\Presentation\\YatriiWorld.MVC\\YatriiWorld.MVC.csproj",
-  "expectedPackageFiles": [],
+  "expectedPackageFiles": [
+    "C:\\Users\\zulfu\\.nuget\\packages\\restsharp\\113.1.0\\restsharp.113.1.0.nupkg.sha512"
+  ],
   "logs": []
 }

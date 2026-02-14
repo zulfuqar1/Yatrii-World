@@ -1,0 +1,41 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v8.0",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v8.0": {
+      "YatriiWorld.MVC/1.0.0": {
+        "dependencies": {
+          "RestSharp": "113.1.0"
+        },
+        "runtime": {
+          "YatriiWorld.MVC.dll": {}
+        }
+      },
+      "RestSharp/113.1.0": {
+        "runtime": {
+          "lib/net8.0/RestSharp.dll": {
+            "assemblyVersion": "113.1.0.0",
+            "fileVersion": "113.1.0.0"
+          }
+        }
+      }
+    }
+  },
+  "libraries": {
+    "YatriiWorld.MVC/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "RestSharp/113.1.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-poNb3XPzF0Rxp+XW9e7U+TZOIjABkGEYd0cGuNIstcRZTU8ES6+7tpbZ55+0XpxwnxxU8nSAZ89p6WUKI+Cg+A==",
+      "path": "restsharp/113.1.0",
+      "hashPath": "restsharp.113.1.0.nupkg.sha512"
+    }
+  }
+}
