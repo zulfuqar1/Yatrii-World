@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace YatriiWorld.Domain.Entities
 {
-    internal class ContactMessage:Base.BaseNameableEntitiy
+    public class ContactMessage:Base.BaseNameableEntitiy
     {
         public string Name { get; set; }
         public string Email { get; set; }

@@ -7,9 +7,9 @@ using YatriiWorld.Application.DTOs.Tour;
 
 namespace YatriiWorld.Application.DTOs.Categories
 {
-    internal class CategoryWithToursDto
+    public class CategoryWithToursDto
     {
-        public int Id { get; set; }
+        public long Id { get; set; }
         public string Name { get; set; }
         public List<TourListDto> Tours { get; set; }
     }

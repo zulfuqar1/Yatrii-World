@@ -6,8 +6,8 @@ using System.Threading.Tasks;
 
 namespace YatriiWorld.Application.DTOs.Tour
 {
-    internal class TourUpdateDto : TourCreateDto
+    public class TourUpdateDto : TourCreateDto
     {
-        public int Id { get; set; }
+        public long Id { get; set; }
     }
 }

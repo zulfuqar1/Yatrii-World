@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace YatriiWorld.Application.DTOs.Tour
 {
-    internal class TourCreateDto
+    public class TourCreateDto
     {
         public string Name { get; set; }
         public string Description { get; set; }

@@ -22,7 +22,21 @@ namespace YatriiWorld.Persistance.Data
 
 
         public DbSet<Category> Categories { get; set; }
-        public DbSet<Tour> Tours {get; set;}
+
+        public DbSet<Tour> Tours { get; set; }
+
+        public DbSet<Destination> Destinations { get; set; }
+
+        public DbSet<Tag> Tags { get; set; }
+
+        public DbSet<Ticket> Tickets { get; set; }
+
+        public DbSet<Review> Reviews { get; set; }
+
+        public DbSet<TourImage> TourImages { get; set; }
+
+        public DbSet<ContactMessage> ContactMessages { get; set; }
+
 
 
     }

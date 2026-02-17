@@ -11,6 +11,34 @@
   </ItemGroup>
 
   <ItemGroup>
+    <None Include="wwwroot\assets\.sass-cache\01526bb22c7666d84be9712e3f8b137c7a33ae43\style.scssc" />
+    <None Include="wwwroot\assets\.sass-cache\01526bb22c7666d84be9712e3f8b137c7a33ae43\_default.scssc" />
+    <None Include="wwwroot\assets\.sass-cache\01526bb22c7666d84be9712e3f8b137c7a33ae43\_variable.scssc" />
+    <None Include="wwwroot\assets\.sass-cache\01ff328a530509c5ddebee6c34b56a175a6c5cc5\style.scssc" />
+    <None Include="wwwroot\assets\.sass-cache\01ff328a530509c5ddebee6c34b56a175a6c5cc5\_default.scssc" />
+    <None Include="wwwroot\assets\.sass-cache\01ff328a530509c5ddebee6c34b56a175a6c5cc5\_variable.scssc" />
+    <None Include="wwwroot\assets\.sass-cache\44f4aa16e7d42305346b388b4a035651fca856b1\blog.scssc" />
+    <None Include="wwwroot\assets\.sass-cache\44f4aa16e7d42305346b388b4a035651fca856b1\style.scssc" />
+    <None Include="wwwroot\assets\.sass-cache\44f4aa16e7d42305346b388b4a035651fca856b1\variable.scssc" />
+    <None Include="wwwroot\assets\.sass-cache\44f4aa16e7d42305346b388b4a035651fca856b1\_blog.scssc" />
+    <None Include="wwwroot\assets\.sass-cache\44f4aa16e7d42305346b388b4a035651fca856b1\_default.scssc" />
+    <None Include="wwwroot\assets\.sass-cache\44f4aa16e7d42305346b388b4a035651fca856b1\_variable.scssc" />
+    <None Include="wwwroot\assets\.sass-cache\4815f2201a4ee63ad36e3bc77d11f51694a594ca\style.scssc" />
+    <None Include="wwwroot\assets\.sass-cache\4815f2201a4ee63ad36e3bc77d11f51694a594ca\_default.scssc" />
+    <None Include="wwwroot\assets\.sass-cache\4815f2201a4ee63ad36e3bc77d11f51694a594ca\_variable.scssc" />
+    <None Include="wwwroot\assets\.sass-cache\7c3bce8b2fd8d2beae544bba5b29ebadcf1b6c97\rtl.scssc" />
+    <None Include="wwwroot\assets\.sass-cache\7c3bce8b2fd8d2beae544bba5b29ebadcf1b6c97\style.scssc" />
+    <None Include="wwwroot\assets\.sass-cache\7c3bce8b2fd8d2beae544bba5b29ebadcf1b6c97\_default.scssc" />
+    <None Include="wwwroot\assets\.sass-cache\7c3bce8b2fd8d2beae544bba5b29ebadcf1b6c97\_variable.scssc" />
+    <None Include="wwwroot\assets\.sass-cache\a4a9075eb571024d9ea9679f625fa9c50675f59f\style.scssc" />
+    <None Include="wwwroot\assets\.sass-cache\a4a9075eb571024d9ea9679f625fa9c50675f59f\_default.scssc" />
+    <None Include="wwwroot\assets\.sass-cache\a4a9075eb571024d9ea9679f625fa9c50675f59f\_variable.scssc" />
+    <None Include="wwwroot\assets\.sass-cache\bbdab5b0ae459ce4564faafb8945891b36d74546\style.scssc" />
+    <None Include="wwwroot\assets\.sass-cache\bbdab5b0ae459ce4564faafb8945891b36d74546\_default.scssc" />
+    <None Include="wwwroot\assets\.sass-cache\bbdab5b0ae459ce4564faafb8945891b36d74546\_variable.scssc" />
+  </ItemGroup>
+
+  <ItemGroup>
     <PackageReference Include="RestSharp" Version="113.1.0" />
   </ItemGroup>
 

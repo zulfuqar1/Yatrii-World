@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace YatriiWorld.Domain.Entities
 {
-    internal class Destination : Base.BaseNameableEntitiy
+    public class Destination : Base.BaseNameableEntitiy
     {
         public string City { get; set; }
         public string Country { get; set; }

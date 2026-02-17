@@ -6,9 +6,9 @@ using System.Threading.Tasks;
 
 namespace YatriiWorld.Application.DTOs.Tour
 {
-    internal class TourListDto
+    public class TourListDto
     {
-        public int Id { get; set; }
+        public long Id { get; set; }
         public string Name { get; set; }
         public decimal Price { get; set; }
         public string CategoryName { get; set; }

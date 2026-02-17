@@ -6,9 +6,9 @@ using System.Threading.Tasks;
 
 namespace YatriiWorld.Application.DTOs.Categories
 {
-    internal class CategoryGetDto
+    public class CategoryGetDto
     {
-        public int Id { get; set; }
+        public long Id { get; set; }
         public string Name { get; set; }
     }
 }

@@ -8,7 +8,6 @@ namespace YatriiWorld.Domain.Entities
 {
     public class Tag: Base.BaseNameableEntitiy
     {
-        public string TagName { get; set; }
         public ICollection<Tour> Tours { get; set; }
     }
 }
