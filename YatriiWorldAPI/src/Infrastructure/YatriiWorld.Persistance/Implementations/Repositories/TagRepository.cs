@@ -8,14 +8,14 @@ using YatriiWorld.Domain.Entities;
 using YatriiWorld.Persistance.Data;
 using YatriiWorld.Persistance.Implementations.Repositories.Generic;
 
-namespace YatriiWorld.Persistance.Implementations.Repositories
-{
-    internal class TagRepository:Repository<Tag>, ITagRepisitory
+    namespace YatriiWorld.Persistance.Implementations.Repositories
     {
-        public TagRepository(AppDbContext context) : base(context)
+        internal class TagRepository:Repository<Tag>, ITagRepisitory
         {
+            public TagRepository(AppDbContext context) : base(context)
+            {
+
+            }
 
         }
-
     }
-}

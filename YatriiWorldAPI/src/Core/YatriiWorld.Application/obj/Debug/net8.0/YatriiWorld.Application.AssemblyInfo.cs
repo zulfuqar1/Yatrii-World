@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("YatriiWorld.Application")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+3287d440aeb049fae273cf42f1e90f8a1c6b8f40")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+51395656d6c7639391879b279597d6992d097e1c")]
 [assembly: System.Reflection.AssemblyProductAttribute("YatriiWorld.Application")]
 [assembly: System.Reflection.AssemblyTitleAttribute("YatriiWorld.Application")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
