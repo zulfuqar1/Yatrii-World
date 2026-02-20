@@ -7,9 +7,16 @@ using YatriiWorld.Application.DTOs.Categories;
 
 namespace YatriiWorld.Application.Interfaces.Services
 {
-    internal interface ICategoryService
+    public interface ICategoryService
     {
         Task<List<CategoryGetDto>> GetAllCategoriesAsync();
         Task<CategoryGetDto> GetCategoryByIdAsync(int id);
+
+        Task<List<CategoryWithToursDto>> GetAllCategoriesWithToursAsync();
+
+        Task<CategoryWithToursDto> GetCategoryWithToursByIdAsync(int id);
+
+        Task<CategoryUpdateDto> GetCategoryUpdateByIdAsync(int id);
+
     }
 }

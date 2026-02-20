@@ -151,3 +151,6 @@ C:\Users\zulfu\OneDrive\Desktop\Z's\Code\projects\Final_Project\YatriiWorldAPI\Y
 C:\Users\zulfu\OneDrive\Desktop\Z's\Code\projects\Final_Project\YatriiWorldAPI\Yatrii-World\YatriiWorldAPI\Presentation\YatriiWorld.API\bin\Debug\net8.0\YatriiWorld.Persistance.pdb
 C:\Users\zulfu\OneDrive\Desktop\Z's\Code\projects\Final_Project\YatriiWorldAPI\Yatrii-World\YatriiWorldAPI\Presentation\YatriiWorld.API\bin\Debug\net8.0\YatriiWorld.Application.pdb
 C:\Users\zulfu\OneDrive\Desktop\Z's\Code\projects\Final_Project\YatriiWorldAPI\Yatrii-World\YatriiWorldAPI\Presentation\YatriiWorld.API\bin\Debug\net8.0\YatriiWorld.Domain.pdb
+C:\Users\zulfu\OneDrive\Desktop\Z's\Code\projects\Final_Project\YatriiWorldAPI\Yatrii-World\YatriiWorldAPI\Presentation\YatriiWorld.API\bin\Debug\net8.0\AutoMapper.dll
+C:\Users\zulfu\OneDrive\Desktop\Z's\Code\projects\Final_Project\YatriiWorldAPI\Yatrii-World\YatriiWorldAPI\Presentation\YatriiWorld.API\bin\Debug\net8.0\Microsoft.Extensions.Primitives.dll
+C:\Users\zulfu\OneDrive\Desktop\Z's\Code\projects\Final_Project\YatriiWorldAPI\Yatrii-World\YatriiWorldAPI\Presentation\YatriiWorld.API\bin\Debug\net8.0\System.Diagnostics.DiagnosticSource.dll

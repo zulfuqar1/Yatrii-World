@@ -8,10 +8,10 @@ public class AuthController : Controller
 {
     private readonly IRepository<User> _userRepository;
 
-    //public AuthController(IRepository<User> userRepository)
-    //{
-    //    _userRepository = userRepository;
-    //}
+    public AuthController(IRepository<User> userRepository)
+    {
+        _userRepository = userRepository;
+    }
 
     //[HttpPost]
     //public async Task<IActionResult> Register(RegisterDto dto)
@@ -52,4 +52,6 @@ public class AuthController : Controller
 
     //    return RedirectToAction("Index", "Home");
     //}
+
+
 }

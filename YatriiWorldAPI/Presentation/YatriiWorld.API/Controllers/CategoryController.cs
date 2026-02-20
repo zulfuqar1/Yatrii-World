@@ -4,8 +4,7 @@ using YatriiWorld.Application.DTOs.Categories;
 using YatriiWorld.Domain.Entities;
 using YatriiWorld.Persistance.Data;
 using YatriiWorld.Application.DTOs.Tour;
-using YatriiWorld.Application.DTOs.Tour; // TourListDto üçün
-using Microsoft.EntityFrameworkCore;    // Include üçün
+
 
 
 namespace YatriiWorld.API.Controllers
