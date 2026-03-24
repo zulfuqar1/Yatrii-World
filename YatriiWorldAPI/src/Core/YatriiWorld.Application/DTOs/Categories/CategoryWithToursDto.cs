@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using YatriiWorld.Application.DTOs.Tour;
+using YatriiWorld.Application.DTOs.Tours;
 
 namespace YatriiWorld.Application.DTOs.Categories
 {

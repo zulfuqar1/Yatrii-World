@@ -1,3 +1,6 @@
+using YatriiWorld.MVC.Services.Implementations;
+using YatriiWorld.MVC.Services.Interfaces;
+
 namespace YatriiWorld.MVC
 {
     public class Program
@@ -6,16 +9,22 @@ namespace YatriiWorld.MVC
         {
             var builder = WebApplication.CreateBuilder(args);
 
-            // Add services to the container.
+            // 1. Standart MVC Servisleri
             builder.Services.AddControllersWithViews();
+
+            
+            builder.Services.AddHttpClient("YatriiApiClient", client =>
+            {
+                // Buradaki portu (7029) kendi API projenin portuyla de?i?tir!
+                client.BaseAddress = new Uri("https://localhost:7029/api/");
+                client.DefaultRequestHeaders.Add("Accept", "application/json");
+            });
 
             var app = builder.Build();
 
-            // Configure the HTTP request pipeline.
             if (!app.Environment.IsDevelopment())
             {
                 app.UseExceptionHandler("/Home/Error");
-                // The default HSTS value is 30 days. You may want to change this for production scenarios, see https://aka.ms/aspnetcore-hsts.
                 app.UseHsts();
             }
 
@@ -23,8 +32,12 @@ namespace YatriiWorld.MVC
             app.UseStaticFiles();
 
             app.UseRouting();
-
             app.UseAuthorization();
+
+            // Areas deste?i (Admin paneli vb. için önemli)
+            app.MapControllerRoute(
+               name: "areas",
+               pattern: "{area:exists}/{controller=Home}/{action=Index}/{id?}");
 
             app.MapControllerRoute(
                 name: "default",

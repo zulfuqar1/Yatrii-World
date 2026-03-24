@@ -15,6 +15,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\..\src\Infrastructure\YatriiWolrd.Infrastructure\YatriiWolrd.Infrastructure.csproj" />
     <ProjectReference Include="..\..\src\Infrastructure\YatriiWorld.Persistance\YatriiWorld.Persistance.csproj" />
   </ItemGroup>
 

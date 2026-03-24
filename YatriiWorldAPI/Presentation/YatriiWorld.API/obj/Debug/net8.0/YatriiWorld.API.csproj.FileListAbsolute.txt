@@ -152,5 +152,14 @@ C:\Users\zulfu\OneDrive\Desktop\Z's\Code\projects\Final_Project\YatriiWorldAPI\Y
 C:\Users\zulfu\OneDrive\Desktop\Z's\Code\projects\Final_Project\YatriiWorldAPI\Yatrii-World\YatriiWorldAPI\Presentation\YatriiWorld.API\bin\Debug\net8.0\YatriiWorld.Application.pdb
 C:\Users\zulfu\OneDrive\Desktop\Z's\Code\projects\Final_Project\YatriiWorldAPI\Yatrii-World\YatriiWorldAPI\Presentation\YatriiWorld.API\bin\Debug\net8.0\YatriiWorld.Domain.pdb
 C:\Users\zulfu\OneDrive\Desktop\Z's\Code\projects\Final_Project\YatriiWorldAPI\Yatrii-World\YatriiWorldAPI\Presentation\YatriiWorld.API\bin\Debug\net8.0\AutoMapper.dll
-C:\Users\zulfu\OneDrive\Desktop\Z's\Code\projects\Final_Project\YatriiWorldAPI\Yatrii-World\YatriiWorldAPI\Presentation\YatriiWorld.API\bin\Debug\net8.0\Microsoft.Extensions.Primitives.dll
-C:\Users\zulfu\OneDrive\Desktop\Z's\Code\projects\Final_Project\YatriiWorldAPI\Yatrii-World\YatriiWorldAPI\Presentation\YatriiWorld.API\bin\Debug\net8.0\System.Diagnostics.DiagnosticSource.dll
+C:\Users\zulfu\OneDrive\Desktop\Z's\Code\projects\Final_Project\YatriiWorldAPI\Yatrii-World\YatriiWorldAPI\Presentation\YatriiWorld.API\bin\Debug\net8.0\FluentValidation.dll
+C:\Users\zulfu\OneDrive\Desktop\Z's\Code\projects\Final_Project\YatriiWorldAPI\Yatrii-World\YatriiWorldAPI\Presentation\YatriiWorld.API\bin\Debug\net8.0\FluentValidation.AspNetCore.dll
+C:\Users\zulfu\OneDrive\Desktop\Z's\Code\projects\Final_Project\YatriiWorldAPI\Yatrii-World\YatriiWorldAPI\Presentation\YatriiWorld.API\bin\Debug\net8.0\FluentValidation.DependencyInjectionExtensions.dll
+C:\Users\zulfu\OneDrive\Desktop\Z's\Code\projects\Final_Project\YatriiWorldAPI\Yatrii-World\YatriiWorldAPI\Presentation\YatriiWorld.API\bin\Debug\net8.0\Microsoft.AspNetCore.Cryptography.Internal.dll
+C:\Users\zulfu\OneDrive\Desktop\Z's\Code\projects\Final_Project\YatriiWorldAPI\Yatrii-World\YatriiWorldAPI\Presentation\YatriiWorld.API\bin\Debug\net8.0\Microsoft.AspNetCore.Cryptography.KeyDerivation.dll
+C:\Users\zulfu\OneDrive\Desktop\Z's\Code\projects\Final_Project\YatriiWorldAPI\Yatrii-World\YatriiWorldAPI\Presentation\YatriiWorld.API\bin\Debug\net8.0\Microsoft.AspNetCore.Identity.EntityFrameworkCore.dll
+C:\Users\zulfu\OneDrive\Desktop\Z's\Code\projects\Final_Project\YatriiWorldAPI\Yatrii-World\YatriiWorldAPI\Presentation\YatriiWorld.API\bin\Debug\net8.0\Microsoft.Extensions.Identity.Core.dll
+C:\Users\zulfu\OneDrive\Desktop\Z's\Code\projects\Final_Project\YatriiWorldAPI\Yatrii-World\YatriiWorldAPI\Presentation\YatriiWorld.API\bin\Debug\net8.0\Microsoft.Extensions.Identity.Stores.dll
+C:\Users\zulfu\OneDrive\Desktop\Z's\Code\projects\Final_Project\YatriiWorldAPI\Yatrii-World\YatriiWorldAPI\Presentation\YatriiWorld.API\bin\Debug\net8.0\YatriiWolrd.Infrastructure.dll
+C:\Users\zulfu\OneDrive\Desktop\Z's\Code\projects\Final_Project\YatriiWorldAPI\Yatrii-World\YatriiWorldAPI\Presentation\YatriiWorld.API\bin\Debug\net8.0\YatriiWolrd.Infrastructure.pdb
+C:\Users\zulfu\OneDrive\Desktop\Z's\Code\projects\Final_Project\YatriiWorldAPI\Yatrii-World\YatriiWorldAPI\Presentation\YatriiWorld.API\bin\Debug\net8.0\Microsoft.AspNetCore.Authentication.JwtBearer.dll

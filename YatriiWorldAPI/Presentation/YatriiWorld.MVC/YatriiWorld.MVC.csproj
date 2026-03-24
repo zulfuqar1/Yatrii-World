@@ -1,4 +1,4 @@
-<Project Sdk="Microsoft.NET.Sdk.Web">
+﻿<Project Sdk="Microsoft.NET.Sdk.Web">
 
   <PropertyGroup>
     <TargetFramework>net8.0</TargetFramework>
@@ -7,10 +7,13 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Folder Include="Models\" />
-  </ItemGroup>
-
-  <ItemGroup>
+    <None Include="wwwroot\admin\fonts\.DS_Store" />
+    <None Include="wwwroot\admin\fonts\Roboto\.DS_Store" />
+    <None Include="wwwroot\admin\images\.DS_Store" />
+    <None Include="wwwroot\admin\images\auth\.DS_Store" />
+    <None Include="wwwroot\admin\images\faces\.DS_Store" />
+    <None Include="wwwroot\admin\js\.DS_Store" />
+    <None Include="wwwroot\admin\vendors\.DS_Store" />
     <None Include="wwwroot\assets\.sass-cache\01526bb22c7666d84be9712e3f8b137c7a33ae43\style.scssc" />
     <None Include="wwwroot\assets\.sass-cache\01526bb22c7666d84be9712e3f8b137c7a33ae43\_default.scssc" />
     <None Include="wwwroot\assets\.sass-cache\01526bb22c7666d84be9712e3f8b137c7a33ae43\_variable.scssc" />
@@ -39,7 +42,19 @@
   </ItemGroup>
 
   <ItemGroup>
+    <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="8.0.23" />
     <PackageReference Include="RestSharp" Version="113.1.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Areas\Admin\Data\" />
+    <Folder Include="Areas\Admin\Models\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\src\Core\YatriiWorld.Application\YatriiWorld.Application.csproj" />
+    <ProjectReference Include="..\..\src\Core\YatriiWorld.Domain\YatriiWorld.Domain.csproj" />
+    <ProjectReference Include="..\..\src\Infrastructure\YatriiWorld.Persistance\YatriiWorld.Persistance.csproj" />
   </ItemGroup>
 
 </Project>

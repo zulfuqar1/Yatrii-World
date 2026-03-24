@@ -10,7 +10,7 @@ using YatriiWorld.Persistance.Data;
 
 namespace YatriiWorld.Persistance.Implementations.Repositories.Generic
 {
-    internal class Repository<T> : IRepository<T> where T : BaseEntitiy, new()
+    internal class Repository<T> : IRepository<T> where T : BaseEntity, new()
     {
         protected readonly DbSet<T> _dbSet;
         protected readonly AppDbContext _context;
@@ -35,7 +35,7 @@ namespace YatriiWorld.Persistance.Implementations.Repositories.Generic
             return _dbSet.AsQueryable();
         }
 
-        public async Task<T> GetByIdAsync(int id)
+        public async Task<T> GetByIdAsync(long id)
         {
             return await _dbSet.FindAsync(id);
         }

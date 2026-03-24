@@ -1,4 +1,10 @@
-﻿
+﻿@using YatriiWorld.Domain.Entities.Enums
+@using YatriiWorld.MVC.ViewModels.Tours
+@model List<TourListVM>
+
+
+
+
     <!-- banner starts -->
     <section class="banner overflow-hidden">
         <div class="slider video-slider">
@@ -173,431 +179,7 @@
         </div>
     </section>
     <!-- form ends -->
-    <!-- Fav destination Starts -->
-    <section class="trending destination pb-6 pt-5">
-        <div class="container">
-            <div class="section-title text-center mb-5 pb-2 w-50 mx-auto">
-                <h2 class="m-0">Find Your <span>Favourite Destination</span></h2>
-                <p class="mb-0">Travel has helped us to understand the meaning of life and it has helped us become better people. Each time we travel, we see the world with new eyes.</p>
-            </div>
-            <div class="trend-box">
-                <div class="price-navtab text-center mb-4">
-                    <ul class="nav nav-tabs">
-                        <li class="active"><a data-toggle="tab" href="#historical">Historical</a></li>
-                        <li><a data-toggle="tab" href="#weekend">Weekend</a></li>
-                        <li><a data-toggle="tab" href="#holidays">Holidays</a></li>
-                        <li><a data-toggle="tab" href="#special">Special Tour</a></li>
-                    </ul>
-                </div>
-                <div class="tab-content">
-                    <div id="historical" class="tab-pane fade in active">
-                        <div class="row">
-                            <div class="col-lg-4 col-md-6 col-xs-12 mb-4">
-                                <div class="trend-item">
-                                    <div class="trend-image">
-                                        <img src="~/assets/images/trending/trending8.jpg" alt="image">
-                                    </div>
-                                    <div class="trend-content-main">
-                                        <div class="trend-content">
-                                            <div class="rating-main d-flex align-items-center pb-1">
-                                                <div class="rating">
-                                                    <span class="fa fa-star checked"></span>
-                                                    <span class="fa fa-star checked"></span>
-                                                    <span class="fa fa-star checked"></span>
-                                                    <span class="fa fa-star checked"></span>
-                                                    <span class="fa fa-star checked"></span>
-                                                </div>
-                                                <span class="ml-2">38 Reviews</span>
-                                            </div>
-                                            <h4><a href="#">Nepal Special Tour</a></h4>
-                                            <p class="mb-0"><i class="fa fa-eye mr-1"></i> 852 Visiting Places <i class="fa fa-map-marker mr-1 ml-3"></i> Nepal.</p>
-                                        </div>
-                                        <div class="trend-last-main">
-                                            <p class="mb-0 trend-para">A wonderful little cottage right on the seashore - perfect for exploring.</p>
-                                            <div class="trend-last d-flex align-items-center justify-content-between">
-                                                <p class="mb-0 white d-flex align-items-center"><img src="~/assets/images/reviewer/1.jpg" class="d-author mr-2" alt=""> Thu Astudillo</p>
-                                                <div class="trend-price">
-                                                    <p class="price white mb-0"><a href="#"><i class="flaticon-like white"></i></a></p>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-lg-4 col-md-6 col-xs-12 mb-4">
-                                <div class="trend-item">
-                                    <div class="trend-image">
-                                        <img src="~/assets/images/trending/trending11.jpg" alt="image">
-                                    </div>
-                                    <div class="trend-content-main">
-                                        <div class="trend-content">
-                                            <div class="rating-main d-flex align-items-center pb-1">
-                                                <div class="rating">
-                                                    <span class="fa fa-star checked"></span>
-                                                    <span class="fa fa-star checked"></span>
-                                                    <span class="fa fa-star checked"></span>
-                                                    <span class="fa fa-star checked"></span>
-                                                    <span class="fa fa-star checked"></span>
-                                                </div>
-                                                <span class="ml-2">38 Reviews</span>
-                                            </div>
-                                            <h4><a href="#">Canada New Year Tour</a></h4>
-                                            <p class="mb-0"><i class="fa fa-eye mr-1"></i> 615 Visiting Places <i class="fa fa-map-marker mr-1 ml-3"></i> Canada.</p>
-                                        </div>
-                                        <div class="trend-last-main">
-                                            <p class="mb-0 trend-para">A wonderful little cottage right on the seashore - perfect for exploring.</p>
-                                            <div class="trend-last d-flex align-items-center justify-content-between">
-                                                <p class="mb-0 white d-flex align-items-center"><img src="~/assets/images/reviewer/2.jpg" class="d-author mr-2" alt=""> Thu Astudillo</p>
-                                                <div class="trend-price">
-                                                    <p class="price white mb-0"><a href="#"><i class="flaticon-like white"></i></a></p>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-lg-4 col-md-12 col-xs-12 mb-4">
-                                <div class="trend-item">
-                                    <div class="trend-image">
-                                        <img src="~/assets/images/trending/trending12.jpg" alt="image">
-                                    </div>
-                                    <div class="trend-content-main">
-                                        <div class="trend-content">
-                                            <div class="rating-main d-flex align-items-center pb-1">
-                                                <div class="rating">
-                                                    <span class="fa fa-star checked"></span>
-                                                    <span class="fa fa-star checked"></span>
-                                                    <span class="fa fa-star checked"></span>
-                                                    <span class="fa fa-star checked"></span>
-                                                    <span class="fa fa-star checked"></span>
-                                                </div>
-                                                <span class="ml-2">25 Reviews</span>
-                                            </div>
-                                            <h4><a href="#">America Christmas Tour</a></h4>
-                                            <p class="mb-0"><i class="fa fa-eye mr-1"></i> 926 Visiting Places <i class="fa fa-map-marker mr-1 ml-3"></i> America.</p>
-                                        </div>
-                                        <div class="trend-last-main">
-                                            <p class="mb-0 trend-para">A wonderful little cottage right on the seashore - perfect for exploring.</p>
-                                            <div class="trend-last d-flex align-items-center justify-content-between">
-                                                <p class="mb-0 white d-flex align-items-center"><img src="~/assets/images/reviewer/1.jpg" class="d-author mr-2" alt=""> Thu Astudillo</p>
-                                                <div class="trend-price">
-                                                    <p class="price white mb-0"><a href="#"><i class="flaticon-like white"></i></a></p>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
 
-                    <div id="weekend" class="tab-pane fade">
-                        <div class="row">
-                            <div class="col-lg-4 col-md-6 col-xs-12 mb-4">
-                                <div class="trend-item">
-                                    <div class="trend-image">
-                                        <img src="~/assets/images/trending/trending14.jpg" alt="image">
-                                    </div>
-                                    <div class="trend-content-main">
-                                        <div class="trend-content">
-                                            <div class="rating-main d-flex align-items-center pb-1">
-                                                <div class="rating">
-                                                    <span class="fa fa-star checked"></span>
-                                                    <span class="fa fa-star checked"></span>
-                                                    <span class="fa fa-star checked"></span>
-                                                    <span class="fa fa-star checked"></span>
-                                                    <span class="fa fa-star checked"></span>
-                                                </div>
-                                                <span class="ml-2">38 Reviews</span>
-                                            </div>
-                                            <h4><a href="#">Nepal Weekend Tour</a></h4>
-                                            <p class="mb-0"><i class="fa fa-eye mr-1"></i> 852 Visiting Places <i class="fa fa-map-marker mr-1 ml-3"></i> Nepal.</p>
-                                        </div>
-                                        <div class="trend-last-main">
-                                            <p class="mb-0 trend-para">A wonderful little cottage right on the seashore - perfect for exploring.</p>
-                                            <div class="trend-last d-flex align-items-center justify-content-between">
-                                                <p class="mb-0 white d-flex align-items-center"><img src="~/assets/images/reviewer/1.jpg" class="d-author mr-2" alt=""> Thu Astudillo</p>
-                                                <div class="trend-price">
-                                                    <p class="price white mb-0"><a href="#"><i class="flaticon-like white"></i></a></p>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-lg-4 col-md-6 col-xs-12 mb-4">
-                                <div class="trend-item">
-                                    <div class="trend-image">
-                                        <img src="~/assets/images/trending/trending13.jpg" alt="image">
-                                    </div>
-                                    <div class="trend-content-main">
-                                        <div class="trend-content">
-                                            <div class="rating-main d-flex align-items-center pb-1">
-                                                <div class="rating">
-                                                    <span class="fa fa-star checked"></span>
-                                                    <span class="fa fa-star checked"></span>
-                                                    <span class="fa fa-star checked"></span>
-                                                    <span class="fa fa-star checked"></span>
-                                                    <span class="fa fa-star checked"></span>
-                                                </div>
-                                                <span class="ml-2">38 Reviews</span>
-                                            </div>
-                                            <h4><a href="#">Canada Weekend Tour</a></h4>
-                                            <p class="mb-0"><i class="fa fa-eye mr-1"></i> 615 Visiting Places <i class="fa fa-map-marker mr-1 ml-3"></i> Canada.</p>
-                                        </div>
-                                        <div class="trend-last-main">
-                                            <p class="mb-0 trend-para">A wonderful little cottage right on the seashore - perfect for exploring.</p>
-                                            <div class="trend-last d-flex align-items-center justify-content-between">
-                                                <p class="mb-0 white d-flex align-items-center"><img src="~/assets/images/reviewer/2.jpg" class="d-author mr-2" alt=""> Thu Astudillo</p>
-                                                <div class="trend-price">
-                                                    <p class="price white mb-0"><a href="#"><i class="flaticon-like white"></i></a></p>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-lg-4 col-md-12 col-xs-12 mb-4">
-                                <div class="trend-item">
-                                    <div class="trend-image">
-                                        <img src="~/assets/images/trending/trending7.jpg" alt="image">
-                                    </div>
-                                    <div class="trend-content-main">
-                                        <div class="trend-content">
-                                            <div class="rating-main d-flex align-items-center pb-1">
-                                                <div class="rating">
-                                                    <span class="fa fa-star checked"></span>
-                                                    <span class="fa fa-star checked"></span>
-                                                    <span class="fa fa-star checked"></span>
-                                                    <span class="fa fa-star checked"></span>
-                                                    <span class="fa fa-star checked"></span>
-                                                </div>
-                                                <span class="ml-2">25 Reviews</span>
-                                            </div>
-                                            <h4><a href="#">America Weekend Tour</a></h4>
-                                            <p class="mb-0"><i class="fa fa-eye mr-1"></i> 926 Visiting Places <i class="fa fa-map-marker mr-1 ml-3"></i> America.</p>
-                                        </div>
-                                        <div class="trend-last-main">
-                                            <p class="mb-0 trend-para">A wonderful little cottage right on the seashore - perfect for exploring.</p>
-                                            <div class="trend-last d-flex align-items-center justify-content-between">
-                                                <p class="mb-0 white d-flex align-items-center"><img src="~/assets/images/reviewer/1.jpg" class="d-author mr-2" alt=""> Thu Astudillo</p>
-                                                <div class="trend-price">
-                                                    <p class="price white mb-0"><a href="#"><i class="flaticon-like white"></i></a></p>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div id="holidays" class="tab-pane fade">
-                        <div class="row">
-                            <div class="col-lg-4 col-md-6 col-xs-12 mb-4">
-                                <div class="trend-item">
-                                    <div class="trend-image">
-                                        <img src="~/assets/images/trending/trending2.jpg" alt="image">
-                                    </div>
-                                    <div class="trend-content-main">
-                                        <div class="trend-content">
-                                            <div class="rating-main d-flex align-items-center pb-1">
-                                                <div class="rating">
-                                                    <span class="fa fa-star checked"></span>
-                                                    <span class="fa fa-star checked"></span>
-                                                    <span class="fa fa-star checked"></span>
-                                                    <span class="fa fa-star checked"></span>
-                                                    <span class="fa fa-star checked"></span>
-                                                </div>
-                                                <span class="ml-2">38 Reviews</span>
-                                            </div>
-                                            <h4><a href="#">Nepal Holidays Tour</a></h4>
-                                            <p class="mb-0"><i class="fa fa-eye mr-1"></i> 852 Visiting Places <i class="fa fa-map-marker mr-1 ml-3"></i> Nepal.</p>
-                                        </div>
-                                        <div class="trend-last-main">
-                                            <p class="mb-0 trend-para">A wonderful little cottage right on the seashore - perfect for exploring.</p>
-                                            <div class="trend-last d-flex align-items-center justify-content-between">
-                                                <p class="mb-0 white d-flex align-items-center"><img src="~/assets/images/reviewer/1.jpg" class="d-author mr-2" alt=""> Thu Astudillo</p>
-                                                <div class="trend-price">
-                                                    <p class="price white mb-0"><a href="#"><i class="flaticon-like white"></i></a></p>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-lg-4 col-md-6 col-xs-12 mb-4">
-                                <div class="trend-item">
-                                    <div class="trend-image">
-                                        <img src="~/assets/images/trending/trending3.jpg" alt="image">
-                                    </div>
-                                    <div class="trend-content-main">
-                                        <div class="trend-content">
-                                            <div class="rating-main d-flex align-items-center pb-1">
-                                                <div class="rating">
-                                                    <span class="fa fa-star checked"></span>
-                                                    <span class="fa fa-star checked"></span>
-                                                    <span class="fa fa-star checked"></span>
-                                                    <span class="fa fa-star checked"></span>
-                                                    <span class="fa fa-star checked"></span>
-                                                </div>
-                                                <span class="ml-2">38 Reviews</span>
-                                            </div>
-                                            <h4><a href="#">Canada Holidays Tour</a></h4>
-                                            <p class="mb-0"><i class="fa fa-eye mr-1"></i> 615 Visiting Places <i class="fa fa-map-marker mr-1 ml-3"></i> Canada.</p>
-                                        </div>
-                                        <div class="trend-last-main">
-                                            <p class="mb-0 trend-para">A wonderful little cottage right on the seashore - perfect for exploring.</p>
-                                            <div class="trend-last d-flex align-items-center justify-content-between">
-                                                <p class="mb-0 white d-flex align-items-center"><img src="~/assets/images/reviewer/2.jpg" class="d-author mr-2" alt=""> Thu Astudillo</p>
-                                                <div class="trend-price">
-                                                    <p class="price white mb-0"><a href="#"><i class="flaticon-like white"></i></a></p>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-lg-4 col-md-12 col-xs-12 mb-4">
-                                <div class="trend-item">
-                                    <div class="trend-image">
-                                        <img src="~/assets/images/trending/trending4.jpg" alt="image">
-                                    </div>
-                                    <div class="trend-content-main">
-                                        <div class="trend-content">
-                                            <div class="rating-main d-flex align-items-center pb-1">
-                                                <div class="rating">
-                                                    <span class="fa fa-star checked"></span>
-                                                    <span class="fa fa-star checked"></span>
-                                                    <span class="fa fa-star checked"></span>
-                                                    <span class="fa fa-star checked"></span>
-                                                    <span class="fa fa-star checked"></span>
-                                                </div>
-                                                <span class="ml-2">25 Reviews</span>
-                                            </div>
-                                            <h4><a href="#">America Holidays Tour</a></h4>
-                                            <p class="mb-0"><i class="fa fa-eye mr-1"></i> 926 Visiting Places <i class="fa fa-map-marker mr-1 ml-3"></i> America.</p>
-                                        </div>
-                                        <div class="trend-last-main">
-                                            <p class="mb-0 trend-para">A wonderful little cottage right on the seashore - perfect for exploring.</p>
-                                            <div class="trend-last d-flex align-items-center justify-content-between">
-                                                <p class="mb-0 white d-flex align-items-center"><img src="~/assets/images/reviewer/1.jpg" class="d-author mr-2" alt=""> Thu Astudillo</p>
-                                                <div class="trend-price">
-                                                    <p class="price white mb-0"><a href="#"><i class="flaticon-like white"></i></a></p>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div id="special" class="tab-pane fade">
-                        <div class="row">
-                            <div class="col-lg-4 col-md-6 col-xs-12 mb-4">
-                                <div class="trend-item">
-                                    <div class="trend-image">
-                                        <img src="~/assets/images/trending/trending6.jpg" alt="image">
-                                    </div>
-                                    <div class="trend-content-main">
-                                        <div class="trend-content">
-                                            <div class="rating-main d-flex align-items-center pb-1">
-                                                <div class="rating">
-                                                    <span class="fa fa-star checked"></span>
-                                                    <span class="fa fa-star checked"></span>
-                                                    <span class="fa fa-star checked"></span>
-                                                    <span class="fa fa-star checked"></span>
-                                                    <span class="fa fa-star checked"></span>
-                                                </div>
-                                                <span class="ml-2">38 Reviews</span>
-                                            </div>
-                                            <h4><a href="#">Nepal Special Tour</a></h4>
-                                            <p class="mb-0"><i class="fa fa-eye mr-1"></i> 852 Visiting Places <i class="fa fa-map-marker mr-1 ml-3"></i> Nepal.</p>
-                                        </div>
-                                        <div class="trend-last-main">
-                                            <p class="mb-0 trend-para">A wonderful little cottage right on the seashore - perfect for exploring.</p>
-                                            <div class="trend-last d-flex align-items-center justify-content-between">
-                                                <p class="mb-0 white d-flex align-items-center"><img src="~/assets/images/reviewer/1.jpg" class="d-author mr-2" alt=""> Thu Astudillo</p>
-                                                <div class="trend-price">
-                                                    <p class="price white mb-0"><a href="#"><i class="flaticon-like white"></i></a></p>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-lg-4 col-md-6 col-xs-12 mb-4">
-                                <div class="trend-item">
-                                    <div class="trend-image">
-                                        <img src="~/assets/images/trending/trending5.jpg" alt="image">
-                                    </div>
-                                    <div class="trend-content-main">
-                                        <div class="trend-content">
-                                            <div class="rating-main d-flex align-items-center pb-1">
-                                                <div class="rating">
-                                                    <span class="fa fa-star checked"></span>
-                                                    <span class="fa fa-star checked"></span>
-                                                    <span class="fa fa-star checked"></span>
-                                                    <span class="fa fa-star checked"></span>
-                                                    <span class="fa fa-star checked"></span>
-                                                </div>
-                                                <span class="ml-2">38 Reviews</span>
-                                            </div>
-                                            <h4><a href="#">Canada Special Tour</a></h4>
-                                            <p class="mb-0"><i class="fa fa-eye mr-1"></i> 615 Visiting Places <i class="fa fa-map-marker mr-1 ml-3"></i> Canada.</p>
-                                        </div>
-                                        <div class="trend-last-main">
-                                            <p class="mb-0 trend-para">A wonderful little cottage right on the seashore - perfect for exploring.</p>
-                                            <div class="trend-last d-flex align-items-center justify-content-between">
-                                                <p class="mb-0 white d-flex align-items-center"><img src="~/assets/images/reviewer/2.jpg" class="d-author mr-2" alt=""> Thu Astudillo</p>
-                                                <div class="trend-price">
-                                                    <p class="price white mb-0"><a href="#"><i class="flaticon-like white"></i></a></p>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-lg-4 col-md-12 col-xs-12 mb-4">
-                                <div class="trend-item">
-                                    <div class="trend-image">
-                                        <img src="~/assets/images/trending/trending9.jpg" alt="image">
-                                    </div>
-                                    <div class="trend-content-main">
-                                        <div class="trend-content">
-                                            <div class="rating-main d-flex align-items-center pb-1">
-                                                <div class="rating">
-                                                    <span class="fa fa-star checked"></span>
-                                                    <span class="fa fa-star checked"></span>
-                                                    <span class="fa fa-star checked"></span>
-                                                    <span class="fa fa-star checked"></span>
-                                                    <span class="fa fa-star checked"></span>
-                                                </div>
-                                                <span class="ml-2">25 Reviews</span>
-                                            </div>
-                                            <h4><a href="#">America Special Tour</a></h4>
-                                            <p class="mb-0"><i class="fa fa-eye mr-1"></i> 926 Visiting Places <i class="fa fa-map-marker mr-1 ml-3"></i> America.</p>
-                                        </div>
-                                        <div class="trend-last-main">
-                                            <p class="mb-0 trend-para">A wonderful little cottage right on the seashore - perfect for exploring.</p>
-                                            <div class="trend-last d-flex align-items-center justify-content-between">
-                                                <p class="mb-0 white d-flex align-items-center"><img src="~/assets/images/reviewer/1.jpg" class="d-author mr-2" alt=""> Thu Astudillo</p>
-                                                <div class="trend-price">
-                                                    <p class="price white mb-0"><a href="#"><i class="flaticon-like white"></i></a></p>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-    <!-- Fav destination Ends -->
     <!-- top destination starts -->
     <section class="top-destination overflow-hidden bg-navy pt-9">
         <div class="container">
@@ -605,6 +187,8 @@
                 <h2 class="m-0 white"><span>Best Holidays Trips</span> In The World</h2>
                 <p class="mb-0 white">Travel has helped us to understand the meaning of life and it has helped us become better people. Each time we travel, we see the world with new eyes.</p>
             </div>
+
+
             <div class="desti-inner">
                 <div class="row d-flex align-items-center">
                     <div class="col-lg-4 col-md-6 p-1">
@@ -760,6 +344,8 @@
         <div id="particles-js"></div>
     </section>
     <!-- top destination ends -->
+    
+    
     <!-- Trending Starts -->
     <section class="trending destination-b pb-6 pt-9">
         <div class="container">
@@ -769,172 +355,65 @@
             </div>
             <div class="trend-box">
                 <div class="row team-slider">
+
+                @foreach (TourListVM tour in Model)
+                {
                     <div class="col-lg-4 col-md-6 col-xs-12 mb-4">
-                        <div class="trend-item">
-                            <div class="trend-image">
-                                <img src="~/assets/images/trending/trending1.jpg" alt="image">
+                        @* min-width ekleyerek büzülmeyi, min-height ile de aşırı kısalığı önledik *@
+                        <div class="trend-item" style="min-width: 330px; min-height: 450px; background: #fff; border-radius: 10px;">
+                            <div class="trend-image" style="height: 220px; overflow: hidden;">
+                                @{
+                                    var mainImage = tour.Images?.FirstOrDefault(x => x.IsMain)?.ImageUrl;
+                                }
+                                @* object-fit: cover resmi kutuya tam sığdırır, bozmaz *@
+                                <img src="@(string.IsNullOrEmpty(mainImage) ? "/assets/images/trending/trending1.jpg" : "/assets/" + mainImage.TrimStart('/'))"
+                                     alt="@tour.Title"
+                                     style="width: 100%; height: 100%; object-fit: cover;">
+
                                 <div class="trend-tags">
                                     <a href="#"><i class="flaticon-like"></i></a>
                                 </div>
                             </div>
+
                             <div class="trend-content-main">
-                                <div class="trend-content">
-                                    <h6 class="font-weight-normal"><i class="fa fa-map-marker-alt"></i> Thailand</h6>
-                                    <h4><a href="#">Stonehenge, Windsor Castle, and Bath from London</a></h4>
+                                <div class="trend-content" style="padding: 15px;">
+                                    <h6 class="font-weight-normal"><i class="fa fa-map-marker-alt"></i> @tour.City  @tour.Country</h6>
+                                    <h4 style="min-height: 50px;"><a href="#">@tour.Title</a></h4>
                                     <div class="rating-main d-flex align-items-center">
                                         <div class="rating">
-                                            <span class="fa fa-star checked"></span>
-                                            <span class="fa fa-star checked"></span>
-                                            <span class="fa fa-star checked"></span>
-                                            <span class="fa fa-star checked"></span>
-                                            <span class="fa fa-star checked"></span>
+                                            @for (int i = 0; i < 5; i++)
+                                            {
+                                                <span class="fa fa-star checked"></span>
+                                            }
                                         </div>
-                                        <span class="ml-2">38 Reviews</span>
+                                        <span class="ml-2">@tour.ReviewCount Reviews</span>
                                     </div>
                                 </div>
-                                <div class="trend-last-main">
-                                    <p class="mb-0 trend-para">A wonderful little cottage right on the seashore - perfect for exploring.</p>
+
+                                <div class="trend-last-main" style="padding: 15px;">
+                                    <p class="mb-0 trend-para" style="height: 75px; overflow: hidden;">
+                                        @(tour.Description?.Length > 75 ? tour.Description.Substring(0, 75) + "..." : tour.Description)
+                                    </p>
                                     <div class="trend-last d-flex align-items-center justify-content-between">
-                                        <p class="mb-0 white"><i class="fa fa-clock-o" aria-hidden="true"></i> 3 days & 2 night</p>
+                                        <p class="mb-0 white"><i class="fa fa-clock-o" aria-hidden="true"></i> @tour.Duration</p>
                                         <div class="trend-price">
-                                            <p class="price white mb-0">From <span>$350.00</span></p>
+                                            <p class="price white mb-0">From <span>$@tour.Price</span></p>
                                         </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
                     </div>
-                    <div class="col-lg-4 col-md-6 col-xs-12 mb-4">
-                        <div class="trend-item">
-                            <div class="trend-image">
-                                <img src="~/assets/images/trending/trending2.jpg" alt="image">
-                                <div class="trend-tags">
-                                    <a href="#"><i class="flaticon-like"></i></a>
-                                </div>
-                            </div>
-                            <div class="trend-content-main">
-                                <div class="trend-content">
-                                    <h6 class="font-weight-normal"><i class="fa fa-map-marker-alt"></i> Germany</h6>
-                                    <h4><a href="#">Here We Bosphorus and Black Sea Cruise from Istanbul</a></h4>
-                                    <div class="rating-main d-flex align-items-center">
-                                        <div class="rating">
-                                            <span class="fa fa-star checked"></span>
-                                            <span class="fa fa-star checked"></span>
-                                            <span class="fa fa-star checked"></span>
-                                            <span class="fa fa-star checked"></span>
-                                            <span class="fa fa-star checked"></span>
-                                        </div>
-                                        <span class="ml-2">38 Reviews</span>
-                                    </div>
-                                </div>
-                                <div class="trend-last-main">
-                                    <p class="mb-0 trend-para">A wonderful little cottage right on the seashore - perfect for exploring.</p>
-                                    <div class="trend-last d-flex align-items-center justify-content-between">
-                                        <p class="mb-0 white"><i class="fa fa-clock-o" aria-hidden="true"></i> 3 days & 2 night</p>
-                                        <div class="trend-price">
-                                            <p class="price white mb-0">From <span>$350.00</span></p>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-4 col-md-6 col-xs-12 mb-4">
-                        <div class="trend-item">
-                            <div class="trend-image">
-                                <img src="~/assets/images/trending/trending3.jpg" alt="image">
-                                <div class="trend-tags">
-                                    <a href="#"><i class="flaticon-like"></i></a>
-                                </div>
-                            </div>
-                            <div class="trend-content-main">
-                                <div class="trend-content">
-                                    <h6 class="font-weight-normal"><i class="fa fa-map-marker-alt"></i> Denmark</h6>
-                                    <h4><a href="#">NYC One World Observatory Skip-the-Line Ticket</a></h4>
-                                    <div class="rating-main d-flex align-items-center">
-                                        <div class="rating">
-                                            <span class="fa fa-star checked"></span>
-                                            <span class="fa fa-star checked"></span>
-                                            <span class="fa fa-star checked"></span>
-                                            <span class="fa fa-star checked"></span>
-                                            <span class="fa fa-star checked"></span>
-                                        </div>
-                                        <span class="ml-2">38 Reviews</span>
-                                    </div>
-                                </div>
-                                <div class="trend-last-main">
-                                    <p class="mb-0 trend-para">A wonderful little cottage right on the seashore - perfect for exploring.</p>
-                                    <div class="trend-last d-flex align-items-center justify-content-between">
-                                        <p class="mb-0 white"><i class="fa fa-clock-o" aria-hidden="true"></i> 3 days & 2 night</p>
-                                        <div class="trend-price">
-                                            <p class="price white mb-0">From <span>$350.00</span></p>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-4 col-md-6 col-xs-12 mb-4">
-                        <div class="trend-item">
-                            <div class="trend-image">
-                                <img src="~/assets/images/trending/trending4.jpg" alt="image">
-                                <div class="trend-tags">
-                                    <a href="#"><i class="flaticon-like"></i></a>
-                                </div>
-                            </div>
-                            <div class="trend-content-main">
-                                <div class="trend-content">
-                                    <h6 class="font-weight-normal"><i class="fa fa-map-marker-alt"></i> Japan</h6>
-                                    <h4><a href="#">Stonehenge, Windsor Castle, and Bath from London</a></h4>
-                                    <div class="rating-main d-flex align-items-center">
-                                        <div class="rating">
-                                            <span class="fa fa-star checked"></span>
-                                            <span class="fa fa-star checked"></span>
-                                            <span class="fa fa-star checked"></span>
-                                            <span class="fa fa-star checked"></span>
-                                            <span class="fa fa-star checked"></span>
-                                        </div>
-                                        <span class="ml-2">38 Reviews</span>
-                                    </div>
-                                </div>
-                                <div class="trend-last-main">
-                                    <p class="mb-0 trend-para">A wonderful little cottage right on the seashore - perfect for exploring.</p>
-                                    <div class="trend-last d-flex align-items-center justify-content-between">
-                                        <p class="mb-0 white"><i class="fa fa-clock-o" aria-hidden="true"></i> 3 days & 2 night</p>
-                                        <div class="trend-price">
-                                            <p class="price white mb-0">From <span>$350.00</span></p>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
+                }
+        </div>
+
         </div>
     </section>
     <!-- Trending Ends -->
-    <!-- Call to action starts -->
-    <section class="call-to-action pb-8">
-        <div class="call-main">
-            <div class="container">
-                <div class="action-content text-center">
-                    <h3 class="white mb-0">Find next place to visit</h3>
-                    <h2 class="white call-name">EXPLORE THE WORLD</h2>
-                </div>
-                <div class="video-button text-center">
-                    <img src="~/assets/images/trending/trending3.jpg" alt="">
-                    <div class="call-button text-center">
-                        <button type="button" class="play-btn js-video-button" data-video-id="152879427" data-channel="vimeo">
-                            <i class="fa fa-play"></i>
-                        </button>
-                    </div>
-                    <div class="video-figure"></div>
-                </div>
-            </div>
-        </div>
-    </section>
-    <!-- call to action Ends -->
+    
+    
+  
+    
     <!-- Trending Starts -->
     <section class="latest-tour pb-5 pt-0">
         <div class="container">
@@ -1043,6 +522,8 @@
         </div>
     </section>
     <!-- Trending Ends -->
+    
+    
     <!-- testomonial start -->
     <section class="testimonial pt-0 pb-9">
         <div class="container">
@@ -1100,6 +581,9 @@
         </div>
     </section>
     <!-- testimonial ends -->
+    
+    
+    
     <!-- News Starts -->
     <section class="news pb-6 bg-grey pt-9">
         <div class="container">
@@ -1183,6 +667,8 @@
         </div>
     </section>
     <!-- News Ends -->
+
+
     <!-- Discount action starts -->
     <section class="discount-action p-0">
         <div class="call-banner" style="background-image: url(images/bg/bg7.jpg);">
@@ -1206,6 +692,8 @@
         <div class="overlay"></div>
     </section>
     <!-- Discount action Ends -->
+    
+    
     <!-- footer starts -->
     <footer class="footer1 pt-10 bg-lgrey">
         <div class="footer-upper pb-5">

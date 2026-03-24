@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace YatriiWorld.Domain.Entities.Base
 {
-    public abstract class BaseAccountableEntity: BaseEntitiy
+    public abstract class BaseAccountableEntity: BaseEntity
     {
         public DateTime CreatedAt { get; set; }
         public DateTime? UpdatedAt { get; set; }

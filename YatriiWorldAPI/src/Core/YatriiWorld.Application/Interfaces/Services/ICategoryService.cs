@@ -9,14 +9,15 @@ namespace YatriiWorld.Application.Interfaces.Services
 {
     public interface ICategoryService
     {
+  
         Task<List<CategoryGetDto>> GetAllCategoriesAsync();
-        Task<CategoryGetDto> GetCategoryByIdAsync(int id);
-
         Task<List<CategoryWithToursDto>> GetAllCategoriesWithToursAsync();
-
-        Task<CategoryWithToursDto> GetCategoryWithToursByIdAsync(int id);
-
-        Task<CategoryUpdateDto> GetCategoryUpdateByIdAsync(int id);
+        Task<CategoryGetDto> GetCategoryByIdAsync(long id);
+        Task<CategoryWithToursDto> GetCategoryWithToursByIdAsync(long id);
+        Task<CategoryUpdateDto> GetCategoryUpdateByIdAsync(long id);
+        Task CreateCategoryAsync(CategoryCreateDto dto);
+        Task UpdateCategoryAsync(CategoryUpdateDto dto);
+        Task RemoveCategoryAsync(long id);
 
     }
 }

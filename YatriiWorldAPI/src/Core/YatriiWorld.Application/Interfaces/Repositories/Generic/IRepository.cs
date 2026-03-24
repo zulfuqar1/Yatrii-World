@@ -7,10 +7,10 @@ using System.Threading.Tasks;
 using YatriiWorld.Domain.Entities.Base;
 namespace YatriiWorld.Application.Interfaces.Repositories
 {
-    public interface IRepository<T> where T: BaseEntitiy
+    public interface IRepository<T> where T: BaseEntity
     {
         IQueryable<T> GetAll();
-        Task<T> GetByIdAsync(int id);
+        Task<T> GetByIdAsync(long id);
         Task AddAsync(T entity);
         void Update(T entity);
         void Delete(T entity);

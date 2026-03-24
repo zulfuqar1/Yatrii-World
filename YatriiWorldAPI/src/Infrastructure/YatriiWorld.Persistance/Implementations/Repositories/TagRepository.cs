@@ -10,7 +10,7 @@ using YatriiWorld.Persistance.Implementations.Repositories.Generic;
 
     namespace YatriiWorld.Persistance.Implementations.Repositories
     {
-        internal class TagRepository:Repository<Tag>, ITagRepisitory
+        internal class TagRepository:Repository<Tag>, ITagRepository
         {
             public TagRepository(AppDbContext context) : base(context)
             {

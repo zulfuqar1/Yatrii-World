@@ -1,11 +1,19 @@
 is_global = true
 build_property.TargetFramework = net8.0
+build_property.TargetFramework = net8.0
+build_property.TargetPlatformMinVersion = 
 build_property.TargetPlatformMinVersion = 
 build_property.UsingMicrosoftNETSdkWeb = true
+build_property.UsingMicrosoftNETSdkWeb = true
+build_property.ProjectTypeGuids = 
 build_property.ProjectTypeGuids = 
 build_property.InvariantGlobalization = 
+build_property.InvariantGlobalization = 
+build_property.PlatformNeutralAssembly = 
 build_property.PlatformNeutralAssembly = 
 build_property.EnforceExtendedAnalyzerRules = 
+build_property.EnforceExtendedAnalyzerRules = 
+build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = YatriiWorld.MVC
 build_property.RootNamespace = YatriiWorld.MVC
@@ -19,6 +27,22 @@ build_property.MSBuildProjectDirectory = C:\Users\zulfu\OneDrive\Desktop\Z's\Cod
 build_property._RazorSourceGeneratorDebug = 
 build_property.EffectiveAnalysisLevelStyle = 8.0
 build_property.EnableCodeStyleSeverity = 
+
+[C:/Users/zulfu/OneDrive/Desktop/Z's/Code/projects/Final_Project/YatriiWorldAPI/Yatrii-World/YatriiWorldAPI/Presentation/YatriiWorld.MVC/Areas/Admin/Views/Home/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcSG9tZVxJbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/zulfu/OneDrive/Desktop/Z's/Code/projects/Final_Project/YatriiWorldAPI/Yatrii-World/YatriiWorldAPI/Presentation/YatriiWorld.MVC/Areas/Admin/Views/Shared/_AdminLayout.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcU2hhcmVkXF9BZG1pbkxheW91dC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/zulfu/OneDrive/Desktop/Z's/Code/projects/Final_Project/YatriiWorldAPI/Yatrii-World/YatriiWorldAPI/Presentation/YatriiWorld.MVC/Areas/Admin/Views/Slide/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcU2xpZGVcSW5kZXguY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/zulfu/OneDrive/Desktop/Z's/Code/projects/Final_Project/YatriiWorldAPI/Yatrii-World/YatriiWorldAPI/Presentation/YatriiWorld.MVC/Areas/Admin/Views/_ViewStart.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcX1ZpZXdTdGFydC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Users/zulfu/OneDrive/Desktop/Z's/Code/projects/Final_Project/YatriiWorldAPI/Yatrii-World/YatriiWorldAPI/Presentation/YatriiWorld.MVC/Views/Home/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxJbmRleC5jc2h0bWw=

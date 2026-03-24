@@ -10,3 +10,4 @@ C:\Users\zulfu\OneDrive\Desktop\Z's\Code\projects\Final_Project\YatriiWorldAPI\Y
 C:\Users\zulfu\OneDrive\Desktop\Z's\Code\projects\Final_Project\YatriiWorldAPI\Yatrii-World\YatriiWorldAPI\src\Core\YatriiWorld.Domain\obj\Debug\net8.0\refint\YatriiWorld.Domain.dll
 C:\Users\zulfu\OneDrive\Desktop\Z's\Code\projects\Final_Project\YatriiWorldAPI\Yatrii-World\YatriiWorldAPI\src\Core\YatriiWorld.Domain\obj\Debug\net8.0\YatriiWorld.Domain.pdb
 C:\Users\zulfu\OneDrive\Desktop\Z's\Code\projects\Final_Project\YatriiWorldAPI\Yatrii-World\YatriiWorldAPI\src\Core\YatriiWorld.Domain\obj\Debug\net8.0\ref\YatriiWorld.Domain.dll
+C:\Users\zulfu\OneDrive\Desktop\Z's\Code\projects\Final_Project\YatriiWorldAPI\Yatrii-World\YatriiWorldAPI\src\Core\YatriiWorld.Domain\obj\Debug\net8.0\YatriiWorld.Domain.csproj.AssemblyReference.cache
