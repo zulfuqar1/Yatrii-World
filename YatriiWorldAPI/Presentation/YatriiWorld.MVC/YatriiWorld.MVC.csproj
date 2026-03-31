@@ -47,11 +47,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Areas\Admin\Data\" />
-    <Folder Include="Areas\Admin\Models\" />
-  </ItemGroup>
-
-  <ItemGroup>
     <ProjectReference Include="..\..\src\Core\YatriiWorld.Application\YatriiWorld.Application.csproj" />
     <ProjectReference Include="..\..\src\Core\YatriiWorld.Domain\YatriiWorld.Domain.csproj" />
     <ProjectReference Include="..\..\src\Infrastructure\YatriiWorld.Persistance\YatriiWorld.Persistance.csproj" />

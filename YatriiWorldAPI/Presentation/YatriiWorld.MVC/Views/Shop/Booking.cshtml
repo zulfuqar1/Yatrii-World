@@ -1,0 +1,322 @@
+﻿@using YatriiWorld.MVC.ViewModels.Booking
+@model TicketCreateVM
+
+
+
+<!-- BreadCrumb Starts -->
+<section class="breadcrumb-main pb-0" style="background-image: url(images/bg/bg8.jpg);">
+    <div class="breadcrumb-outer pt-10">
+        <div class="container">
+            <div class="breadcrumb-content d-md-flex align-items-center pt-10">
+
+                <h2 class="mb-0">Booking: @ViewBag.Tour.Title</h2>
+
+                <nav aria-label="breadcrumb">
+                    <ul class="breadcrumb">
+                        <li class="breadcrumb-item"><a href="/">Home</a></li>
+                        <li class="breadcrumb-item"><a href="/Tours">Tours</a></li>
+
+                        <li class="breadcrumb-item active" aria-current="page"></li>
+                    </ul>
+                </nav>
+
+            </div>
+        </div>
+    </div>
+    <div class="dot-overlay"></div>
+</section>
+<!-- BreadCrumb Ends -->
+
+
+
+<!-- blog starts -->
+<section class="blog trending destination-b pb-6">
+    <div class="container">
+        <div class="row">
+
+
+
+
+
+            <div class="col-lg-8 col-xs-12 mb-4">
+                <div class="payment-book">
+                    <div class="booking-box">
+
+                        <form asp-action="ConfirmBooking" asp-controller="Shop" method="post">
+
+                            @if (!ViewData.ModelState.IsValid)
+                            {
+                                <div class="alert alert-danger" style="background-color: #ffcccc; color: #cc0000; padding: 20px; margin-bottom: 20px; border-radius: 5px;">
+                                    <h4 style="color: #cc0000; font-weight: bold;">🚨 FORM EROR:</h4>
+                                    <div asp-validation-summary="All"></div>
+                                </div>
+                            }
+                            <input type="hidden" name="TourId" value="@ViewBag.Tour.Id" />
+
+                            <div class="customer-information mb-2">
+                                <h3 class="border-b pb-2 mb-2">Traveller Information</h3>
+
+                                <div class="row mb-4">
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+            
+
+                                            <input type="text" class="form-control" value="@Model.TotalPersonCount" readonly>
+
+                                            <input type="hidden" id="personCountInput" name="TotalPersonCount" value="@Model.TotalPersonCount" />
+
+                                            <small class="text-muted">Available capacity: @ViewBag.Tour.Capacity</small>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            <label class="font-weight-bold">Contact Phone Number</label>
+                                            <input type="tel" name="Phone" class="form-control" placeholder="+994 XXX XX XX" required>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div id="travelerContainer">
+                                    @for (int i = 0; i < Model.TotalPersonCount; i++)
+                                    {
+                                        <div class="traveler-block mb-4 border-bottom pb-4">
+                                            <h5 class="mb-3">Traveler #@(i + 1) @(i == 0 ? "(Main Traveler)" : "")</h5>
+                                            <div class="row">
+                                                <div class="col-md-2">
+                                             
+                                                </div>
+                                                <div class="col-md-5">
+                                                    <div class="form-group">
+                                                        <label>First Name</label>
+                                                        <input type="text" name="Travelers[@i].FirstName" class="form-control" required>
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-5">
+                                                    <div class="form-group">
+                                                        <label>Last Name</label>
+                                                        <input type="text" name="Travelers[@i].LastName" class="form-control" required>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    }
+                                </div>
+                            </div>
+
+                            <div class="customer-information card-information">
+                                <h3 class="border-b pb-2 mb-2">Payment Information <small class="font-sm text-muted">/ <i class="fas fa-lock"></i> secure</small></h3>
+                                <div class="form-btn">
+                                    <div class="customer-information card-information mt-4">
+                                        <div class="row">
+                                            <div class="col-md-12">
+                                                <div class="form-group">
+                                                    <label>Name on Card</label>
+                                                    <input type="text" name="CardHolderName" class="form-control" placeholder="John Doe" required>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-12">
+                                                <div class="form-group">
+                                                    <label>Card Number</label>
+                                                    <input type="text" name="CardNumber" class="form-control" placeholder="0000 0000 0000 0000" id="cardNumber" required>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-4">
+                                                <div class="form-group">
+                                                    <label>Expiry Month</label>
+                                                    <input type="text" name="ExpiryMonth" class="form-control" placeholder="MM" required>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-4">
+                                                <div class="form-group">
+                                                    <label>Expiry Year</label>
+                                                    <input type="text" name="ExpiryYear" class="form-control" placeholder="YY" required>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-4">
+                                                <div class="form-group">
+                                                    <label>CVV</label>
+                                                    <input type="text" name="CVV" class="form-control" placeholder="***" required>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <button type="submit" class="nir-btn w-100">CONFIRM BOOKING</button>
+                                </div>
+                            </div>
+
+                        </form>
+                    </div>
+                </div>
+            </div>
+
+
+
+
+
+            <div class="col-lg-4 col-xs-12 mb-4">
+                <div class="sidebar-sticky sticky1">
+                    <div class="trend-item mb-4 shadow-sm border-0">
+                        @{
+                            string mainImg = "/images/trending/trending8.jpg";
+                            if (ViewBag.Tour.Images != null && ViewBag.Tour.Images.Count > 0)
+                            {
+
+                                mainImg = "/assets/" + ViewBag.Tour.Images[0].ImageUrl.TrimStart('/');
+                            }
+                        }
+                        <div class="trend-image" style="overflow: hidden;">
+                            <img src="@mainImg" alt="@ViewBag.Tour.Title" class="static-img">
+                        </div>
+
+                        <div class="trend-content-main">
+                            <div class="trend-content p-3 pb-2">
+                                <div class="rating-main d-flex align-items-center pb-1">
+                                    <div class="rating">
+                        
+                                        @for (int i = 1; i <= 5; i++)
+                                        {
+                                            <span class="fa fa-star @(i <= ViewBag.Tour.Rating ? "checked" : "empty-star")"></span>
+                                        }
+                                    </div>
+                                    <span class="ml-2 font-weight-bold">@ViewBag.Tour.Rating / 5</span>
+                                </div>
+                                <h4 class="mb-1"><a href="#">@ViewBag.Tour.Title</a></h4>
+                                <p class="mb-0 pink">
+                                    <i class="fa fa-map-marker mr-1"></i> @ViewBag.Tour.City, @ViewBag.Tour.Country
+                                </p>
+                            </div>
+
+                            <div class="trend-last-main">
+                                <p class="mb-0 trend-para p-3 pt-0">
+                       
+                                    @(ViewBag.Tour.Description?.Length > 95 ? ViewBag.Tour.Description.Substring(0, 95) + "..." : ViewBag.Tour.Description)
+                                </p>
+                                <div class="trend-last d-flex align-items-center justify-content-between bg-navy w-100 p-3">
+                                    <p class="mb-0 white"><i class="fa fa-clock-o mr-1" aria-hidden="true"></i> @ViewBag.Tour.DurationInDays Days</p>
+                                    <div class="trend-price">
+                                        <p class="price white mb-0">Unit: <span>$@ViewBag.Tour.Price</span></p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="list-sidebar">
+                        <div class="sidebar-item shadow-sm">
+                            <h4>Payment Summary</h4>
+                            <table>
+                                <tbody>
+                                    <tr>
+                                        <td>Unit Price</td>
+                                        <td class="pink">$@ViewBag.Tour.Price</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Travellers</td>
+                                        <td class="pink" id="summaryTravellerCount">@Model.TotalPersonCount</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Subtotal</td>
+                                        <td class="pink" id="summarySubtotal">$@(Model.TotalPersonCount* ViewBag.Tour.Price)</td>
+                                    </tr>
+                       
+                                </tbody>
+                                <tfoot class="bg-pink">
+                                    <tr>
+                                        <th class="font-weight-bold white">Total Amount</th>
+
+                                        <th class="font-weight-bold white" id="summaryTotalAmount">$@ViewBag.Tour.Price</th>
+                                    </tr>
+                                </tfoot>
+                            </table>
+                        </div>
+                    </div>
+
+                    <style>
+                        .sidebar-item table {
+                            width: 100%;
+                            border-collapse: collapse;
+                        }
+
+                            .sidebar-item table td, .sidebar-item table th {
+                                padding: 12px 15px;
+                                border-bottom: 1px solid #f1f1f1;
+                                font-size: 14px;
+                            }
+
+                                .sidebar-item table td:last-child {
+                                    text-align: right;
+                                }
+
+                        .sidebar-item h4 {
+                            padding: 15px;
+                            background: #f8f9fa;
+                            margin-bottom: 0;
+                            border-bottom: 2px solid #ff7675;
+                        }
+
+                        .bg-pink {
+                            background-color: #ff7675 !important;
+                        }
+
+                        .white {
+                            color: #fff !important;
+                        }
+                    </style>
+
+
+
+                    <div class="bg-navy p-4 text-center rounded shadow">
+                        <h5 class="white mb-2" style="letter-spacing: 2px; font-size: 14px; opacity: 0.9;">TOTAL AMOUNT</h5>
+                        <h2 class="white mb-0" id="totalPriceDisplay">$@(Model.TotalPersonCount* ViewBag.Tour.Price)</h2>
+                    </div>
+                </div>
+            </div>
+
+            <style>
+              
+                .static-img {
+                    width: 100%;
+                    height: 250px;
+                    object-fit: cover;
+                    transition: none !important; 
+                    transform: none !important;
+                }
+
+                .trend-image:hover img {
+                    transform: none !important;
+                }
+
+                .fa-star.checked {
+                    color: #ffc107 !important; 
+                }
+
+                .fa-star.empty-star {
+                    color: #dfe6e9 !important;
+                }
+
+                .bg-navy {
+                    background-color: #141b2d !important;
+                }
+
+                .white {
+                    color: #ffffff !important;
+                }
+            </style>
+
+
+
+
+
+
+
+
+
+
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- blog Ends -->

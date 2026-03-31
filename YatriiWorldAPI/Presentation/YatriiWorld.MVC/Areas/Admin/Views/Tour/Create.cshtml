@@ -1,0 +1,304 @@
+﻿@model TourCreateVM
+
+
+<div class="row">
+
+    <div class="col-12 grid-margin stretch-card">
+        <div class="card">
+            <div class="card-body">
+                <h4 class="card-title">Basic form elements</h4>
+                <p class="card-description">
+                    Basic form elements
+                </p>
+                <form class="forms-sample" asp-controller="Tour" asp-action="Create" method="post" enctype="multipart/form-data">
+
+                    <div class="form-group">
+                        <label asp-for="Name">Name</label>
+                        <input asp-for="Name"  class="form-control"placeholder="Name">
+                        <span asp-validation-for="Name" class="text-danger"></span>
+                    </div>
+
+                    <div class="form-group">
+                        <label asp-for="Title">Title</label>
+                        <input asp-for="Title" class="form-control" placeholder="Title">
+                        <span asp-validation-for="Title" class="text-danger"></span>
+                    </div>
+
+                    <div class="form-group">
+                        <label asp-for="Country">Country</label>
+                        <input asp-for="Country" class="form-control" placeholder="Country">
+                        <span asp-validation-for="Country" class="text-danger"></span>
+                    </div>
+
+                    <div class="form-group">
+                        <label asp-for="City">City</label>
+                        <input asp-for="City" class="form-control" placeholder="Name">
+                        <span asp-validation-for="Country" class="text-danger"></span>
+                    </div>
+
+
+                    <div class="form-group">
+                        <label asp-for="Description">Description</label>
+                        <input asp-for="Description" class="form-control" rows="4">
+                        <span asp-validation-for="Description" class="text-danger"></span>
+                    </div>
+
+                    <div class="form-group">
+                        <label asp-for="AmaizingPlacesCount">AmaizingPlacesCount</label>
+                        <input asp-for="AmaizingPlacesCount" class="form-control" placeholder="AmaizingPlacesCount">
+                        <span asp-validation-for="AmaizingPlacesCount" class="text-danger"></span>
+                    </div>
+
+                    <div class="form-group">
+                        <label asp-for="Price">Price</label>
+                        <input asp-for="Price" class="form-control" placeholder="Price">
+                        <span asp-validation-for="Price" class="text-danger"></span>
+                    </div>
+
+                    <div class="form-group">
+                        <label asp-for="Capacity">Capacity</label>
+                        <input asp-for="Capacity" class="form-control" placeholder="Capacity">
+                        <span asp-validation-for="Capacity" class="text-danger"></span>
+                    </div>
+
+                    <div class="form-group">
+                        <label asp-for="StartDate">Start Date</label>
+                        <input type="date" asp-for="StartDate" class="form-control" />
+                        <span asp-validation-for="StartDate" class="text-danger"></span>
+                    </div>
+
+                    <div class="form-group">
+                        <label asp-for="EndDate">End Date</label>
+                        <input type="date" asp-for="EndDate" class="form-control" />
+                        <span asp-validation-for="EndDate" class="text-danger"></span>
+                    </div>
+
+                    <div class="form-group mb-3">
+                        <label>Transport Type</label>
+                        <select asp-for="TransportType" class="form-control"
+                                asp-items="Html.GetEnumSelectList<YatriiWorld.Domain.Entities.Enums.TransportType>()">
+                            <option value="">-- Select Transport --</option>
+                        </select>
+                        <span asp-validation-for="TransportType" class="text-danger"></span>
+                    </div>
+
+                    <div class="form-group">
+                        <label>Select Category</label>
+                        <select asp-for="CategoryId" class="form-control">
+                            <option value="">-- Seçiniz --</option>
+                           
+                            @foreach (var cat in Model.AvailableCategories)
+                            {
+                                <option value="@cat.Id">@cat.Name</option>
+                            }
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label>Etiketler</label>
+                        <div class="row ml-2">
+                          
+                            @foreach (var tag in Model.AvailableTags)
+                            {
+                                <div class="form-check col-md-3">
+                                    <label class="form-check-label">
+                                        <input type="checkbox" name="SelectedTagIds" value="@tag.Id" class="form-check-input"> @tag.Name
+                                    </label>
+                                </div>
+                            }
+                        </div>
+                    </div>
+
+                  
+                    <div class="form-group">
+                        <label>Tur Fotoğrafları</label>
+                        <input type="file" asp-for="Photos" class="file-upload-default" multiple id="imageInput">
+
+                        <div class="input-group col-xs-12">
+                            <input type="text" class="form-control file-upload-info" disabled placeholder="Resimleri Seçiniz">
+                            <span class="input-group-append">
+                                <button class="file-upload-browse btn btn-primary" type="button">Dosyaları Bul</button>
+                            </span>
+                        </div>
+                    </div>
+                    <div id="imagePreviewContainer" class="row mt-3 ml-1">
+                      
+                    </div>
+
+                    <style>
+                        #imagePreviewContainer {
+                            display: flex;
+                            flex-wrap: wrap;
+                            gap: 12px;
+                            margin-top: 15px;
+                        }
+
+                        .preview-wrapper {
+                            position: relative;
+                            width: 110px;
+                            height: 110px;
+                            border-radius: 10px;
+                            overflow: hidden;
+                            border: 1px solid #e0e0e0;
+                            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+                        }
+
+                        .preview-image {
+                            width: 100%;
+                            height: 100%;
+                            object-fit: cover; 
+                            display: block;
+                        }
+
+                        .remove-btn {
+                            position: absolute;
+                            top: 5px;
+                            right: 5px;
+                            width: 22px;
+                            height: 22px;
+                            background: rgba(0, 0, 0, 0.6);
+                            color: white;
+                            border: none;
+                            border-radius: 50%;
+                            cursor: pointer;
+                            display: none;
+                            align-items: center;
+                            justify-content: center;
+                            font-weight: bold;
+                            font-size: 14px;
+                            line-height: 1;
+                            transition: background 0.2s;
+                            z-index: 99;
+                        }
+
+                            .remove-btn:hover {
+                                background: rgba(255, 0, 0, 0.8); 
+                            }
+
+                      
+                        .preview-wrapper:hover .remove-btn {
+                            display: flex;
+                        }
+
+              
+                        .main-badge {
+                            position: absolute;
+                            bottom: 0;
+                            left: 0;
+                            right: 0;
+                            background: rgba(75, 73, 172, 0.8);
+                            color: white;
+                            font-size: 9px;
+                            text-align: center;
+                            padding: 2px 0;
+                        }
+                    </style>
+
+      
+
+                    <button type="submit" class="btn btn-primary me-2">Submit</button>
+                    <button class="btn btn-light">Cancel</button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+        const browseButton = document.querySelector('.file-upload-browse');
+        const fileInput = document.querySelector('.file-upload-default');
+        const infoInput = document.querySelector('.file-upload-info');
+        const previewContainer = document.getElementById('imagePreviewContainer');
+        const mainForm = document.querySelector('.forms-sample');
+
+        let allSelectedFiles = []; 
+
+        browseButton.addEventListener('click', () => fileInput.click());
+
+        fileInput.addEventListener('change', function () {
+            const newFiles = Array.from(this.files);
+
+           
+            if (allSelectedFiles.length + newFiles.length > 3) {
+                alert("You can upload a maximum of 3 photos..");
+                return;
+            }
+
+            allSelectedFiles = allSelectedFiles.concat(newFiles);
+            renderPreviews();
+            updateInputInfo();
+        });
+
+        function renderPreviews() {
+            previewContainer.innerHTML = '';
+            allSelectedFiles.forEach((file, index) => {
+                const reader = new FileReader();
+                reader.onload = function (e) {
+                    const wrapper = document.createElement('div');
+                    wrapper.style.cssText = "position:relative; width:100px; height:100px; margin:10px; border-radius:8px; display:inline-block; border:2px solid #ddd;";
+
+                    const isMain = index === 0 ? '<div style="position:absolute; bottom:0; width:100%; background:rgba(75,73,172,0.8); color:white; font-size:10px; text-align:center;">MAIN</div>' : '';
+
+                    wrapper.innerHTML = `
+                        ${isMain}
+                        <img src="${e.target.result}" style="width:100%; height:100%; object-fit:cover; border-radius:6px;">
+                        <button type="button" onclick="removeFile(${index})"
+                                style="position:absolute; top:-8px; right:-8px; width:22px; height:22px; background:red; color:white; border:none; border-radius:50%; cursor:pointer; font-weight:bold; z-index:9999; display:flex; align-items:center; justify-content:center;">
+                            ×
+                        </button>`;
+                    previewContainer.appendChild(wrapper);
+                }
+                reader.readAsDataURL(file);
+            });
+        }
+
+        function updateInputInfo() {
+            infoInput.value = allSelectedFiles.length > 0 ? allSelectedFiles.length + " file selected" : "Select Image";
+        }
+
+        window.removeFile = function(index) {
+            allSelectedFiles.splice(index, 1);
+            renderPreviews();
+            updateInputInfo();
+        };
+
+    
+        mainForm.addEventListener('submit', async function (e) {
+            e.preventDefault();
+
+            const formData = new FormData(this);
+
+            
+            formData.delete("Photos");
+            allSelectedFiles.forEach(file => {
+                formData.append("Photos", file);
+            });
+
+     
+            const token = document.querySelector('input[name="__RequestVerificationToken"]').value;
+
+            try {
+                const response = await fetch(this.action, {
+                    method: 'POST',
+                    body: formData,
+                    headers: {
+                        "RequestVerificationToken": token 
+                    }
+                });
+
+                if (response.ok) {
+                    window.location.href = "/Admin/Tour/Index";
+                } else {
+                    const errorMsg = await response.text();
+                    console.error("Error:", errorMsg);
+                    alert("An error occurred during registration. Please check the fields.");
+                }
+            } catch (err) {
+                console.error("Connection Error:", err);
+                alert("System Error");
+            }
+        });
+    });
+</script>

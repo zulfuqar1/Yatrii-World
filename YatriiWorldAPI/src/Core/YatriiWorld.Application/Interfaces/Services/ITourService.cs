@@ -18,5 +18,7 @@ namespace YatriiWorld.Application.Interfaces.Services
         Task UpdateTourAsync(TourUpdateDto dto);
         Task RemoveTourAsync(long id);
 
+        Task<List<TourTagDto>> GetAllTagsAsync();
+
     }
 }

@@ -1,11 +1,11 @@
 ﻿using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
-using PetCareManagement.Application.DTOs.RegistrationCodes;
+using YatriiWorld.Application.DTOs.RegistrationCodes;
 using PetCareManagement.Application.Interfaces.Services;
 using System.Security.Claims;
 
-namespace PetCareManagement.API.Controllers
+namespace YatriiWorld.API.Controllers
 {
     //[Authorize(Roles = "Admin")]
     [Route("api/[controller]")]
@@ -19,6 +19,9 @@ namespace PetCareManagement.API.Controllers
             _registrationCodeService = registrationCodeService;
         }
 
+
+
+
         [Authorize(Roles = "Admin")]
         [HttpPost]
         public async Task<IActionResult> Create([FromBody] PostRegistrationCodeDto dto)
@@ -27,6 +30,9 @@ namespace PetCareManagement.API.Controllers
             return CreatedAtAction(nameof(GetById), new { id = result.Id }, result);
         }
 
+
+
+
         [Authorize(Roles = "Admin")]
         [HttpGet]
         public async Task<IActionResult> GetAll( [FromQuery] bool? isUsed = null, [FromQuery] int page = 0, [FromQuery] int take = 0)
@@ -34,6 +40,9 @@ namespace PetCareManagement.API.Controllers
             var result = await _registrationCodeService.GetAllAsync(isUsed, page, take);
             return Ok(result);
         }
+
+
+
         [Authorize(Roles = "Admin")]
         [HttpGet("{id}")]
         public async Task<IActionResult> GetById(long id)
@@ -43,6 +52,8 @@ namespace PetCareManagement.API.Controllers
             var result = await _registrationCodeService.GetByIdAsync(id);
             return Ok(result);
         }
+
+
 
         [Authorize(Roles = "Admin")]
         [HttpDelete("{id}")]

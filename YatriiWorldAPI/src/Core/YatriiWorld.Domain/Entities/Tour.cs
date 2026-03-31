@@ -23,7 +23,7 @@ namespace YatriiWorld.Domain.Entities
         public TransportType TransportType { get; set; }
         public Category Category { get; set; }
 
-
+        public double Rating { get; set; }
 
         public ICollection<Tag> Tags { get; set; } = new List<Tag>();
         public ICollection<Review> Reviews { get; set; }

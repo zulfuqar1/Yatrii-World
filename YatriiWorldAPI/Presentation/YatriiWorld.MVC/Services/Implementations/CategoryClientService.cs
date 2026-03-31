@@ -15,7 +15,7 @@ namespace YatriiWorld.MVC.Services.Implementations
 
         public CategoryClientService(IHttpClientFactory factory, IHttpContextAccessor contextAccessor)
         {
-            _httpClient = factory.CreateClient("Api");
+            _httpClient = factory.CreateClient("YatriiApiClient");
             _contextAccessor = contextAccessor;
             _attachToken();
         }

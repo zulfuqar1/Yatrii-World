@@ -1,4 +1,4 @@
-﻿using PetCareManagement.Application.DTOs.RegistrationCodes;
+﻿using YatriiWorld.Application.DTOs.RegistrationCodes;
 using System;
 using System.Collections.Generic;
 using System.Linq;

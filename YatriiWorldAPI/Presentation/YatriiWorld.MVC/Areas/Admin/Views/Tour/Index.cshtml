@@ -1,0 +1,126 @@
+﻿
+@model List<TourListVM>
+@{
+    int counter = 0;
+}
+
+<div class="row">
+
+    <div class="col-lg-12 grid-margin stretch-card">
+        <div class="card">
+            <div class="card-body">
+           
+                <div class="table-responsive">
+
+                    <a class="btn btn-outline-success" asp-action="Create">Create Tour</a>
+
+                    <table class="table table-striped">
+                        <thead>
+                            <tr>
+                                <th>
+                                    No
+                                </th>
+                                <th>
+                                    Image
+                                </th>
+                                <th>
+                                    Name
+                                </th>
+                                <th>
+                                    Title
+                                </th>
+                                <th>
+                                    Price
+                                </th>
+                                <th>
+                                    StartDate
+                                </th>
+            
+                                <th>
+                                    Duration
+                                </th>
+                                <th>
+                                    Capacity
+                                </th>
+                                <th>
+                                    Settings
+                                </th>
+                               
+                            </tr>
+                        </thead>
+
+                        <tbody>
+
+
+                         @foreach(var tour in Model)
+                         {
+                                counter++;
+                            <tr>
+                                <td>
+                                    @counter
+                                </td>
+
+                                <td>
+                                        @{
+                                            var mainImage = tour.Images?.FirstOrDefault(i => i.IsMain == true)?.ImageUrl;
+
+                                            var displayImage = mainImage ?? tour.Images?.FirstOrDefault()?.ImageUrl ?? "/images/no-image.png";
+                                        }
+
+                                        <img src="@(string.IsNullOrEmpty(mainImage) ? "/assets/images/trending/trending1.jpg" : "/assets/" + mainImage.TrimStart('/'))"
+                                             alt="@tour.Title"
+                                             style="width: 100px; height: 100px;">
+                                </td>
+                                
+                                    <td>
+                                        @tour.Name
+                                    </td>
+                                <td>
+                                    @tour.Title
+                                </td>
+                                
+                                <td>
+                                    @tour.Price
+                                </td>
+                                <td>
+                                        @tour.StartDate.ToShortDateString()
+                                </td>
+                
+                                <td>
+                                        @tour.DurationInDays
+                                </td>
+                                <td>
+                                    @tour.Capacity
+                                </td>
+                                    <td>
+                                        <form asp-action="Delete" asp-route-id="@tour.Id" method="post" style="display:inline;" onsubmit="return confirm('Bu turu silmek istediğinize emin misiniz?');">
+                                            <button type="submit" class="btn btn-danger">
+                                                <i class="mdi mdi-delete"></i>
+                                            </button>
+                                        </form>
+
+                                        <a asp-area="Admin"
+                                           asp-controller="Tour"
+                                           asp-action="Edit"
+                                           asp-route-id="@tour.Id"
+                                           class="btn btn-warning">
+                                            <i class="mdi mdi-pencil"></i>
+                                        </a>
+
+                                        <a class="btn btn-primary"><i class="mdi mdi-open-in-new"></i></a>
+                                    </td>
+                            </tr>
+                            }
+
+
+
+
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+<div/>

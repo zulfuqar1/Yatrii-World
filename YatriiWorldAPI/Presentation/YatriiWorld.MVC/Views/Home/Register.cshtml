@@ -1,0 +1,143 @@
+﻿@model YatriiWorld.MVC.ViewModels.Register.RegisterVM
+
+<section class="breadcrumb-main pb-0" style="background-image: url(/images/bg/bg8.jpg); background-size: cover;">
+    <div class="breadcrumb-outer pt-10">
+        <div class="container">
+            <div class="breadcrumb-content d-md-flex align-items-center pt-10">
+                <h2 class="mb-0">Register</h2>
+            </div>
+        </div>
+    </div>
+    <div class="dot-overlay"></div>
+</section>
+
+<section class="login">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-lg-6 col-md-10 col-xs-12">
+                <div class="login-content border p-4 shadow-lg bg-white">
+                    <h4 class="text-center mb-4">Create a Yatriiworld Account</h4>
+
+                    <div asp-validation-summary="ModelOnly" class="text-danger mb-3"></div>
+
+               
+                    <form id="registerForm">
+                        @Html.AntiForgeryToken()
+
+                        <div id="registerInputs">
+                            <div class="row">
+                                <div class="col-6">
+                                    <div class="form-group mb-3">
+                                        <label class="small mb-1" asp-for="FirstName">First Name</label>
+                                        <input type="text" asp-for="FirstName" id="FirstName" class="form-control" placeholder="John">
+                                    </div>
+                                </div>
+                                <div class="col-6">
+                                    <div class="form-group mb-3">
+                                        <label class="small mb-1" asp-for="LastName">Last Name</label>
+                                        <input type="text" asp-for="LastName" id="LastName" class="form-control" placeholder="Doe">
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="form-group mb-3">
+                                <label class="small mb-1" asp-for="UserName">Username</label>
+                                <input type="text" asp-for="UserName" id="UserName" class="form-control" placeholder="johndoe123">
+                            </div>
+
+                            <div class="form-group mb-3">
+                                <label class="small mb-1" asp-for="Email">Email Address</label>
+                                <input type="email" asp-for="Email" id="Email" class="form-control" placeholder="example@mail.com">
+                            </div>
+
+                            <div class="form-group mb-3">
+                                <label class="small mb-1" asp-for="Gender">Gender</label>
+                                <select asp-for="Gender" id="Gender" class="form-control"
+                                        asp-items="Html.GetEnumSelectList<YatriiWorld.Domain.Entities.Enums.Gender>()">
+                                    <option value="">Select Gender</option>
+                                </select>
+                            </div>
+
+                            <div class="form-group mb-3">
+                                <label class="small mb-1" asp-for="Password">Password</label>
+                                <input type="password" asp-for="Password" id="Password" class="form-control" placeholder="******">
+                            </div>
+
+                            <div class="form-group mb-4">
+                                <label class="small mb-1" asp-for="ConfirmPassword">Confirm Password</label>
+                                <input type="password" asp-for="ConfirmPassword" id="ConfirmPassword" class="form-control" placeholder="******">
+                            </div>
+
+                            <div class="form-btn text-center">
+                                <button type="submit" class="nir-btn w-100 border-0">REGISTER NOW</button>
+                            </div>
+                        </div>
+
+                        <div id="verifyArea" style="display: none;" class="mt-4 p-4 border border-warning rounded bg-light shadow-sm text-center">
+                            <h5 class="text-warning mb-2">Email Verification</h5>
+                            <p class="small">We sent a 6-digit code to <strong id="displayEmail"></strong>.</p>
+                            <input type="text" id="finalCode" class="form-control text-center mb-3" placeholder="000000" maxlength="6" style="font-size: 24px; letter-spacing: 5px; font-weight: bold;">
+                            <button type="button" onclick="executeVerify()" class="btn btn-success w-100">VERIFY & COMPLETE</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script>
+        $(document).ready(function () {
+            $("#registerForm").on("submit", function (e) {
+                e.preventDefault();=
+                const formData = {
+                    firstName: $("#FirstName").val(),
+                    lastName: $("#LastName").val(),
+                    userName: $("#UserName").val(),
+                    email: $("#Email").val(),
+                    gender: parseInt($("#Gender").val()),
+                    password: $("#Password").val(),
+                    confirmPassword: $("#ConfirmPassword").val()
+                };
+
+                $.ajax({
+                    url: "https://localhost:7029/api/Accounts/Register",
+                    type: "POST",
+                    contentType: "application/json",
+                    data: JSON.stringify(formData),
+                    success: function () {
+                        $("#registerInputs").slideUp(500);
+                        $("#displayEmail").text(formData.email);
+                        $("#verifyArea").slideDown(500);
+                        Swal.fire('Success!', 'Check your email for the code.', 'success');
+                    },
+                    error: function () {
+                        Swal.fire('Error!', 'Check your details or if user exists.', 'error');
+                    }
+                });
+            });
+        });
+
+        function executeVerify() {
+            $.ajax({
+                url: "https://localhost:7029/api/Accounts/VerifyCode",
+                type: "POST",
+                contentType: "application/json",
+                data: JSON.stringify({
+                    email: $("#Email").val(),
+                    code: $("#finalCode").val()
+                }),
+                success: function () {
+                    Swal.fire('Verified!', 'Redirecting...', 'success');
+                    setTimeout(() => window.location.href = "/Home/Login", 2000);
+                },
+                error: function () {
+                    Swal.fire('Hata!', 'Kod yanlış!', 'error');
+                }
+            });
+        }
+    </script>
+}

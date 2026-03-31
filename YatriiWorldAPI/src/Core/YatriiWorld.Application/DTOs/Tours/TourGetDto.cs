@@ -20,6 +20,8 @@ namespace YatriiWorld.Application.DTOs.Tours
         public List<string> ImageUrls { get; set; } = new();
         public int AmaizingPlacesCount { get; set; }
         public List<ReviewListDto> Reviews { get; set; } = new();
+
+        public double Rating { get; set; }
     }
 
 }

@@ -46,22 +46,27 @@ builder.Services.AddSwaggerGen(opt =>
 
 
 
-
-
-
-
-
-
-
-
-
-
-
 // Dependency Injection
 builder.Services
     .AddApplicationServices()
     .AddPersistenceServices(builder.Configuration)
     .AddInfrastructureServices(builder.Configuration);
+
+builder.Services.AddScoped<IEmailService, EmailService>();
+
+builder.Services.AddScoped<IReviewService, ReviewService>();
+
+builder.Services.AddCors(options =>
+{
+    options.AddPolicy("AllowMVC",
+        policy => policy.WithOrigins("https://localhost:7085") 
+                        .AllowAnyMethod()
+                        .AllowCredentials()
+                        .AllowAnyHeader());
+});
+
+
+
 
 
 
@@ -90,6 +95,8 @@ using (var scope = app.Services.CreateScope())
 
 // HTTPS Redirection
 app.UseHttpsRedirection();
+app.UseRouting();
+app.UseCors("AllowMVC");
 
 // Authentication 
 app.UseAuthentication();

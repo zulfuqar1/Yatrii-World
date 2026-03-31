@@ -11,5 +11,6 @@
         public long CategoryId { get; set; }
         public List<string> ImageUrls { get; set; } = new();
         public int AmaizingPlacesCount { get; set; }
+        public double Rating { get; set; }
     }
 }

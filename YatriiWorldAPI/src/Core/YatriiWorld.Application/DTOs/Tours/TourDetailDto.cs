@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Microsoft.AspNetCore.Http;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -15,17 +16,19 @@ namespace YatriiWorld.Application.DTOs.Tours
         public string Description { get; set; } = string.Empty;
         public string Country { get; set; } = string.Empty;
         public string City { get; set; } = string.Empty;
-        public int Duration { get; set; }
+        public int DurationInDays { get; set; }
         public decimal Price { get; set; }
         public int Capacity { get; set; }
         public DateTime StartDate { get; set; }
+        public DateTime EndDate { get; set; }
         public int AmaizingPlacesCount { get; set; }
 
 
         public string CategoryName { get; set; } = string.Empty;
         public double AverageRating { get; set; }
         public int ReviewCount { get; set; }
-        
+
+        public double Rating { get; set; }
 
 
 

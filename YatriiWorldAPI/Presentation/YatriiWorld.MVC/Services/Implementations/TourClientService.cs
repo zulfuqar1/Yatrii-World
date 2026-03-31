@@ -13,7 +13,7 @@ public class TourClientService : ITourClientService
 
     public TourClientService(IHttpClientFactory factory, IHttpContextAccessor contextAccessor)
     {
-        _httpClient = factory.CreateClient("Api");
+        _httpClient = factory.CreateClient("YatriiApiClient");
         _contextAccessor = contextAccessor;
         AttachToken();
     }
@@ -28,9 +28,33 @@ public class TourClientService : ITourClientService
     private async Task HandleErrorAsync(HttpResponseMessage response)
     {
         if (response.IsSuccessStatusCode) return;
-        var json = await response.Content.ReadAsStringAsync();
-        var errorObj = JsonSerializer.Deserialize<ApiErrorResponse>(json, new JsonSerializerOptions { PropertyNameCaseInsensitive = true });
-        var message = errorObj?.Error ?? "Unexpected error";
+
+        var content = await response.Content.ReadAsStringAsync();
+        string message = "Unexpected error";
+
+        if (!string.IsNullOrWhiteSpace(content))
+        {
+            content = content.Trim();
+            if (content.StartsWith("{"))
+            {
+                try
+                {
+                    var errorObj = JsonSerializer.Deserialize<ApiErrorResponse>(content,
+                        new JsonSerializerOptions { PropertyNameCaseInsensitive = true });
+
+                 
+                    message = errorObj?.Error ?? content;
+                }
+                catch
+                {
+                    message = content;
+                }
+            }
+            else
+            {
+                message = content;
+            }
+        }
 
         throw response.StatusCode switch
         {
@@ -38,7 +62,8 @@ public class TourClientService : ITourClientService
             HttpStatusCode.Conflict => new AlreadyExistsException(message),
             HttpStatusCode.BadRequest => new BadRequestException(message),
             HttpStatusCode.Forbidden => new ForbiddenException(message),
-            _ => new Exception(message)
+            HttpStatusCode.Unauthorized => new UnauthorizedAccessException("Yetkisiz: " + message),
+            _ => new Exception($"API Hatası ({response.StatusCode}): {message}")
         };
     }
 

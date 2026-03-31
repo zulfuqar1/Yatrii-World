@@ -1,6 +1,5 @@
-﻿
-
-using Microsoft.AspNetCore.Diagnostics;
+﻿using Microsoft.AspNetCore.Diagnostics;
+using System.Net;
 using YatriiWorld.MVC.Exceptions;
 
 namespace YatriiWorld.MVC.Middlewares
@@ -8,7 +7,7 @@ namespace YatriiWorld.MVC.Middlewares
     public class MvcExceptionHandler : IExceptionHandler
     {
         private readonly ILogger<MvcExceptionHandler> _logger;
-        
+
         public MvcExceptionHandler(ILogger<MvcExceptionHandler> logger)
         {
             _logger = logger;
@@ -16,7 +15,7 @@ namespace YatriiWorld.MVC.Middlewares
 
         public async ValueTask<bool> TryHandleAsync(HttpContext httpContext, Exception exception, CancellationToken cancellationToken)
         {
-            _logger.LogError(exception, "Exception: {Message}", exception.Message);
+            _logger.LogError(exception, "App error: {Message}", exception.Message);
 
             if (exception is AlreadyExistsException)
                 return false;
@@ -26,11 +25,14 @@ namespace YatriiWorld.MVC.Middlewares
                 NotFoundException ex => (404, ex.Message),
                 BadRequestException ex => (400, ex.Message),
                 ForbiddenException ex => (403, ex.Message),
-                _ => (500, "An unexpected error occurred.")
+                UnauthorizedAccessException => (401, "You do not have permission to perform this action."),
+                _ => (500, "An unexpected error occurred in the system. Please try again later.")
             };
 
-            httpContext.Response.Redirect(
-                $"/Home/Error?message={Uri.EscapeDataString(message)}&code={code}");
+          
+            var errorPath = $"/Home/Error?message={Uri.EscapeDataString(message)}&code={code}";
+
+            httpContext.Response.Redirect(errorPath);
 
             return true;
         }

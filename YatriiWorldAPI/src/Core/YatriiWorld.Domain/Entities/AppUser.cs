@@ -28,6 +28,7 @@ namespace YatriiWorld.Domain.Entities
         public bool IsActive { get; set; } = true;
         public bool IsDeleted { get; set; } = false;
 
+        public string? VerificationCode { get; set; }
 
         public ICollection<Review> Reviews { get; set; } = new List<Review>();
         public ICollection<Ticket> Tickets { get; set; } = new List<Ticket>();

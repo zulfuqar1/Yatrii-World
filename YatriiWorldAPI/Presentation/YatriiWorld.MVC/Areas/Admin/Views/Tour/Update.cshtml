@@ -1,0 +1,253 @@
+﻿@model TourUpdateVM
+
+<div class="row">
+    <div class="col-12 grid-margin stretch-card">
+        <div class="card">
+            <div class="card-body">
+                <h4 class="card-title">Turu Güncelle</h4>
+                <p class="card-description"> Mevcut tur bilgilerini düzenleyin. </p>
+
+                <form class="forms-sample" asp-controller="Tour" asp-action="Edit" method="post" enctype="multipart/form-data">
+                    @Html.AntiForgeryToken()
+                    <input type="hidden" asp-for="Id" />
+
+                    <div class="form-group">
+                        <label asp-for="Name">Name</label>
+                        <input asp-for="Name" class="form-control" placeholder="Name">
+                        <span asp-validation-for="Name" class="text-danger"></span>
+                    </div>
+
+                    <div class="form-group">
+                        <label asp-for="Title">Title</label>
+                        <input asp-for="Title" class="form-control" placeholder="Title">
+                        <span asp-validation-for="Title" class="text-danger"></span>
+                    </div>
+
+                    <div class="row">
+                        <div class="form-group col-md-6">
+                            <label asp-for="Country">Country</label>
+                            <input asp-for="Country" class="form-control">
+                            <span asp-validation-for="Country" class="text-danger"></span>
+                        </div>
+                        <div class="form-group col-md-6">
+                            <label asp-for="City">City</label>
+                            <input asp-for="City" class="form-control">
+                            <span asp-validation-for="City" class="text-danger"></span>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label asp-for="Description">Description</label>
+                        <textarea asp-for="Description" class="form-control" rows="4"></textarea>
+                        <span asp-validation-for="Description" class="text-danger"></span>
+                    </div>
+
+                    <div class="row">
+                        <div class="form-group col-md-4">
+                            <label asp-for="Price">Price</label>
+                            <input asp-for="Price" class="form-control">
+                        </div>
+                        <div class="form-group col-md-4">
+                            <label asp-for="Capacity">Capacity</label>
+                            <input asp-for="Capacity" class="form-control">
+                        </div>
+                        <div class="form-group col-md-4">
+                            <label asp-for="AmaizingPlacesCount">Amazing Places</label>
+                            <input asp-for="AmaizingPlacesCount" class="form-control">
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="form-group col-md-6">
+                            <label asp-for="StartDate">Start Date</label>
+                            <input type="date" asp-for="StartDate" class="form-control"
+                                   value="@Model.StartDate.ToString("yyyy-MM-dd")" />
+                        </div>
+                        <div class="form-group col-md-6">
+                            <label asp-for="EndDate">End Date</label>
+                            <input type="date" asp-for="EndDate" class="form-control"
+                                   value="@Model.EndDate.ToString("yyyy-MM-dd")" />
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label>Transport Type</label>
+                        <select asp-for="TransportType" class="form-control"
+                                asp-items="Html.GetEnumSelectList<YatriiWorld.Domain.Entities.Enums.TransportType>()">
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label>Category</label>
+                        <select asp-for="CategoryId" class="form-control">
+                            @foreach (var cat in Model.AvailableCategories)
+                            {
+                                <option value="@cat.Id">@cat.Name</option>
+                            }
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label>tags</label>
+                        <div class="row ml-2">
+                            @foreach (var tag in Model.Tags)
+                            {
+                                <div class="form-check col-md-3">
+                                    <label class="form-check-label">
+                                        <input type="checkbox" name="SelectedTagIds" value="@tag.Id"
+                                               class="form-check-input"
+                                               @(Model.SelectedTagIds.Contains(tag.Id) ? "checked" : "")> @tag.Name
+                                    </label>
+                                </div>
+                            }
+                        </div>
+                    </div>
+                    @if (Model.Images != null && Model.Images.Any())
+                    {
+                        <div class="form-group">
+                            <label>Mevcut Resimler</label>
+                            <div class="d-flex flex-wrap gap-2">
+                                @foreach (var img in Model.Images)
+                                {
+                                    <div class="preview-wrapper existing-image" style="position:relative; width:120px; height:120px; margin-right:15px; margin-bottom:15px;">
+
+                                        <img src="/assets/@img.ImageUrl"
+                                             style="width:100%; height:100%; object-fit:cover; border-radius:8px; border:1px solid #ddd; @(img.IsMain ? "border: 3px solid #28a745;" : "")">
+
+                                      
+                                        @if (img.IsMain)
+                                        {
+                                            <span style="position:absolute; bottom:5px; left:50%; transform:translateX(-50%); background-color:#28a745; color:white; font-size:11px; padding:2px 8px; border-radius:10px; font-weight:bold; white-space:nowrap;">
+                                                ⭐ Ana Resim
+                                            </span>
+                                        }
+
+                                        <button type="button" class="remove-existing" onclick="removeExistingImage(this, '@img.ImageUrl')"
+                                                style="position:absolute; top:-10px; right:-10px; width:24px; height:24px; background:black; color:white; border:none; border-radius:50%; cursor:pointer; font-weight:bold; display:flex; align-items:center; justify-content:center; z-index:10;">
+                                            ×
+                                        </button>
+                                    </div>
+                                }
+                            </div>
+                        </div>
+                    }
+
+                    <div class="form-group">
+                        <label>Yeni Fotoğraflar Ekle (Opsiyonel)</label>
+                        <input type="file" asp-for="Photos" class="file-upload-default" multiple id="imageInput">
+                        <div class="input-group col-xs-12">
+                            <input type="text" class="form-control file-upload-info" disabled placeholder="Resimleri Seçiniz">
+                            <span class="input-group-append">
+                                <button class="file-upload-browse btn btn-primary" type="button">Dosyaları Bul</button>
+                            </span>
+                        </div>
+                    </div>
+                    <div id="imagePreviewContainer" class="row mt-3 ml-1"></div>
+
+                    <button type="submit" class="btn btn-success me-2">Güncelle</button>
+                    <a asp-action="Index" class="btn btn-light">İptal</a>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+        const browseButton = document.querySelector('.file-upload-browse');
+        const fileInput = document.querySelector('.file-upload-default');
+        const infoInput = document.querySelector('.file-upload-info');
+        const previewContainer = document.getElementById('imagePreviewContainer');
+        const mainForm = document.querySelector('.forms-sample');
+
+        let allSelectedFiles = [];
+        let deletedExistingImages = [];
+
+        browseButton.addEventListener('click', () => fileInput.click());
+
+        fileInput.addEventListener('change', function () {
+            const newFiles = Array.from(this.files);
+            const existingCount = document.querySelectorAll('.existing-image').length;
+            const currentSelectedCount = allSelectedFiles.length;
+
+            if (existingCount + currentSelectedCount + newFiles.length > 3) {
+                alert(`The total number of images cannot exceed 3. ${existingCount} , ${currentSelectedCount} You have a newly selected picture..`);
+                this.value = "";
+                return;
+            }
+
+            allSelectedFiles = allSelectedFiles.concat(newFiles);
+            renderPreviews();
+            updateInputInfo();
+        });
+
+        function renderPreviews() {
+            previewContainer.innerHTML = '';
+            allSelectedFiles.forEach((file, index) => {
+                const reader = new FileReader();
+                reader.onload = function (e) {
+                    const wrapper = document.createElement('div');
+                    wrapper.style.cssText = "position:relative; width:100px; height:100px; margin:10px; border-radius:8px; display:inline-block; border:2px solid #ddd;";
+                    wrapper.innerHTML = `
+                        <img src="${e.target.result}" style="width:100%; height:100%; object-fit:cover; border-radius:6px;">
+                        <button type="button" onclick="removeFile(${index})"
+                                style="position:absolute; top:-8px; right:-8px; width:22px; height:22px; background:red; color:white; border:none; border-radius:50%; cursor:pointer; font-weight:bold; display:flex; align-items:center; justify-content:center; z-index:100;">
+                            ×
+                        </button>`;
+                    previewContainer.appendChild(wrapper);
+                }
+                reader.readAsDataURL(file);
+            });
+        }
+        function updateInputInfo() {
+            const count = allSelectedFiles.length;
+            infoInput.value = count > 0 ? count + " new file selected" : "Select Image";
+        }
+        window.removeFile = function(index) {
+            allSelectedFiles.splice(index, 1);
+            renderPreviews();
+            updateInputInfo();
+        };
+
+        window.removeExistingImage = function(btn, fileName) {
+            if (confirm("Are you sure you want to delete this image?")) {
+                deletedExistingImages.push(fileName);
+                btn.closest('.existing-image').remove(); 
+                console.log("Old photos to be deleted::", deletedExistingImages);
+            }
+        };
+
+        mainForm.addEventListener('submit', async function (e) {
+            e.preventDefault();
+            const formData = new FormData(this);
+
+  
+            formData.delete("Photos");
+            allSelectedFiles.forEach(file => {
+                formData.append("Photos", file);
+            });
+
+            deletedExistingImages.forEach(name => {
+                formData.append("DeletedImageUrls", name);
+            });
+
+            try {
+                const response = await fetch(this.action, {
+                    method: 'POST',
+                    body: formData
+                });
+
+                if (response.ok) {
+                    window.location.href = "/Admin/Tour/Index";
+                } else {
+                    const errorText = await response.text();
+                    console.error("Sunucu Hatası:", errorText);
+                    alert("Güncelleme sırasında bir hata oluştu.");
+                }
+            } catch (err) {
+                console.error("Connection Error:", err);
+                alert("System error.");
+            }
+        });
+    });
+</script>

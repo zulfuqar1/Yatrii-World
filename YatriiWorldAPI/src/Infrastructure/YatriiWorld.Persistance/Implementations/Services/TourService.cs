@@ -57,50 +57,102 @@ namespace YatriiWorld.Persistance.Implementations.Services
 
         public async Task CreateTourAsync(TourCreateDto dto)
         {
-            // Opsiyonel: Aynı isimde tur var mı kontrolü
-            var existing = await _tourRepository.GetAll().AnyAsync(x => x.Title == dto.Title);
-            if (existing) throw new Exception("This tour title already exists.");
+           
             var tour = _mapper.Map<Tour>(dto);
+
+        
+            tour.CreatedAt = DateTime.Now;
+            tour.UpdatedAt = DateTime.Now;
+            tour.IsDeleted = false;
+
+          
             await _tourRepository.AddAsync(tour);
             await _tourRepository.SaveAsync();
+
+          
+            if (dto.SelectedTagIds != null && dto.SelectedTagIds.Any())
+            {
+                foreach (var tagId in dto.SelectedTagIds)
+                {
+                    var tag = await _tagRepository.GetByIdAsync(tagId);
+                    if (tag != null)
+                    {
+                        if (tour.Tags == null) tour.Tags = new List<Tag>();
+                        tour.Tags.Add(tag);
+                    }
+                }
+             
+                await _tourRepository.SaveAsync();
+            }
+
+            if (dto.Photos != null && dto.Photos.Count > 0)
+            {
+                string currentDir = Directory.GetCurrentDirectory();
+                string mvcPath = Path.GetFullPath(Path.Combine(currentDir, "..", "YatriiWorld.MVC", "wwwroot", "assets", "images", "Tour"));
+
+                if (!Directory.Exists(mvcPath)) Directory.CreateDirectory(mvcPath);
+
+                foreach (var photo in dto.Photos)
+                {
+                    string fileName = Guid.NewGuid().ToString() + Path.GetExtension(photo.FileName);
+                    string fullPath = Path.Combine(mvcPath, fileName);
+
+                    using (var stream = new FileStream(fullPath, FileMode.Create))
+                    {
+                        await photo.CopyToAsync(stream);
+                    }
+
+                    var tourImage = new TourImage
+                    {
+                        TourId = tour.Id,
+                        ImageUrl = "images/Tour/" + fileName,
+                        IsMain = (tour.Images == null || !tour.Images.Any())
+                    };
+
+                    if (tour.Images == null) tour.Images = new List<TourImage>();
+                    tour.Images.Add(tourImage);
+                }
+
+                await _tourRepository.SaveAsync();
+            }
         }
+
+
+
+
+
 
 
 
         public async Task UpdateTourAsync(TourUpdateDto dto)
         {
-            // 1. Turu, mevcut etiketleriyle (Tags) birlikte getir
+         
             var existTour = await _tourRepository.GetAll()
-                .Include(x => x.Tags) // Burada TourTags değil, direkt Tags yazıyoruz
+                .Include(x => x.Tags)
                 .FirstOrDefaultAsync(x => x.Id == dto.Id);
 
             if (existTour == null) throw new Exception("Tour not found");
 
-            // 2. Basit alanları Maple
+          
             _mapper.Map(dto, existTour);
-
-            // 3. MANY-TO-MANY GÜNCELLEMESİ (EF Core Otomatik Yöntem)
-            existTour.Tags.Clear(); // Mevcut tüm etiket ilişkilerini temizle
+         
+            existTour.Tags.Clear(); 
 
             foreach (var tagId in dto.SelectedTagIds)
             {
-                // TagRepository kullanarak veritabanındaki gerçek Tag nesnesini bulmalısın
-                // Not: Eğer TagRepository yoksa _context.Tags üzerinden de yapabilirsin
+
                 var tag = await _tagRepository.GetByIdAsync(tagId);
 
                 if (tag != null)
                 {
-                    existTour.Tags.Add(tag); // Direkt Tag nesnesini ekle
+                    existTour.Tags.Add(tag);
                 }
             }
 
-            // 4. Kaydet
+
             _tourRepository.Update(existTour);
             await _tourRepository.SaveAsync();
         }
-
-
-
 
 
 
@@ -115,6 +167,22 @@ namespace YatriiWorld.Persistance.Implementations.Services
             _tourRepository.Update(tour);
             await _tourRepository.SaveAsync();
         }
+
+
+
+
+
+        public async Task<List<TourTagDto>> GetAllTagsAsync()
+        {
+
+            var tags = await _tagRepository.GetAll().ToListAsync();
+
+          
+            return _mapper.Map<List<TourTagDto>>(tags);
+        }
+
+
+
 
     }
 }

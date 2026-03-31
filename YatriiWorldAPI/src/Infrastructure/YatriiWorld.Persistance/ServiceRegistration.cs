@@ -54,7 +54,10 @@ namespace YatriiWorld.Persistence
             services.AddScoped<IReviewRepository, ReviewRepository>();
 
             services.AddScoped<IAuthenticationService, AuthenticationService>();
+          
+            services.AddScoped<IWishlistRepository, WishlistRepository>();
 
+          
 
             services.AddScoped<AppDbContextInitializer>();
 

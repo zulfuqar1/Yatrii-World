@@ -4,10 +4,11 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace PetCareManagement.Application.DTOs.RegistrationCodes
+namespace YatriiWorld.Application.DTOs.RegistrationCodes
 {
     public class PostRegistrationCodeDto
     {
+        public string Email { get; set; }
         public string Code { get; set; }
     }
 }

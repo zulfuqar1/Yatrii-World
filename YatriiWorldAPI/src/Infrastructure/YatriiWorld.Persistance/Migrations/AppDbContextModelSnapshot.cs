@@ -268,6 +268,9 @@ namespace YatriiWorld.Persistance.Migrations
                         .HasMaxLength(256)
                         .HasColumnType("nvarchar(256)");
 
+                    b.Property<string>("VerificationCode")
+                        .HasColumnType("nvarchar(max)");
+
                     b.Property<string>("ZipCode")
                         .HasColumnType("nvarchar(max)");
 
@@ -367,9 +370,6 @@ namespace YatriiWorld.Persistance.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<long>("Id"));
 
-                    b.Property<long>("AppUserId")
-                        .HasColumnType("bigint");
-
                     b.Property<string>("Comment")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
@@ -398,9 +398,9 @@ namespace YatriiWorld.Persistance.Migrations
 
                     b.HasKey("Id");
 
-                    b.HasIndex("AppUserId");
-
                     b.HasIndex("TourId");
+
+                    b.HasIndex("UserId");
 
                     b.ToTable("Reviews");
                 });
@@ -443,20 +443,14 @@ namespace YatriiWorld.Persistance.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<long>("Id"));
 
-                    b.Property<int>("AdultCount")
-                        .HasColumnType("int");
-
-                    b.Property<long?>("AppUserId")
+                    b.Property<long>("AppUserId")
                         .HasColumnType("bigint");
-
-                    b.Property<DateTime>("ChecikinDate")
-                        .HasColumnType("datetime2");
 
                     b.Property<DateTime>("CheckOutDate")
                         .HasColumnType("datetime2");
 
-                    b.Property<int>("ChilderenCount")
-                        .HasColumnType("int");
+                    b.Property<DateTime>("CheckinDate")
+                        .HasColumnType("datetime2");
 
                     b.Property<DateTime>("CreatedAt")
                         .HasColumnType("datetime2");
@@ -473,17 +467,32 @@ namespace YatriiWorld.Persistance.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
+                    b.Property<string>("CustomerPhone")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
                     b.Property<bool>("IsDeleted")
                         .HasColumnType("bit");
+
+                    b.Property<DateTime?>("PaymentDate")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("PaymentStatus")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<decimal>("TotalPrice")
                         .HasColumnType("decimal(18,2)");
 
-                    b.Property<int>("TourId")
-                        .HasColumnType("int");
-
-                    b.Property<long>("TourId1")
+                    b.Property<long>("TourId")
                         .HasColumnType("bigint");
+
+                    b.Property<string>("TransactionId")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<int>("TravellerCount")
+                        .HasColumnType("int");
 
                     b.Property<DateTime?>("UpdatedAt")
                         .HasColumnType("datetime2");
@@ -492,9 +501,66 @@ namespace YatriiWorld.Persistance.Migrations
 
                     b.HasIndex("AppUserId");
 
-                    b.HasIndex("TourId1");
+                    b.HasIndex("TourId");
 
                     b.ToTable("Tickets");
+                });
+
+            modelBuilder.Entity("YatriiWorld.Domain.Entities.TicketTraveler", b =>
+                {
+                    b.Property<long>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("bigint");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<long>("Id"));
+
+                    b.Property<DateTime>("CreatedAt")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("CreatedBy")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<DateTime?>("DateOfBirth")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("Email")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("FirstName")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Gender")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<bool>("IsDeleted")
+                        .HasColumnType("bit");
+
+                    b.Property<bool>("IsMainTraveller")
+                        .HasColumnType("bit");
+
+                    b.Property<string>("LastName")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Nationality")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Phone")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<long>("TicketId")
+                        .HasColumnType("bigint");
+
+                    b.Property<DateTime?>("UpdatedAt")
+                        .HasColumnType("datetime2");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("TicketId");
+
+                    b.ToTable("TicketTravelers");
                 });
 
             modelBuilder.Entity("YatriiWorld.Domain.Entities.Tour", b =>
@@ -549,6 +615,9 @@ namespace YatriiWorld.Persistance.Migrations
 
                     b.Property<decimal>("Price")
                         .HasColumnType("decimal(18,2)");
+
+                    b.Property<double>("Rating")
+                        .HasColumnType("float");
 
                     b.Property<DateTime>("StartDate")
                         .HasColumnType("datetime2");
@@ -610,6 +679,32 @@ namespace YatriiWorld.Persistance.Migrations
                     b.HasIndex("TourId");
 
                     b.ToTable("TourImages");
+                });
+
+            modelBuilder.Entity("YatriiWorld.Domain.Entities.Wishlist", b =>
+                {
+                    b.Property<long>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("bigint");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<long>("Id"));
+
+                    b.Property<long>("AppUserId")
+                        .HasColumnType("bigint");
+
+                    b.Property<bool>("IsDeleted")
+                        .HasColumnType("bit");
+
+                    b.Property<long>("TourId")
+                        .HasColumnType("bigint");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("AppUserId");
+
+                    b.HasIndex("TourId");
+
+                    b.ToTable("Wishlists");
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRoleClaim<long>", b =>
@@ -680,15 +775,15 @@ namespace YatriiWorld.Persistance.Migrations
 
             modelBuilder.Entity("YatriiWorld.Domain.Entities.Review", b =>
                 {
-                    b.HasOne("YatriiWorld.Domain.Entities.AppUser", "AppUser")
-                        .WithMany("Reviews")
-                        .HasForeignKey("AppUserId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
                     b.HasOne("YatriiWorld.Domain.Entities.Tour", "Tour")
                         .WithMany("Reviews")
                         .HasForeignKey("TourId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("YatriiWorld.Domain.Entities.AppUser", "AppUser")
+                        .WithMany("Reviews")
+                        .HasForeignKey("UserId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
@@ -699,17 +794,32 @@ namespace YatriiWorld.Persistance.Migrations
 
             modelBuilder.Entity("YatriiWorld.Domain.Entities.Ticket", b =>
                 {
-                    b.HasOne("YatriiWorld.Domain.Entities.AppUser", null)
+                    b.HasOne("YatriiWorld.Domain.Entities.AppUser", "AppUser")
                         .WithMany("Tickets")
-                        .HasForeignKey("AppUserId");
-
-                    b.HasOne("YatriiWorld.Domain.Entities.Tour", "Tour")
-                        .WithMany("Tickets")
-                        .HasForeignKey("TourId1")
+                        .HasForeignKey("AppUserId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
+                    b.HasOne("YatriiWorld.Domain.Entities.Tour", "Tour")
+                        .WithMany("Tickets")
+                        .HasForeignKey("TourId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("AppUser");
+
                     b.Navigation("Tour");
+                });
+
+            modelBuilder.Entity("YatriiWorld.Domain.Entities.TicketTraveler", b =>
+                {
+                    b.HasOne("YatriiWorld.Domain.Entities.Ticket", "Ticket")
+                        .WithMany("Travellers")
+                        .HasForeignKey("TicketId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Ticket");
                 });
 
             modelBuilder.Entity("YatriiWorld.Domain.Entities.Tour", b =>
@@ -732,6 +842,25 @@ namespace YatriiWorld.Persistance.Migrations
                     b.Navigation("Tour");
                 });
 
+            modelBuilder.Entity("YatriiWorld.Domain.Entities.Wishlist", b =>
+                {
+                    b.HasOne("YatriiWorld.Domain.Entities.AppUser", "AppUser")
+                        .WithMany()
+                        .HasForeignKey("AppUserId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("YatriiWorld.Domain.Entities.Tour", "Tour")
+                        .WithMany()
+                        .HasForeignKey("TourId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("AppUser");
+
+                    b.Navigation("Tour");
+                });
+
             modelBuilder.Entity("YatriiWorld.Domain.Entities.AppUser", b =>
                 {
                     b.Navigation("Reviews");
@@ -742,6 +871,11 @@ namespace YatriiWorld.Persistance.Migrations
             modelBuilder.Entity("YatriiWorld.Domain.Entities.Category", b =>
                 {
                     b.Navigation("Tours");
+                });
+
+            modelBuilder.Entity("YatriiWorld.Domain.Entities.Ticket", b =>
+                {
+                    b.Navigation("Travellers");
                 });
 
             modelBuilder.Entity("YatriiWorld.Domain.Entities.Tour", b =>

@@ -8,7 +8,7 @@ namespace YatriiWorld.Application.DTOs.Tickets
 {
     public class TicketUpdateDto
     {
-        public int Id { get; set; }
+        public long Id { get; set; }
         public string CustomerFullName { get; set; }
         public string CustomerEmail { get; set; }
         public int AdultCount { get; set; }

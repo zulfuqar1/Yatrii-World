@@ -43,6 +43,8 @@ namespace YatriiWorld.Persistance.Data
 
         public DbSet<ContactMessage> ContactMessages { get; set; }
 
+        public DbSet<Wishlist> Wishlists { get; set; }
 
+        public DbSet<TicketTraveler> TicketTravelers { get; set; }
     }
 }

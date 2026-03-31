@@ -1,62 +1,64 @@
 [
   {
     "ContainingType": "YatriiWorld.API.Controllers.AccountsController",
-    "Method": "Register",
-    "RelativePath": "Accounts",
+    "Method": "Login",
+    "RelativePath": "api/Accounts/Login",
     "HttpMethod": "POST",
     "IsController": true,
     "Order": 0,
     "Parameters": [
       {
-        "Name": "FirstName",
-        "Type": "System.String",
-        "IsRequired": false
-      },
-      {
-        "Name": "LastName",
-        "Type": "System.String",
-        "IsRequired": false
-      },
-      {
-        "Name": "UserName",
-        "Type": "System.String",
-        "IsRequired": false
-      },
-      {
-        "Name": "Email",
-        "Type": "System.String",
-        "IsRequired": false
-      },
-      {
-        "Name": "Password",
-        "Type": "System.String",
-        "IsRequired": false
-      },
-      {
-        "Name": "ConfirmPassword",
-        "Type": "System.String",
-        "IsRequired": false
+        "Name": "dto",
+        "Type": "YatriiWorld.Application.DTOs.Users.LoginDto",
+        "IsRequired": true
       }
     ],
     "ReturnTypes": []
   },
   {
     "ContainingType": "YatriiWorld.API.Controllers.AccountsController",
-    "Method": "Login",
-    "RelativePath": "Accounts/Login",
+    "Method": "Register",
+    "RelativePath": "api/Accounts/Register",
     "HttpMethod": "POST",
     "IsController": true,
     "Order": 0,
     "Parameters": [
       {
-        "Name": "UserNameOrEmail",
-        "Type": "System.String",
-        "IsRequired": false
-      },
+        "Name": "dto",
+        "Type": "YatriiWorld.Application.DTOs.Users.RegisterDto",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "YatriiWorld.API.Controllers.AccountsController",
+    "Method": "VerifyCode",
+    "RelativePath": "api/Accounts/VerifyCode",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
       {
-        "Name": "Password",
-        "Type": "System.String",
-        "IsRequired": false
+        "Name": "dto",
+        "Type": "YatriiWorld.Application.DTOs.RegistrationCodes.PostRegistrationCodeDto",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "YatriiWorld.API.Controllers.BookingController",
+    "Method": "CreateBooking",
+    "RelativePath": "api/Booking/create-booking",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "model",
+        "Type": "YatriiWorld.Application.DTOs.Tickets.TicketCreateDto",
+        "IsRequired": true
       }
     ],
     "ReturnTypes": []
@@ -161,7 +163,7 @@
     "ReturnTypes": []
   },
   {
-    "ContainingType": "PetCareManagement.API.Controllers.RegistrationCodesController",
+    "ContainingType": "YatriiWorld.API.Controllers.RegistrationCodesController",
     "Method": "Create",
     "RelativePath": "api/RegistrationCodes",
     "HttpMethod": "POST",
@@ -170,14 +172,14 @@
     "Parameters": [
       {
         "Name": "dto",
-        "Type": "PetCareManagement.Application.DTOs.RegistrationCodes.PostRegistrationCodeDto",
+        "Type": "YatriiWorld.Application.DTOs.RegistrationCodes.PostRegistrationCodeDto",
         "IsRequired": true
       }
     ],
     "ReturnTypes": []
   },
   {
-    "ContainingType": "PetCareManagement.API.Controllers.RegistrationCodesController",
+    "ContainingType": "YatriiWorld.API.Controllers.RegistrationCodesController",
     "Method": "GetAll",
     "RelativePath": "api/RegistrationCodes",
     "HttpMethod": "GET",
@@ -203,7 +205,7 @@
     "ReturnTypes": []
   },
   {
-    "ContainingType": "PetCareManagement.API.Controllers.RegistrationCodesController",
+    "ContainingType": "YatriiWorld.API.Controllers.RegistrationCodesController",
     "Method": "GetById",
     "RelativePath": "api/RegistrationCodes/{id}",
     "HttpMethod": "GET",
@@ -219,7 +221,7 @@
     "ReturnTypes": []
   },
   {
-    "ContainingType": "PetCareManagement.API.Controllers.RegistrationCodesController",
+    "ContainingType": "YatriiWorld.API.Controllers.RegistrationCodesController",
     "Method": "Delete",
     "RelativePath": "api/RegistrationCodes/{id}",
     "HttpMethod": "DELETE",
@@ -267,6 +269,16 @@
     "ReturnTypes": []
   },
   {
+    "ContainingType": "YatriiWorld.API.Controllers.TagsController",
+    "Method": "GetAll",
+    "RelativePath": "api/Tags",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
     "ContainingType": "YatriiWorld.API.Controllers.ToursController",
     "Method": "GetAll",
     "RelativePath": "api/Tours",
@@ -285,9 +297,84 @@
     "Order": 0,
     "Parameters": [
       {
-        "Name": "dto",
-        "Type": "YatriiWorld.Application.DTOs.Tours.TourCreateDto",
-        "IsRequired": true
+        "Name": "Name",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "Title",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "Description",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "AmaizingPlacesCount",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "Country",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "City",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "DurationInDays",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "Price",
+        "Type": "System.Decimal",
+        "IsRequired": false
+      },
+      {
+        "Name": "Capacity",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "StartDate",
+        "Type": "System.DateTime",
+        "IsRequired": false
+      },
+      {
+        "Name": "EndDate",
+        "Type": "System.DateTime",
+        "IsRequired": false
+      },
+      {
+        "Name": "Photos",
+        "Type": "System.Collections.Generic.List\u00601[[Microsoft.AspNetCore.Http.IFormFile, Microsoft.AspNetCore.Http.Features, Version=8.0.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60]]",
+        "IsRequired": false
+      },
+      {
+        "Name": "TransportType",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "CategoryId",
+        "Type": "System.Int64",
+        "IsRequired": false
+      },
+      {
+        "Name": "SelectedTagIds",
+        "Type": "System.Collections.Generic.List\u00601[[System.Int64, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]",
+        "IsRequired": false
+      },
+      {
+        "Name": "ImageUrls",
+        "Type": "System.Collections.Generic.List\u00601[[System.String, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]",
+        "IsRequired": false
       }
     ],
     "ReturnTypes": []
@@ -301,9 +388,89 @@
     "Order": 0,
     "Parameters": [
       {
-        "Name": "dto",
-        "Type": "YatriiWorld.Application.DTOs.Tours.TourUpdateDto",
-        "IsRequired": true
+        "Name": "Id",
+        "Type": "System.Int64",
+        "IsRequired": false
+      },
+      {
+        "Name": "Name",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "Title",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "Description",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "AmaizingPlacesCount",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "Country",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "City",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "DurationInDays",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "Price",
+        "Type": "System.Decimal",
+        "IsRequired": false
+      },
+      {
+        "Name": "Capacity",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "StartDate",
+        "Type": "System.DateTime",
+        "IsRequired": false
+      },
+      {
+        "Name": "EndDate",
+        "Type": "System.DateTime",
+        "IsRequired": false
+      },
+      {
+        "Name": "CategoryId",
+        "Type": "System.Int64",
+        "IsRequired": false
+      },
+      {
+        "Name": "TransportType",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "SelectedTagIds",
+        "Type": "System.Collections.Generic.List\u00601[[System.Int64, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]",
+        "IsRequired": false
+      },
+      {
+        "Name": "Photos",
+        "Type": "System.Collections.Generic.List\u00601[[Microsoft.AspNetCore.Http.IFormFile, Microsoft.AspNetCore.Http.Features, Version=8.0.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60]]",
+        "IsRequired": false
+      },
+      {
+        "Name": "ImageUrls",
+        "Type": "System.Collections.Generic.List\u00601[[System.String, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]",
+        "IsRequired": false
       }
     ],
     "ReturnTypes": []
@@ -335,33 +502,23 @@
       {
         "Name": "id",
         "Type": "System.Int64",
-        "IsRequired": false
-      },
-      {
-        "Name": "id",
-        "Type": "",
         "IsRequired": true
       }
     ],
     "ReturnTypes": []
   },
   {
-    "ContainingType": "YatriiWorld.API.Controllers.ToursController",
-    "Method": "GetTopRated",
-    "RelativePath": "api/Tours/top-rated/{count}",
-    "HttpMethod": "GET",
+    "ContainingType": "YatriiWorld.API.Controllers.WishlistsController",
+    "Method": "ToggleWishlist",
+    "RelativePath": "api/Wishlists/ToggleWishlist",
+    "HttpMethod": "POST",
     "IsController": true,
     "Order": 0,
     "Parameters": [
       {
-        "Name": "count",
-        "Type": "System.Int32",
+        "Name": "tourId",
+        "Type": "System.Int64",
         "IsRequired": false
-      },
-      {
-        "Name": "count",
-        "Type": "",
-        "IsRequired": true
       }
     ],
     "ReturnTypes": []

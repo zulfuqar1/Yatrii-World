@@ -146,6 +146,7 @@ wwwroot\assets\images\clients\logo-04.png
 wwwroot\assets\images\close.png
 wwwroot\assets\images\coming.svg
 wwwroot\assets\images\coming-1.svg
+wwwroot\assets\images\default-avatar.png
 wwwroot\assets\images\delivery.svg
 wwwroot\assets\images\destination\destination10.jpg
 wwwroot\assets\images\destination\destination11.jpg
@@ -261,6 +262,14 @@ wwwroot\assets\images\testimonial\img2.jpg
 wwwroot\assets\images\testimonial\img3.jpg
 wwwroot\assets\images\testi-shape.png
 wwwroot\assets\images\tour.mp4
+wwwroot\assets\images\Tour\3dafec38-3581-4ce5-b161-eb55d9c61c81.webp
+wwwroot\assets\images\Tour\4f0e0e67-ebdb-48ad-b3a8-f1a4bd54bd71.jpg
+wwwroot\assets\images\Tour\4f3874f1-f75d-470f-b556-2e159dd905fc.jpg
+wwwroot\assets\images\Tour\5691a793-f1dc-48c6-bfa2-e9e084117206.jpg
+wwwroot\assets\images\Tour\5a1aaffa-cabd-4ffb-8af0-44d235e62e0f.jpg
+wwwroot\assets\images\Tour\beffab4e-23c3-480f-af08-1c612d5024be.webp
+wwwroot\assets\images\Tour\d388f0cf-e56a-4294-b41c-8a7d314926a8.jpg
+wwwroot\assets\images\Tour\ed1d7d26-6925-4d57-9941-e6b25c7be4b8.png
 wwwroot\assets\images\Tour\ItalyRome1.jpg
 wwwroot\assets\images\Tour\ItalyRome2.jpg
 wwwroot\assets\images\trains\1.jpg
@@ -296,6 +305,7 @@ wwwroot\assets\images\trending\trending7.jpg
 wwwroot\assets\images\trending\trending8.jpg
 wwwroot\assets\images\trending\trending9.jpg
 wwwroot\assets\images\user-avatar.jpg
+wwwroot\assets\images\UserPP\ADMIN1.jpg
 wwwroot\assets\js\bootstrap.min.js
 wwwroot\assets\js\chart.js
 wwwroot\assets\js\custom-accordian.js

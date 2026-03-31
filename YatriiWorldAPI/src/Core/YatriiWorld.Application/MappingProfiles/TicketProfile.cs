@@ -1,6 +1,6 @@
 ﻿using AutoMapper;
-using YatriiWorld.Domain.Entities;
 using YatriiWorld.Application.DTOs.Tickets;
+using YatriiWorld.Domain.Entities;
 
 namespace YatriiWorld.Application.MappingProfiles
 {
@@ -8,29 +8,19 @@ namespace YatriiWorld.Application.MappingProfiles
     {
         public TicketProfile()
         {
-       
-            CreateMap<Ticket, TicketListDto>()
-                .ForMember(dest => dest.TourName, opt => opt.MapFrom(src => src.Tour.Title))
-                .ForMember(dest => dest.UserFullName, opt => opt.MapFrom(src => src.CustomerFullName))
-                .ForMember(dest => dest.CheckIn, opt => opt.MapFrom(src => src.ChecikinDate))
-                .ForMember(dest => dest.CheckOut, opt => opt.MapFrom(src => src.CheckOutDate))
-                .ForMember(dest => dest.IsDeleted, opt => opt.MapFrom(src => src.IsDeleted));
+            CreateMap<TicketCreateDto, Ticket>()
+                .ForMember(dest => dest.CustomerEmail, opt => opt.MapFrom(src => src.Email))
+                .ForMember(dest => dest.CustomerPhone, opt => opt.MapFrom(src => src.Phone))
+                .ForMember(dest => dest.TravellerCount, opt => opt.MapFrom(src => src.TotalPersonCount))
+                .ForMember(dest => dest.CustomerFullName, opt => opt.MapFrom(src => src.CardHolderName))
+                .ForMember(dest => dest.Travellers, opt => opt.MapFrom(src => src.Travelers))
+                .ReverseMap();
 
-           
-            CreateMap<Ticket, TicketDetailsDto>()
-                .ForMember(dest => dest.TourName, opt => opt.MapFrom(src => src.Tour.Title))
-                .ForMember(dest => dest.UserFullName, opt => opt.MapFrom(src => src.CustomerFullName))
-                .ForMember(dest => dest.UserEmail, opt => opt.MapFrom(src => src.CustomerEmail))
-                .ForMember(dest => dest.AdultCount, opt => opt.MapFrom(src => src.AdultCount))
-                .ForMember(dest => dest.ChildrenCount, opt => opt.MapFrom(src => src.ChilderenCount))
-                .ForMember(dest => dest.TotalPrice, opt => opt.MapFrom(src => src.TotalPrice))
-                .ForMember(dest => dest.CheckInDate, opt => opt.MapFrom(src => src.ChecikinDate))
-                .ForMember(dest => dest.CheckOutDate, opt => opt.MapFrom(src => src.CheckOutDate))
-                .ForMember(dest => dest.IsDeleted, opt => opt.MapFrom(src => src.IsDeleted));
+            CreateMap<TicketUpdateDto, Ticket>().ReverseMap();
 
-
-            CreateMap<TicketCreateDto, Ticket>();
-            CreateMap<TicketUpdateDto, Ticket>();
+            CreateMap<TicketTravelerDto, TicketTraveler>()
+                .ForMember(dest => dest.DateOfBirth, opt => opt.MapFrom(src => src.DateOfBirth))
+                .ReverseMap();
         }
     }
 }

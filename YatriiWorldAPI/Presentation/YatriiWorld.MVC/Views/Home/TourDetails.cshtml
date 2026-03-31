@@ -1,0 +1,563 @@
+﻿@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@model TourDetailsVM
+  
+
+<!-- BreadCrumb Starts -->
+<section class="breadcrumb-main pb-0" style="background-image: url(images/bg/bg8.jpg);">
+    <div class="breadcrumb-outer pt-10">
+        <div class="container">
+            <div class="breadcrumb-content d-md-flex align-items-center pt-10">
+                <h2 class="mb-0">@Model.City  @Model.Country</h2>
+                <nav aria-label="breadcrumb">
+                    <ul class="breadcrumb">
+                        <li class="breadcrumb-item"><a href="#">Tour </a></li>
+                        <li class="breadcrumb-item active" aria-current="page">@Model.Title</li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </div>
+    <div class="dot-overlay"></div>
+</section>
+<!-- BreadCrumb Ends -->
+<!-- top places starts -->
+
+
+<section class="shop-main pb-6">
+    <div class="container">
+
+
+        <div class="shop-detail">
+            <div class="row d-md-flex align-items-center">
+
+                <div class="col-lg-6 col-md-12 col-sm-12">
+                    <div class="thumbnail-images" style="width: 100%;">
+
+                        <div class="slider-store" style="width: 100%;">
+                            @for (int i = 0; i < 10; i++)
+                            {
+                                var img = Model.Images[i % Model.Images.Count];
+                                <div>
+                                    <img src="/assets/@img.ImageUrl?v=@i"
+                                         alt="tour-large"
+                                         style="width:100%; height:450px; object-fit:cover; border-radius:8px; display: block;">
+                                </div>
+                            }
+                        </div>
+
+                        <div class="slider-thumbs mt-2" style="width: 100%;">
+                            @for (int i = 0; i < 10; i++)
+                            {
+                                var img = Model.Images[i % Model.Images.Count];
+                                <div style="padding: 0 5px;">
+                                    <img src="/assets/@img.ImageUrl?v=@i"
+                                         alt="thumb"
+                                         style="height:80px; width:100%; object-fit:cover; cursor:pointer; border-radius:4px; display: block;">
+                                </div>
+                            }
+                        </div>
+
+                    </div>
+                </div>
+
+                <div class="col-lg-6 col-sm-12 col-xs-12">
+                    <div class="blog-content p-0">
+
+                        <h3 class="mb-1">@Model.Title</h3>
+
+                        <p class="mb-1 text-muted">
+                            <i class="fa fa-map-marker-alt"></i>
+                            @Model.City, @Model.Country
+                        </p>
+
+                
+                        <div class="rating-comment d-flex align-items-center mb-1">
+                            <div class="rating mr-2" style="font-size: 18px;">
+                               
+                                @for (int i = 1; i <= 5; i++)
+                                {
+                                    string starClass = "";
+                                    string starColor = "#dfe6e9"; 
+
+                                    if (i <= Model.Rating)
+                                    {
+                                       
+                                        starClass = "fas fa-star fa checked";
+                                        starColor = "#ffc107";
+                                    }
+                                    else if (i - 0.5 <= Model.Rating)
+                                    {
+                                      
+                                        starClass = "fas fa-star-half-alt fa";
+                                        starColor = "#ffc107";
+                                    }
+                                    else
+                                    {
+                                       
+                                        starClass = "far fa-star fa";
+                                      
+                                    }
+
+                                    <span class="@starClass" style="color:@starColor;"></span>
+                                }
+                            </div>
+                            <span class="yellow">@Model.Rating Rating</span>
+                        </div>
+
+                    
+                        <div class="listing-price mb-2">
+                            $@Model.Price
+                        </div>
+
+                        <p class="mb-3">
+                            @Model.Description
+                        </p>
+
+                        <ul class="productlist mb-3">
+                            <li><strong>Days:</strong> @Model.DurationInDays Days</li>
+                            <li><strong>Capacity:</strong> @Model.Capacity </li>
+                            <li><strong>StartDate:</strong> @Model.StartDate.ToShortDateString()</li>
+                            <li><strong>EndDate:</strong> @Model.EndDate.ToShortDateString()</li>
+                        </ul>
+
+                        <form class="cart mb-3 d-flex align-items-center">
+                            <div class="quantity-buttons d-flex align-items-center">
+                                <label class="mr-2 mb-0"><strong>Kişi:</strong></label>
+                                <input type="number" id="personCount" class="quantity-input" min="1" max="@Model.Capacity" value="1">
+                            </div>
+
+                            <div class="shop-btn ml-2">
+                                <button type="button" class="nir-btn" onclick="redirectToBooking(@Model.Id)">
+                                    Book Now
+                                </button>
+                            </div>
+                        </form>
+
+                        <div class="wishcomp-btn">
+                            <a href="#" onclick="addToWishlist(@Model.Id)">
+                                <i class="fa fa-heart"></i> Add to wishlist
+                            </a>
+                        </div>
+
+                        <div class="product_meta mt-3">
+                            <div>
+                                <span class="font-weight-bold">Category:</span>
+                                @Model.CategoryName
+                            </div>
+
+                            <div class="mt-2">
+                                <span class="font-weight-bold">Tags:</span>
+                                @foreach (var tag in Model.Tags)
+                                {
+                                    <span class="badge badge-secondary">@tag.Name</span>
+                                }
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+
+     
+
+
+
+
+
+        <div id="store-tab-main" class="mt-4">
+            <ul class="nav nav-tabs">
+                <li class="active"><a href="#1" data-toggle="tab">Description</a></li>
+                <li><a href="#2" data-toggle="tab">Additional Information</a></li>
+                <li><a href="#3" data-toggle="tab">Review</a></li>
+            </ul>
+
+            <div class="tab-content">
+                <div class="tab-pane active" id="1">
+                    <p>@Model.Description</p>
+
+                    <ul class="product-tab-list">
+                        <li>@Model.City</li>
+                        <li>@Model.Country</li>
+                    </ul>
+                </div>
+
+
+
+
+
+
+                <div class="tab-pane" id="2">
+                    <table class="woocommerce-product-attributes shop_attributes">
+                        <tbody>
+                            <tr>
+                                <th>Color</th>
+                                <td>Blue, Gray</td>
+                            </tr>
+                            <tr>
+                                <th>Size</th>
+                                <td>Large, Medium, Small</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <div class="tab-pane" id="3">
+                    <!-- blog comment list -->
+                    <div class="single-comments single-box mb-4" style="background: #fff; padding: 20px; border-radius: 10px; border: 1px solid #eee;">
+                        <h4 class="mb-4" style="border-bottom: 2px solid #ffb100; display: inline-block; padding-bottom: 5px;">
+                            Guest Reviews (@(Model.Reviews?.Count ?? 0))
+                        </h4>
+
+                        @if (Model.Reviews != null && Model.Reviews.Count > 0)
+                        {
+                            foreach (var review in Model.Reviews)
+                            {
+                                <div class="comment-box mb-4" style="display: flex; gap: 15px; border-bottom: 1px solid #f1f1f1; padding-bottom: 15px;">
+                                    <div class="comment-image">
+
+                                        <img src="/assets/@(string.IsNullOrEmpty(review.UserProfilePicture) ? "images/default-avatar.png" : review.UserProfilePicture)"
+                                             style="width: 60px; height: 60px; border-radius: 50%; object-fit: cover; border: 2px solid #ffb100;" alt="User">
+
+                                    </div>
+
+                                    <div class="comment-content" style="flex: 1;">
+                                        <div style="display: flex; justify-content: space-between; align-items: center;">
+                                            <h5 class="mb-0" style="font-weight: bold; color: #333;">@(review.UserName ?? "Guest User")</h5>
+                                            <small style="color: #999;">@review.CreatedAt.ToString("dd MMM yyyy")</small>
+                                        </div>
+
+                                        <div class="rating-display" style="margin: 5px 0;">
+                                            @for (int i = 1; i <= 5; i++)
+                                            {
+                                                <span style="font-size: 20px; color: @(i <= review.Rating ? "#ffb100" : "#ccc");">★</span>
+                                            }
+                                            <span style="margin-left: 8px; font-weight: bold; color: #ffb100;">@review.Rating/5</span>
+                                        </div>
+
+                                        <p class="comment" style="color: #666; font-style: italic; margin-top: 10px; line-height: 1.5;">
+                                            @review.Comment
+                                        </p>
+                                    </div>
+                                </div>
+                            }
+                        }
+                        else
+                        {
+                            <div style="padding: 20px; background: #f9f9f9; text-align: center; border-radius: 8px; color: #999;">
+                                No reviews yet. Be the first to share your experience!
+                            </div>
+                        }
+                    </div>
+
+                    <div class="single-add-review" style="background: #ffffff; padding: 30px; border-radius: 15px; box-shadow: 0 10px 25px rgba(0,0,0,0.05); border: 1px solid #f1f2f6; margin-top: 30px; font-family: sans-serif;">
+                        <h4 style="color: #2d3436; font-weight: 700; margin-bottom: 25px; display: flex; align-items: center; gap: 10px;">
+                            <span style="background: #ff7675; width: 4px; height: 25px; display: inline-block; border-radius: 2px;"></span>
+                            Write a Review
+                        </h4>
+
+                        @if (User.Identity.IsAuthenticated)
+                        {
+                            <form id="reviewForm">
+                                <input type="hidden" id="tourId" value="@Model.Id" />
+
+                                <div class="row">
+                                    <div class="col-md-12" style="margin-bottom: 20px;">
+                                        <label style="display: block; margin-bottom: 10px; font-weight: 600; color: #636e72;">How was your experience?</label>
+                                        <div class="star-rating-wrapper" style="display: flex; flex-direction: row-reverse; justify-content: flex-end; gap: 8px;">
+                                            @for (int i = 5; i >= 1; i--)
+                                            {
+                                                <input type="radio" id="rate-star-@i" name="rating" value="@i" style="display: none;" />
+                                                <label for="rate-star-@i" style="font-size: 35px; color: #dfe6e9; cursor: pointer; transition: 0.2s;">★</label>
+                                            }
+                                        </div>
+                                    </div>
+
+                                    <div class="col-md-12">
+                                        <div class="form-group" style="margin-bottom: 20px;">
+                                            <label style="display: block; margin-bottom: 8px; font-weight: 600; color: #636e72;">Your Comment</label>
+                                            <textarea id="comment"
+                                                  style="width: 100%; height: 120px; padding: 15px; border: 2px solid #f1f2f6; border-radius: 10px; outline: none; transition: 0.3s; resize: vertical;"
+                                                  placeholder="Tell us about the tour guide, the places, the organization..."></textarea>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-md-12">
+                                        <button type="button" id="btnSubmitReview"
+                                                style="background: #ff7675; color: white; border: none; padding: 12px 30px; border-radius: 8px; font-weight: 700; cursor: pointer; transition: 0.3s; box-shadow: 0 4px 15px rgba(255, 118, 117, 0.3);">
+                                            Post My Review
+                                        </button>
+                                    </div>
+                                </div>
+
+                            </form>
+                        }
+                        else
+                        {
+                            <div style="background: #fff3f0; border-left: 4px solid #ff7675; padding: 20px; border-radius: 8px;">
+                                <p style="margin: 0; color: #d63031; font-weight: 600;">
+                                    Want to share your opinion? Please
+                                    <a href="/Home/Login" style="color: #ff7675; text-decoration: underline;">Login</a>
+                                    to write a review.
+                                </p>
+                            </div>
+                        }
+                    </div>
+       
+                    <style>
+
+                        .star-rating-wrapper input:checked ~ label,
+                        .star-rating-wrapper label:hover,
+                        .star-rating-wrapper label:hover ~ label {
+                            color: #ff7675 !important;
+                            transform: scale(1.1);
+                        }
+
+                        #comment:focus {
+                            border-color: #ff7675 !important;
+                            box-shadow: 0 0 8px rgba(255, 118, 117, 0.1);
+                        }
+
+                        #btnSubmitReview:hover {
+                            background: #e84393 !important;
+                            transform: translateY(-2px);
+                        }
+                    </style>
+
+
+
+
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<section class="blog trending destination-b pt-0 pb-6">
+    <div class="container">
+        <div class="section-title text-center mb-5 pb-2">
+            <h2 class="m-0">Related <span>Products</span></h2>
+        </div>
+
+
+        <div class="row shop-slider">
+            <div class="col-md-3">
+                <div class="trend-item">
+                    <div class="trend-image">
+                        <img src="~/assets/images/shop/shop1.jpg" alt="image">
+                    </div>
+                    <div class="trend-content-main">
+                        <div class="trend-content text-center">
+                            <div class="rating-main pb-1">
+                                <div class="rating">
+                                    <span class="fa fa-star checked"></span>
+                                    <span class="fa fa-star checked"></span>
+                                    <span class="fa fa-star checked"></span>
+                                    <span class="fa fa-star checked"></span>
+                                    <span class="fa fa-star checked"></span>
+                                </div>
+                            </div>
+                            <h4 class="bordernone p-0 mb-1"><a href="#">Trekking Wood Sticks</a></h4>
+                            <p class="price pink mb-1 font-weight-bold">$350.00</p>
+                            <div class="cart-btn">
+                                <a href="#" class="nir-btn-black"><i class="icon-basket-loaded mr-2"></i>Add To Cart</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="trend-item">
+                    <div class="trend-image">
+                        <img src="~/assets/images/shop/shop2.jpg" alt="image">
+                    </div>
+                    <div class="trend-content-main">
+                        <div class="trend-content text-center">
+                            <div class="rating-main pb-1">
+                                <div class="rating">
+                                    <span class="fa fa-star checked"></span>
+                                    <span class="fa fa-star checked"></span>
+                                    <span class="fa fa-star checked"></span>
+                                    <span class="fa fa-star checked"></span>
+                                    <span class="fa fa-star checked"></span>
+                                </div>
+                            </div>
+                            <h4 class="bordernone p-0 mb-1"><a href="#">Adventure X Bag</a></h4>
+                            <p class="price pink mb-1 font-weight-bold">$250.00</p>
+                            <div class="cart-btn">
+                                <a href="#" class="nir-btn-black"><i class="icon-basket-loaded mr-2"></i>Add To Cart</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="trend-item">
+                    <div class="trend-image">
+                        <img src="~/assets/images/shop/shop3.jpg" alt="image">
+                    </div>
+                    <div class="trend-content-main">
+                        <div class="trend-content text-center">
+                            <div class="rating-main pb-1">
+                                <div class="rating">
+                                    <span class="fa fa-star checked"></span>
+                                    <span class="fa fa-star checked"></span>
+                                    <span class="fa fa-star checked"></span>
+                                    <span class="fa fa-star checked"></span>
+                                    <span class="fa fa-star checked"></span>
+                                </div>
+                            </div>
+                            <h4 class="bordernone p-0 mb-1"><a href="#">Fashion Trek Shoes</a></h4>
+                            <p class="price pink mb-1 font-weight-bold">$420.00</p>
+                            <div class="cart-btn">
+                                <a href="#" class="nir-btn-black"><i class="icon-basket-loaded mr-2"></i>Add To Cart</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="trend-item">
+                    <div class="trend-image">
+                        <img src="~/assets/images/shop/shop4.jpg" alt="image">
+                    </div>
+                    <div class="trend-content-main">
+                        <div class="trend-content text-center">
+                            <div class="rating-main pb-1">
+                                <div class="rating">
+                                    <span class="fa fa-star checked"></span>
+                                    <span class="fa fa-star checked"></span>
+                                    <span class="fa fa-star checked"></span>
+                                    <span class="fa fa-star checked"></span>
+                                    <span class="fa fa-star checked"></span>
+                                </div>
+                            </div>
+                            <h4 class="bordernone p-0 mb-1"><a href="#">Nylon Trek Rope</a></h4>
+                            <p class="price pink mb-1 font-weight-bold">$99.00</p>
+                            <div class="cart-btn">
+                                <a href="#" class="nir-btn-black"><i class="icon-basket-loaded mr-2"></i>Add To Cart</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="trend-item">
+                    <div class="trend-image">
+                        <img src="~/assets/images/shop/shop6.jpg" alt="image">
+                    </div>
+                    <div class="trend-content-main">
+                        <div class="trend-content text-center">
+                            <div class="rating-main pb-1">
+                                <div class="rating">
+                                    <span class="fa fa-star checked"></span>
+                                    <span class="fa fa-star checked"></span>
+                                    <span class="fa fa-star checked"></span>
+                                    <span class="fa fa-star checked"></span>
+                                    <span class="fa fa-star checked"></span>
+                                </div>
+                            </div>
+                            <h4 class="bordernone p-0 mb-1"><a href="#">Gadget Tools</a></h4>
+                            <p class="price pink mb-1 font-weight-bold">$56.00</p>
+                            <div class="cart-btn">
+                                <a href="#" class="nir-btn-black"><i class="icon-basket-loaded mr-2"></i>Add To Cart</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+    </div>
+</section>
+
+
+
+    <style>
+
+    .star-rating-wrapper {
+        display: flex;
+        flex-direction: row-reverse;
+        justify-content: flex-end;
+    }
+
+        .star-rating-wrapper input {
+            display: none; 
+        }
+
+        .star-rating-wrapper label {
+            font-size: 35px;
+            color: #dfe6e9;
+            cursor: pointer;
+            transition: color 0.2s, transform 0.2s;
+        }
+
+        .star-rating-wrapper input:checked ~ label {
+            color: #ff7675 !important;
+        }
+
+
+        .star-rating-wrapper label:hover,
+        .star-rating-wrapper label:hover ~ label {
+            color: #fab1a0 !important;
+            transform: scale(1.1);
+        }
+        }
+    </style>
+
+@section Scripts {
+    <script src="~/assets/js/plugin.js"></script>
+
+    <script src="~/assets/js/main.js"></script>
+
+    <script>
+        $(document).ready(function () {
+            $("#btnSubmitReview").on("click", function (e) {
+                e.preventDefault();
+
+                var ratingVal = $("input[name='rating']:checked").val();
+
+                if (!ratingVal) {
+                    alert("Please select a star rating!");
+                    return;
+                }
+
+                var postData = {
+                    TourId: parseInt($("#tourId").val()),
+                    Comment: $("#comment").val(),
+                    Rating: parseInt(ratingVal)
+                };
+
+                $.ajax({
+                    url: "/Home/AddReview",
+                    type: "POST",
+                    contentType: "application/json",
+                    data: JSON.stringify(postData),
+                    success: function (response) {
+                        if (response.success) {
+                            alert("Yorum başarıyla eklendi!");
+                            location.reload();
+                        } else {
+                            alert("Hata: " + response.message);
+                        }
+                    },
+                    error: function () {
+                        alert("Sunucu ile iletişim kurulamadı!");
+                    }
+                });
+            });
+        });
+
+            function redirectToBooking(tourId) {
+   
+            const count = document.getElementById('personCount').value;
+
+            window.location.href = `/Shop/Booking/${tourId}?count=${count}`;
+        }
+    </script>
+}

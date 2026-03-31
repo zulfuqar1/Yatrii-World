@@ -3,7 +3,9 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-using System.Threading.Tasks;
+using Microsoft.EntityFrameworkCore;
+using System;
+using System.Linq;
 using YatriiWorld.Domain.Entities;
 using YatriiWorld.Domain.Entities.Base;
 
@@ -11,27 +13,23 @@ namespace YatriiWorld.Persistance.Data.Common
 {
     internal static class GlobalQueryFilter
     {
-
         public static void ApplyAllQueriesFilters(this ModelBuilder builder)
         {
-            builder.ApplyQueryFilter<Category>();
-            builder.ApplyQueryFilter<Review>();
-            builder.ApplyQueryFilter<Ticket>();
-            builder.ApplyQueryFilter<Tag>();
-            builder.ApplyQueryFilter<Tour>();       
-            builder.ApplyQueryFilter<TourImage>(); 
-            builder.ApplyQueryFilter<ContactMessage>();
+
+            var entityTypes = builder.Model.GetEntityTypes();
+
+            foreach (var entityType in entityTypes)
+            {
+
+                if (typeof(BaseEntity).IsAssignableFrom(entityType.ClrType))
+                {
+
+                    var filter = GenerateFilterExpression(entityType.ClrType);
+
+                    builder.Entity(entityType.ClrType).HasQueryFilter(filter);
+                }
+            }
         }
-        private static void ApplyQueryFilter<T>(this ModelBuilder builder) where T:BaseEntity,new()
-        {
-            builder.Entity<T>().HasQueryFilter(x => x.IsDeleted== false);
-
-
-        }
-
-
-
-  
 
         private static System.Linq.Expressions.LambdaExpression GenerateFilterExpression(Type type)
         {
@@ -42,6 +40,9 @@ namespace YatriiWorld.Persistance.Data.Common
 
             return System.Linq.Expressions.Expression.Lambda(body, parameter);
         }
-
+        private static void ApplyQueryFilter<T>(this ModelBuilder builder) where T : BaseEntity, new()
+        {
+            builder.Entity<T>().HasQueryFilter(x => x.IsDeleted == false);
+        }
     }
 }

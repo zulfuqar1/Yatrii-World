@@ -1,0 +1,533 @@
+﻿@using YatriiWorld.MVC.ViewModels.Tours
+@model List<TourListVM>
+@{
+    var cityGroups = Model.Where(x => !string.IsNullOrEmpty(x.City))
+                          .GroupBy(x => x.City)
+                          .Select(g => new { City = g.Key, Count = g.Count() })
+                          .ToList();
+}
+<!-- BreadCrumb Starts -->
+<section class="breadcrumb-main pb-0" style="background-image: url(images/bg/bg8.jpg);">
+    <div class="breadcrumb-outer pt-10">
+        <div class="container">
+            <div class="breadcrumb-content d-md-flex align-items-center pt-10">
+                <h2 class="mb-0">Destination List</h2>
+                <nav aria-label="breadcrumb">
+                    <ul class="breadcrumb">
+                        <li class="breadcrumb-item"><a href="#">Home</a></li>
+                        <li class="breadcrumb-item active" aria-current="page">Destination List</li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </div>
+    <div class="dot-overlay"></div>
+</section>
+<!-- BreadCrumb Ends -->
+
+<!-- blog starts -->
+<section class="blog destination-b pb-6">
+    <div class="container">
+        <div class="row">
+
+
+
+            <div class="col-lg-8 col-xs-12 mb-4">
+                <div class="trend-box">
+                    <div class="list-results d-flex align-items-center justify-content-between mb-4">
+                        <div class="list-results-sort">
+                            <p class="m-0">Showing 1-@Model.Count() of @Model.Count() results</p>
+                        </div>
+                        <div class="click-menu d-flex align-items-center justify-content-between">
+                            <div class="change-list f-active mr-2"><a href="destination-list.html"><i class="fa fa-bars"></i></a></div>
+                            <div class="change-grid"><a href="destination-grid.html"><i class="fa fa-th"></i></a></div>
+                            <div class="sortby d-flex align-items-center justify-content-between ml-2">
+                                <select class="niceSelect" id="sortSelect" onchange="sortTours(this.value)">
+                                    <option value="default">Sort By</option>
+                                    <option value="rating">Average rating</option>
+                                    <option value="price_asc">Price: low to high</option>
+                                    <option value="price_desc">Price: high to low</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div id="tours-container" class="row">
+                        @foreach (var tour in Model)
+                        {
+                            <div class="blog-full d-flex justify-content-around mb-4 tour-item w-100"
+                                 data-price="@tour.Price"
+                                 data-rating="@tour.Rating"
+                                 data-city="@tour.City"
+                                 data-startdate="@tour.StartDate.ToString("yyyy-MM-dd")">
+
+                                <div class="row w-100">
+                                    @* İndirim vs. varsa buraya ekleyebilirsin, statik 10% OFF koydum şimdilik *@
+                                    <div class="ribbon ribbon-top-left"><span>10% OFF</span></div>
+
+                                    <div class="col-lg-5 col-md-4 col-xs-12 blog-height">
+                                        <div class="blog-image">
+                                            @{
+                                                var mainImage = tour.Images?.FirstOrDefault(x => x.IsMain)?.ImageUrl;
+                                                var imagePath = string.IsNullOrEmpty(mainImage) ? "/assets/images/trending/trending1.jpg" : "/assets/" + mainImage.TrimStart('/');
+                                            }
+                                            <a href="@Url.Action("TourDetails", "Home", new { id = tour.Id })" style="background-image: url('@imagePath');"></a>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-lg-7 col-md-8 col-xs-12">
+                                        <div class="blog-content p-0">
+                                            <h4 class="mb-1">
+                                                <a href="@Url.Action("TourDetails", "Home", new { id = tour.Id })">@tour.Title</a>
+                                            </h4>
+
+                                            <div class="trend-tags">
+                                                <button type="button" onclick="event.stopPropagation(); addToWishlist(@tour.Id);" style="background: none; border: none; padding: 0; cursor: pointer;">
+                                                    <i class="fa fa-heart" style="color: #f34e4e;"></i>
+                                                </button>
+                                            </div>
+
+                                            <div class="rating pb-1">
+                                                @for (int i = 1; i <= 5; i++)
+                                                {
+                                                    if (i <= tour.Rating)
+                                                    {
+                                                        <span class="fa fa-star checked" style="color: #ffc107;"></span>
+                                                    }
+                                                    else if (i - 0.5 <= tour.Rating)
+                                                    {
+                                                        <span class="fa fa-star-half-alt checked" style="color: #ffc107;"></span>
+                                                    }
+                                                    else
+                                                    {
+                                                        <span class="fa fa-star" style="color: #dfe6e9;"></span>
+                                                    }
+                                                }
+                                            </div>
+
+                                            <p class="mb-2 pink"><i class="fa fa-map-marker mr-1"></i> @tour.City, @tour.Country</p>
+
+                                            <p class="mb-2 border-t pt-2">
+                                                @(tour.Description?.Length > 100 ? tour.Description.Substring(0, 100) + "..." : tour.Description)
+                                            </p>
+
+                                            <div class="deal-price">
+                                                <p class="price mb-0">From <span>$@tour.Price</span>/ @tour.DurationInDays Gün</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        }
+                    </div>
+
+                    <div class="text-center mt-4">
+                        <a href="#" class="nir-btn">Load More <i class="fa fa-long-arrow-alt-right"></i></a>
+                    </div>
+                </div>
+            </div>
+
+
+
+
+
+
+
+
+
+  
+<div class="col-lg-4 col-xs-12 mb-4">
+                <div class="sidebar-sticky">
+
+                    <div class="sidebar-item mb-4">
+                        <form class="form-content">
+                            <h4 class="title white">Find The Places</h4>
+                            <div class="row">
+
+                                <div class="col-lg-12">
+                                    <div class="form-group">
+                                        <label class="white">Your Destination</label>
+                                        <div class="input-box">
+                                            <i class="flaticon-placeholder"></i>
+                                            <select class="niceSelect" id="filterDestination" onchange="filterAndSortTours()">
+                                                <option value="all">Where are you going?</option>
+                                                @foreach (var item in cityGroups)
+                                                {
+                                                    <option value="@item.City">@item.City</option>
+                                                }
+                                            </select>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="col-lg-12 mt-3">
+                                    <div class="form-group">
+                                        <label class="white">Start Date (± 5 Days)</label>
+                                        <div class="input-box">
+                                            <i class="flaticon-calendar"></i>
+                                            <input type="date" id="filterStartDate" class="form-control" onchange="filterAndSortTours()" style="background: transparent; color: inherit; border: 1px solid #eee; border-radius: 5px; padding-left: 45px; height: 50px;">
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </form>
+                    </div>
+
+                    <div class="list-sidebar">
+                        
+                        <div class="sidebar-item">
+                            <h4>Star Rating</h4>
+                            @for (int i = 5; i >= 1; i--)
+                            {
+                                <div class="pretty p-default p-thick p-pulse">
+                                    <input type="checkbox" class="rating-checkbox" value="@i" onchange="filterAndSortTours()" />
+                                    <div class="state">
+                                        <label>
+                                            <span class="star-rating">
+                                                @for (int j = 0; j < i; j++)
+                                                {
+                                                    <span class="fa fa-star checked" style="color:#ffc107;"></span>
+                                                }
+                                            </span>
+                                        </label>
+                                    </div>
+                                </div>
+                            }
+                      
+                        </div>
+                        <div class="sidebar-item mb-4">
+                            <h4 class="title">Price Range</h4>
+                            <div class="range-slider">
+                                <input type="range" class="form-control-range custom-slider" id="priceRange"
+                                       min="0" max="10000" step="100" value="10000"
+                                       oninput="document.getElementById('priceVal').innerText = this.value + '$'"
+                                       onchange="filterAndSortTours()">
+                                <div class="d-flex justify-content-between mt-2">
+                                    <span>0$</span>
+                                    <span id="priceVal" class="font-weight-bold text-danger">10000$</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <style>
+                            .custom-slider {
+                                width: 100%;
+                                accent-color: #f34e4e; 
+                                height: 8px;
+                            }
+                        </style>
+
+                        <div class="sidebar-item">
+                            <h4>City</h4>
+                            @foreach (var item in cityGroups)
+                            {
+                                <div class="pretty p-default p-thick p-pulse">
+                                    <input type="checkbox" class="city-checkbox" value="@item.City" onchange="filterAndSortTours()" />
+                                    <div class="state">
+                                        <label>
+                                            @item.City <span class="number">@item.Count</span>
+                                        </label>
+                                    </div>
+                                </div>
+                            }
+                        </div>
+
+                    </div>
+
+
+
+
+                </div>
+            </div>
+
+
+            <div class="col-lg-8 col-xs-12 mb-4">
+                <div class="trend-box">
+                    
+                    <div class="list-results d-flex align-items-center justify-content-between mb-4">
+                        <div class="list-results-sort">
+                            <p class="m-0">Showing @Model.Count() results</p>
+                        </div>
+                        <div class="click-menu d-flex align-items-center justify-content-between">
+                            <div class="sortby d-flex align-items-center justify-content-between ml-2">
+                                <select class="niceSelect" id="sortSelect" onchange="filterAndSortTours()">
+                                    <option value="default">Sort By</option>
+                                    <option value="rating">Average rating</option>
+                                    <option value="price_asc">Price: low to high</option>
+                                    <option value="price_desc">Price: high to low</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+
+                  
+                </div>
+            </div>
+
+        </div>
+
+
+
+        </div>
+    </div>
+</section>
+<!-- blog Ends -->
+
+
+
+<!-- Trending Starts -->
+<section class="trending destination bg-grey pb-6">
+    <div class="container">
+        <div class="section-title text-center mb-5 pb-2 w-50 mx-auto">
+            <h2 class="m-0">Related <span>Tour Packages</span></h2>
+            <p class="mb-0">Travel has helped us to understand the meaning of life and it has helped us become better people. Each time we travel, we see the world with new eyes.</p>
+        </div>
+        <div class="trend-box">
+            <div class="row team-slider">
+                <div class="col-md-4 col-sm-6 col-xs-12 mb-4">
+                    <div class="trend-item">
+                        <div class="trend-image">
+                            <img src="images/trending/trending1.jpg" alt="image">
+                            <div class="trend-tags">
+                                <a href="#"><i class="flaticon-like"></i></a>
+                            </div>
+                        </div>
+                        <div class="trend-content-main">
+                            <div class="trend-content">
+                                <h6 class="font-weight-normal"><i class="fa fa-map-marker-alt"></i> Thailand</h6>
+                                <h4><a href="#">Stonehenge, Windsor Castle, and Bath from London</a></h4>
+                                <div class="rating-main d-flex align-items-center">
+                                    <div class="rating">
+                                        <span class="fa fa-star checked"></span>
+                                        <span class="fa fa-star checked"></span>
+                                        <span class="fa fa-star checked"></span>
+                                        <span class="fa fa-star checked"></span>
+                                        <span class="fa fa-star checked"></span>
+                                    </div>
+                                    <span class="ml-2">38 Reviews</span>
+                                </div>
+                            </div>
+                            <div class="trend-last-main">
+                                <p class="mb-0 trend-para">A wonderful little cottage right on the seashore - perfect for exploring.</p>
+                                <div class="trend-last d-flex align-items-center justify-content-between">
+                                    <p class="mb-0 white"><i class="fa fa-clock-o" aria-hidden="true"></i> 3 days & 2 night</p>
+                                    <div class="trend-price">
+                                        <p class="price white mb-0">From <span>$350.00</span></p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 col-sm-6 col-xs-12 mb-4">
+                    <div class="trend-item">
+                        <div class="trend-image">
+                            <img src="images/trending/trending2.jpg" alt="image">
+                            <div class="trend-tags">
+                                <a href="#"><i class="flaticon-like"></i></a>
+                            </div>
+                        </div>
+                        <div class="trend-content-main">
+                            <div class="trend-content">
+                                <h6 class="font-weight-normal"><i class="fa fa-map-marker-alt"></i> Germany</h6>
+                                <h4><a href="#">Bosphorus and Black Sea Cruise from Istanbul</a></h4>
+                                <div class="rating-main d-flex align-items-center">
+                                    <div class="rating">
+                                        <span class="fa fa-star checked"></span>
+                                        <span class="fa fa-star checked"></span>
+                                        <span class="fa fa-star checked"></span>
+                                        <span class="fa fa-star checked"></span>
+                                        <span class="fa fa-star checked"></span>
+                                    </div>
+                                    <span class="ml-2">38 Reviews</span>
+                                </div>
+                            </div>
+                            <div class="trend-last-main">
+                                <p class="mb-0 trend-para">A wonderful little cottage right on the seashore - perfect for exploring.</p>
+                                <div class="trend-last d-flex align-items-center justify-content-between">
+                                    <p class="mb-0 white"><i class="fa fa-clock-o" aria-hidden="true"></i> 3 days & 2 night</p>
+                                    <div class="trend-price">
+                                        <p class="price white mb-0">From <span>$350.00</span></p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 col-sm-6 col-xs-12 mb-4">
+                    <div class="trend-item">
+                        <div class="trend-image">
+                            <img src="images/trending/trending3.jpg" alt="image">
+                            <div class="trend-tags">
+                                <a href="#"><i class="flaticon-like"></i></a>
+                            </div>
+                        </div>
+                        <div class="trend-content-main">
+                            <div class="trend-content">
+                                <h6 class="font-weight-normal"><i class="fa fa-map-marker-alt"></i> Denmark</h6>
+                                <h4><a href="#">NYC One World Observatory Skip-the-Line Ticket</a></h4>
+                                <div class="rating-main d-flex align-items-center">
+                                    <div class="rating">
+                                        <span class="fa fa-star checked"></span>
+                                        <span class="fa fa-star checked"></span>
+                                        <span class="fa fa-star checked"></span>
+                                        <span class="fa fa-star checked"></span>
+                                        <span class="fa fa-star checked"></span>
+                                    </div>
+                                    <span class="ml-2">38 Reviews</span>
+                                </div>
+                            </div>
+                            <div class="trend-last-main">
+                                <p class="mb-0 trend-para">A wonderful little cottage right on the seashore - perfect for exploring.</p>
+                                <div class="trend-last d-flex align-items-center justify-content-between">
+                                    <p class="mb-0 white"><i class="fa fa-clock-o" aria-hidden="true"></i> 3 days & 2 night</p>
+                                    <div class="trend-price">
+                                        <p class="price white mb-0">From <span>$350.00</span></p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 col-sm-6 col-xs-12 mb-4">
+                    <div class="trend-item">
+                        <div class="trend-image">
+                            <img src="images/trending/trending4.jpg" alt="image">
+                            <div class="trend-tags">
+                                <a href="#"><i class="flaticon-like"></i></a>
+                            </div>
+                        </div>
+                        <div class="trend-content-main">
+                            <div class="trend-content">
+                                <h6 class="font-weight-normal"><i class="fa fa-map-marker-alt"></i> Japan</h6>
+                                <h4><a href="#">Stonehenge, Windsor Castle, and Bath from London</a></h4>
+                                <div class="rating-main d-flex align-items-center">
+                                    <div class="rating">
+                                        <span class="fa fa-star checked"></span>
+                                        <span class="fa fa-star checked"></span>
+                                        <span class="fa fa-star checked"></span>
+                                        <span class="fa fa-star checked"></span>
+                                        <span class="fa fa-star checked"></span>
+                                    </div>
+                                    <span class="ml-2">38 Reviews</span>
+                                </div>
+                            </div>
+                            <div class="trend-last-main">
+                                <p class="mb-0 trend-para">A wonderful little cottage right on the seashore - perfect for exploring.</p>
+                                <div class="trend-last d-flex align-items-center justify-content-between">
+                                    <p class="mb-0 white"><i class="fa fa-clock-o" aria-hidden="true"></i> 3 days & 2 night</p>
+                                    <div class="trend-price">
+                                        <p class="price white mb-0">From <span>$350.00</span></p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- Trending Ends -->
+
+
+
+
+
+
+
+<script>
+    // NiceSelect gibi eklentiler varsa onları zorla tetikle
+    document.addEventListener('DOMContentLoaded', function() {
+        if(typeof jQuery !== 'undefined') {
+            $('select').on('change', function() {
+                filterAndSortTours();
+            });
+        }
+    });
+
+    function filterAndSortTours() {
+        console.log("🚀 Motor Ateşlendi!");
+
+        try {
+            // Elementleri alırken hata payını sıfıra indiriyoruz
+            const sortSelect = document.getElementById('sortSelect');
+            const destSelect = document.getElementById('filterDestination');
+            const dateInput = document.getElementById('filterStartDate');
+            const priceSlider = document.getElementById('priceRange'); // Slider eklediysen
+
+            const selectedSort = sortSelect ? sortSelect.value : 'default';
+            const selectedDest = destSelect ? destSelect.value : 'all';
+            const filterDateStr = dateInput ? dateInput.value : '';
+            const maxPrice = priceSlider ? parseFloat(priceSlider.value) : 999999;
+
+            const checkedRatings = Array.from(document.querySelectorAll('.rating-checkbox:checked')).map(cb => parseInt(cb.value));
+            const checkedCities = Array.from(document.querySelectorAll('.city-checkbox:checked')).map(cb => cb.value.trim());
+
+            const container = document.getElementById('tours-container');
+            // 'tour-item' class'ını bulamazsa alternatif olarak 'blog-full' dene
+            let tours = Array.from(container.querySelectorAll('.tour-item'));
+            if(tours.length === 0) tours = Array.from(container.querySelectorAll('.blog-full'));
+
+            console.log(`📦 ${tours.length} adet tur işleniyor...`);
+
+            // 1. SIRALAMA (Sorting)
+            tours.sort((a, b) => {
+                let priceA = parseFloat(a.getAttribute('data-price')) || 0;
+                let priceB = parseFloat(b.getAttribute('data-price')) || 0;
+                let ratingA = parseFloat(a.getAttribute('data-rating')) || 0;
+                let ratingB = parseFloat(b.getAttribute('data-rating')) || 0;
+
+                if (selectedSort === 'price_asc') return priceA - priceB;
+                if (selectedSort === 'price_desc') return priceB - priceA;
+                if (selectedSort === 'rating') return ratingB - ratingA;
+                return 0;
+            });
+
+            // 2. FİLTRELEME VE GÖSTERİM
+            tours.forEach(tour => {
+                // Sıralama için konteynere tekrar ekle
+                container.appendChild(tour);
+
+                let isVisible = true;
+                const tourPrice = parseFloat(tour.getAttribute('data-price')) || 0;
+                const tourCity = (tour.getAttribute('data-city') || "").trim();
+                const tourRating = Math.floor(parseFloat(tour.getAttribute('data-rating')) || 0);
+                const tourDateStr = tour.getAttribute('data-startdate');
+
+                // Fiyat Slider Kontrolü
+                if (tourPrice > maxPrice) isVisible = false;
+
+                // Destinasyon Dropdown Kontrolü
+                if (selectedDest !== 'all' && tourCity !== selectedDest) isVisible = false;
+
+                // Şehir Checkbox Kontrolü
+                if (checkedCities.length > 0 && !checkedCities.includes(tourCity)) isVisible = false;
+
+                // Yıldız Kontrolü
+                if (checkedRatings.length > 0 && !checkedRatings.includes(tourRating)) isVisible = false;
+
+                // Tarih (±5 Gün) Kontrolü
+                if (filterDateStr && isVisible && tourDateStr) {
+                    let sDate = new Date(filterDateStr);
+                    let tDate = new Date(tourDateStr);
+                    let diffDays = Math.ceil(Math.abs(tDate - sDate) / (1000 * 60 * 60 * 24));
+                    if (diffDays > 5) isVisible = false;
+                }
+
+                // --- KRİTİK NOKTA: CSS'İ EZMEK ---
+                if (isVisible) {
+                    tour.style.setProperty('display', 'flex', 'important');
+                } else {
+                    tour.style.setProperty('display', 'none', 'important');
+                }
+            });
+
+            console.log("✅ Filtreleme bitti.");
+
+        } catch (error) {
+            console.error("❌ Hata:", error);
+        }
+    }
+</script>

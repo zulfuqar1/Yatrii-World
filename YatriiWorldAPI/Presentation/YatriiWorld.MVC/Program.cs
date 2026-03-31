@@ -1,3 +1,4 @@
+using YatriiWorld.MVC.Services;
 using YatriiWorld.MVC.Services.Implementations;
 using YatriiWorld.MVC.Services.Interfaces;
 
@@ -8,17 +9,25 @@ namespace YatriiWorld.MVC
         public static void Main(string[] args)
         {
             var builder = WebApplication.CreateBuilder(args);
-
-            // 1. Standart MVC Servisleri
             builder.Services.AddControllersWithViews();
 
             
             builder.Services.AddHttpClient("YatriiApiClient", client =>
             {
-                // Buradaki portu (7029) kendi API projenin portuyla de?i?tir!
                 client.BaseAddress = new Uri("https://localhost:7029/api/");
                 client.DefaultRequestHeaders.Add("Accept", "application/json");
             });
+            builder.Services.AddScoped<ITourClientService, TourClientService>();
+            builder.Services.AddScoped<IAccountClientService, AccountClientService>();
+            builder.Services.AddScoped<ITicketClientService, TicketClientService>();
+            builder.Services.AddHttpContextAccessor();
+
+          
+            builder.Services.AddAuthentication(Microsoft.AspNetCore.Authentication.Cookies.CookieAuthenticationDefaults.AuthenticationScheme)
+                .AddCookie(options =>
+                {
+                    options.LoginPath = "/Home/Login"; 
+                });
 
             var app = builder.Build();
 
@@ -28,13 +37,16 @@ namespace YatriiWorld.MVC
                 app.UseHsts();
             }
 
+            app.UseStatusCodePagesWithReExecute("/Error/{0}");
+
             app.UseHttpsRedirection();
             app.UseStaticFiles();
 
             app.UseRouting();
+            app.UseAuthentication();
             app.UseAuthorization();
 
-            // Areas deste?i (Admin paneli vb. için önemli)
+         
             app.MapControllerRoute(
                name: "areas",
                pattern: "{area:exists}/{controller=Home}/{action=Index}/{id?}");

@@ -9,15 +9,15 @@ namespace YatriiWorld.Application.Interfaces.Repositories
 {
     public interface ITourRepository : IRepository<Tour>
     {
-        Task<IEnumerable<Tour>> GetToursWithDetailsAsync();//standart All tours with details
+        Task<IEnumerable<Tour>> GetToursWithDetailsAsync();
 
-        Task<List<Tour>> GetFilteredToursAsync(string search, decimal? minPrice, decimal? maxPrice);//price search
+        Task<List<Tour>> GetFilteredToursAsync(string search, decimal? minPrice, decimal? maxPrice);
 
-        Task<List<Tour>> GetPagedToursAsync(int pageNumber, int pageSize);//limitedpagination
+        Task<List<Tour>> GetPagedToursAsync(int pageNumber, int pageSize);
 
-        Task<List<Tour>> GetTopRatedToursAsync(int count);//specially top rated
+        Task<List<Tour>> GetTopRatedToursAsync(int count);
 
-        Task<int> GetTourCountByCategoryAsync(long categoryId);//category......
+        Task<int> GetTourCountByCategoryAsync(long categoryId);
 
         Task<Tour> GetTourByIdWithDetailsAsync(long id);
 

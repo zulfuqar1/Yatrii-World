@@ -26,7 +26,7 @@ namespace YatriiWorld.Persistance.Implementations.Services
         public async Task CreateCategoryAsync(CategoryCreateDto dto)
         {
             if (!await _categoryRepository.IsCategoryNameUniqueAsync(dto.Name))
-                throw new Exception("Bu isimde bir kategori zaten mevcut.");
+                throw new Exception("A category with this name already exists.");
 
             var category = _mapper.Map<Category>(dto);
             await _categoryRepository.AddAsync(category);
@@ -50,7 +50,7 @@ namespace YatriiWorld.Persistance.Implementations.Services
         public async Task<CategoryGetDto> GetCategoryByIdAsync(long id)
         {
             var category = await _categoryRepository.GetByIdAsync(id);
-            if (category == null || category.IsDeleted) throw new Exception("Kategori bulunamadı.");
+            if (category == null || category.IsDeleted) throw new Exception("Category not found.");
 
             return _mapper.Map<CategoryGetDto>(category);
         }
@@ -58,7 +58,7 @@ namespace YatriiWorld.Persistance.Implementations.Services
         public async Task<CategoryUpdateDto> GetCategoryUpdateByIdAsync(long id)
         {
             var category = await _categoryRepository.GetByIdAsync(id);
-            if (category == null || category.IsDeleted) throw new Exception("Kategori bulunamadı.");
+            if (category == null || category.IsDeleted) throw new Exception("Category not found.");
 
             return _mapper.Map<CategoryUpdateDto>(category);
         }
@@ -66,7 +66,7 @@ namespace YatriiWorld.Persistance.Implementations.Services
         public async Task<CategoryWithToursDto> GetCategoryWithToursByIdAsync(long id)
         {
             var category = await _categoryRepository.GetCategoryWithToursByIdAsync(id);
-            if (category == null || category.IsDeleted) throw new Exception("Kategori bulunamadı.");
+            if (category == null || category.IsDeleted) throw new Exception("Category not found.");
 
             return _mapper.Map<CategoryWithToursDto>(category);
         }
@@ -74,7 +74,7 @@ namespace YatriiWorld.Persistance.Implementations.Services
         public async Task RemoveCategoryAsync(long id)
         {
             var category = await _categoryRepository.GetByIdAsync(id);
-            if (category == null) throw new Exception("Kategori zaten mevcut değil.");
+            if (category == null) throw new Exception("The category does not currently exist.");
 
             category.IsDeleted = true;
             _categoryRepository.Update(category);
@@ -84,7 +84,7 @@ namespace YatriiWorld.Persistance.Implementations.Services
         public async Task UpdateCategoryAsync(CategoryUpdateDto dto)
         {
             var category = await _categoryRepository.GetByIdAsync(dto.Id);
-            if (category == null || category.IsDeleted) throw new Exception("Kategori bulunamadı.");
+            if (category == null || category.IsDeleted) throw new Exception("Category not found.");
 
             _mapper.Map(dto, category);
 

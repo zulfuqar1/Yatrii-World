@@ -1,0 +1,131 @@
+﻿  <!-- BreadCrumb Starts -->
+<section class="breadcrumb-main pb-0" style="background-image: url(images/bg/bg8.jpg);">
+    <div class="breadcrumb-outer pt-10">
+        <div class="container">
+            <div class="breadcrumb-content d-md-flex align-items-center pt-10">
+                <h2 class="mb-0">Confirmation</h2>
+                <nav aria-label="breadcrumb">
+                    <ul class="breadcrumb">
+                        <li class="breadcrumb-item"><a href="#">Home</a></li>
+                        <li class="breadcrumb-item active" aria-current="page">Confirmation</li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </div>
+    <div class="dot-overlay"></div>
+</section>
+<!-- BreadCrumb Ends -->
+<!-- blog starts -->
+@model YatriiWorld.MVC.ViewModels.Booking.TicketCreateVM
+
+<section class="blog trending destination-b pb-6">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-xs-12 mb-4">
+                <div class="payment-book">
+                    <div class="booking-box">
+                        <div class="booking-box-title d-md-flex align-items-center bg-pink p-4 mb-4">
+                            <i class="fa fa-check" style="font-size: 40px; color: white;"></i>
+                            <div class="title-content ml-3">
+                                <h3 class="mb-0 white">Thank You, @Model.Travelers[0].FirstName! Your booking is confirmed.</h3>
+                                <p class="mb-0 white">A confirmation email has been sent to your provided email address.</p>
+                            </div>
+                        </div>
+                        <div class="travellers-info mb-4">
+                            <h4>Traveler & Tour Information</h4>
+                            <table class="table table-bordered">
+                                <tr>
+                                    <td>Booking Number</td>
+                                    <td class="font-weight-bold">@ViewBag.BookingNumber</td>
+                                </tr>
+                                <tr>
+                                    <td>Tour Name</td>
+                                    <td>@ViewBag.Tour.Title</td>
+                                </tr>
+                                <tr>
+                                    <td>Total Travelers</td>
+                                    <td>@Model.TotalPersonCount Person(s)</td>
+                                </tr>
+                                <tr>
+                                    <td>Primary Guest</td>
+                                    <td>@Model.Travelers[0].FirstName @Model.Travelers[0].LastName</td>
+                                </tr>
+                                <tr>
+                                    <td>Phone Number</td>
+                                    <td>@Model.Phone</td>
+                                </tr>
+                            </table>
+
+                            <h5 class="mt-4">All Travelers</h5>
+                            <table class="table table-sm mt-2">
+                                <thead class="bg-light">
+                                    <tr>
+                                        <th>#</th>
+                                        <th>Name</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    @for (int i = 0; i < Model.Travelers.Count; i++)
+                                    {
+                                        <tr>
+                                            <td>@(i + 1)</td>
+                                            <td> @Model.Travelers[i].FirstName @Model.Travelers[i].LastName</td>
+                                        </tr>
+                                    }
+                                </tbody>
+                            </table>
+                        </div>
+                        <div class="booking-border mb-4 bg-lgrey p-4">
+                            <h4 class="border-b pb-2 mb-2">Payment</h4>
+                            <p>Your payment has been successfully processed using the card ending in <b>**** **** **** @(Model.CardNumber.Length >= 4 ? Model.CardNumber.Substring(Model.CardNumber.Length - 4) : "****")</b>.</p>
+                            <a href="#">Payment is secured and processed by YatriiWorld</a>
+                        </div>
+                        <div class="booking-border d-flex">
+                            <a href="javascript:window.print()" class="nir-btn mr-4"><i class="fa fa-print"></i> Print Receipt</a>
+                            <a href="/Shop/TourShop" class="nir-btn-black"><i class="fa fa-arrow-right"></i> Back to Tours</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-lg-4 col-xs-12 mb-4">
+                <div class="sidebar-sticky">
+                    <div class="list-sidebar">
+                        <div class="sidebar-item">
+                            <h4>Need Booking Help?</h4>
+                            <div class="sidebar-module-inner">
+                                <p class="mb-2">We are here 24/7 to assist you with any questions or modifications.</p>
+                                <ul class="help-list">
+                                    <li class="border-b pb-1 mb-1"><span class="font-weight-bold">Hotline</span>: +475 15 123 21</li>
+                                    <li class="border-b pb-1 mb-1"><span class="font-weight-bold">Email</span>: support@Yatriiworld.com</li>
+                                    <li><span class="font-weight-bold">Livechat</span>: Yatriiworld (Skype)</li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="sidebar-item">
+                            <h4>Why book with us?</h4>
+                            <div class="sidebar-module-inner">
+                                <ul class="featured-list-sm">
+                                    <li class="border-b pb-2 mb-2">
+                                        <h6 class="mb-0">No Booking Charges</h6>
+                                        We don't charge you an extra fee for booking with us.
+                                    </li>
+                                    <li class="border-b pb-2 mb-2">
+                                        <h6 class="mb-0">Instant Confirmation</h6>
+                                        Instant booking confirmation right on your screen.
+                                    </li>
+                                    <li>
+                                        <h6 class="mb-0">Secure Payment</h6>
+                                        Your payment details are strictly protected.
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- blog Ends -->  

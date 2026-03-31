@@ -60,6 +60,7 @@ namespace YatriiWorld.Persistance.Implementations.Repositories
                 .AsNoTracking() 
                 .Include(t => t.Images)
                 .Include(t => t.Reviews)
+                .ThenInclude(r => r.AppUser)
                 .OrderByDescending(t => t.Reviews.Select(r => (double?)r.Rating).Average() ?? 0) 
                 .Take(count)
                 .ToListAsync();
@@ -78,7 +79,7 @@ namespace YatriiWorld.Persistance.Implementations.Repositories
                 .Include(t => t.Category)
        
                 .Include(t => t.Reviews)
-       
+                .ThenInclude(r => r.AppUser)
                 .FirstOrDefaultAsync(t => t.Id == id);                                            
         }
 

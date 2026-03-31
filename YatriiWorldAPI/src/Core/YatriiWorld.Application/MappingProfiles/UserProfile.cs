@@ -27,17 +27,14 @@ namespace YatriiWorld.Application.MappingProfiles
             CreateMap<AppUser, UserListDto>()
                 .ForMember(dest => dest.FullName, opt => opt.MapFrom(src => src.FullName));
 
-           
-            CreateMap<AppUser, UserProfileDto>()
-                .ForMember(dest => dest.FullName, opt => opt.MapFrom(src => src.FullName));
 
-           
-            CreateMap<UserUpdateDto, AppUser>()
-                .ForMember(dest => dest.FullName, opt => opt.MapFrom(src => src.FullName));
+            CreateMap<AppUser, UserDetailsDto>();
 
-        
-            CreateMap<AppUser, UserDetailsDto>()
-                .ForMember(dest => dest.FullName, opt => opt.MapFrom(src => src.FullName));
+
+
+            CreateMap<UserUpdateDto, AppUser>();
+
+
         }
     }
 }
