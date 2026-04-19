@@ -4,6 +4,7 @@ using YatriiWorld.Application;
 using YatriiWorld.Application.Interfaces.Repositories;
 using YatriiWorld.Application.Interfaces.Services;
 using YatriiWorld.Application.MappingProfiles;
+using YatriiWorld.Application.Services;
 using YatriiWorld.Persistance;
 using YatriiWorld.Persistance.Implementations.Repositories;
 using YatriiWorld.Persistance.Implementations.Services;
@@ -56,6 +57,12 @@ builder.Services.AddScoped<IEmailService, EmailService>();
 
 builder.Services.AddScoped<IReviewService, ReviewService>();
 
+builder.Services.AddScoped<IBasketService, BasketService>();
+
+
+
+builder.Services.AddScoped<IProductService, ProductService>();
+
 builder.Services.AddCors(options =>
 {
     options.AddPolicy("AllowMVC",
@@ -66,17 +73,7 @@ builder.Services.AddCors(options =>
 });
 
 
-
-
-
-
 var app = builder.Build();
-
-
-
-
-
-
 
 
 if (app.Environment.IsDevelopment())

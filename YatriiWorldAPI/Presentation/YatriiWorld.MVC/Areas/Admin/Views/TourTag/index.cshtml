@@ -1,0 +1,67 @@
+﻿@model List<YatriiWorld.MVC.ViewModels.Tours.TourTagVM>
+
+<div class="row">
+    <div class="col-lg-12 grid-margin stretch-card">
+        <div class="card">
+            <div class="card-body">
+                <h4 class="card-title">Tour Tags</h4>
+                <p class="card-description">
+                    Sistemdeki tur etiketlerini buradan yönetebilirsiniz.
+                </p>
+
+                @if (TempData["Error"] != null)
+                {
+                    <div class="alert alert-danger">
+                        @TempData["Error"]
+                    </div>
+                }
+
+                <div class="mb-3">
+                    <a asp-action="Create" class="btn btn-success btn-icon-text">
+                        <i class="mdi mdi-plus btn-icon-prepend"></i> Create New Tag
+                    </a>
+                </div>
+
+                <div class="table-responsive">
+                    <table class="table table-striped">
+                        <thead>
+                            <tr>
+                                <th>Id</th>
+                                <th>Tag Name</th>
+                                <th>Actions</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @if (Model != null && Model.Any())
+                            {
+                                foreach (var tag in Model)
+                                {
+                                    <tr>
+                                        <td>@tag.Id</td>
+                                        <td>@tag.Name</td>
+                                        <td>
+                                            <a asp-action="Update" asp-route-id="@tag.Id" class="btn btn-warning btn-sm">
+                                                <i class="mdi mdi-pencil"></i> Edit
+                                            </a>
+                                            <form asp-action="Delete" asp-route-id="@tag.Id" method="post" class="d-inline" onsubmit="return confirm('Bu etiketi silmek istediğinize emin misiniz?');">
+                                                <button type="submit" class="btn btn-danger btn-sm">
+                                                    <i class="mdi mdi-delete"></i> Delete
+                                                </button>
+                                            </form>
+                                        </td>
+                                    </tr>
+                                }
+                            }
+                            else
+                            {
+                                <tr>
+                                    <td colspan="3" class="text-center">Hiç etiket bulunamadı.</td>
+                                </tr>
+                            }
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

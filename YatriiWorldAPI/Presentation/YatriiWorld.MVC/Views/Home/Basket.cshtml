@@ -1,0 +1,98 @@
+﻿@model YatriiWorld.MVC.ViewModels.Basket.BasketVM
+
+<section class="cart-main pb-6 pt-6">
+    <div class="container">
+        <div class="section-title text-center mb-5 pb-2 w-50 mx-auto">
+            <h2 class="m-0">Your <span>Shopping Cart</span></h2>
+        </div>
+
+        @if (Model.IsBasketEmpty)
+        {
+            <div class="alert alert-warning text-center">
+                <h4>Your cart is currently empty.</h4>
+                <p>Browse our shop to find amazing products.</p>
+                <a href="/Product/Index" class="nir-btn">Go to Shop</a>
+            </div>
+        }
+        else
+        {
+            <div class="row">
+                <div class="col-lg-8 col-md-12 mb-4">
+                    <div class="cart-table table-responsive">
+                        <table class="table table-bordered">
+                            <thead class="bg-light">
+                                <tr>
+                                    <th>Image</th>
+                                    <th>Product Name</th>
+                                    <th>Price</th>
+                                    <th>Quantity</th>
+                                    <th>Total</th>
+                                    <th>Action</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                @foreach (var item in Model.Items)
+                                {
+                                    <tr>
+                                        <td class="cart-pic">
+                                            <img src="@(!string.IsNullOrEmpty(item.ProductImageUrl) ? "/assets/" + item.ProductImageUrl.TrimStart('/') : "/assets/images/products/default-product.jpg")" alt="@item.ProductName" style="width: 80px; height: 80px; object-fit: cover;">
+                                        </td>
+                                        <td class="cart-title">
+                                            <h5>@item.ProductName</h5>
+                                        </td>
+                                        <td class="p-price">$@item.UnitPrice</td>
+                                        <td class="qua-col">
+                                            <div class="quantity">
+                                                <span>@item.Quantity</span>
+                                            </div>
+                                        </td>
+                                        <td class="total-price">$@item.TotalPrice</td>
+                                        <td class="close-td">
+                                            <button type="button" class="btn btn-danger btn-sm" onclick="removeFromBasket(@item.ProductId)"><i class="fa fa-trash"></i></button>
+                                        </td>
+                                    </tr>
+                                }
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+                <div class="col-lg-4 col-md-12">
+                    <div class="cart-summary bg-light p-4 rounded">
+                        <h4 class="mb-3">Cart Summary</h4>
+                        <ul class="list-group mb-3">
+                            <li class="list-group-item d-flex justify-content-between align-items-center bg-transparent border-0 px-0 pb-2">
+                                Subtotal
+                                <span>$@Model.GrandTotal</span>
+                            </li>
+                            <li class="list-group-item d-flex justify-content-between align-items-center bg-transparent border-0 px-0 pt-3 font-weight-bold">
+                                <strong>Grand Total</strong>
+                                <strong class="theme-color">$@Model.GrandTotal</strong>
+                            </li>
+                        </ul>
+                        <a href="/Checkout/Index" class="nir-btn w-100 text-center">Proceed to Checkout</a>
+                    </div>
+                </div>
+            </div>
+        }
+    </div>
+</section>
+
+@section Scripts {
+    <script>
+        function removeFromBasket(productId) {
+            if(confirm("Bu ürünü sepetten çıkarmak istediğinize emin misiniz?")) {
+                $.ajax({
+        url: '/api/baskets/' + @(User.FindFirst(System.Security.Claims.ClaimTypes.NameIdentifier)?.Value) + '/remove/' + productId,
+        type: 'DELETE',
+                    success: function (response) {
+                        location.reload();
+                    },
+                    error: function () {
+                        alert("Bir hata oluştu.");
+                    }
+                });
+            }
+        }
+    </script>
+}

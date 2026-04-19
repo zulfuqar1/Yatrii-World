@@ -1,7 +1,9 @@
 ﻿using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
+using System.Net.Http;
 using System.Net.Http.Headers;
 using System.Security.Claims;
+using YatriiWorld.Application.DTOs.Tickets;
 using YatriiWorld.MVC.ViewModels.User;
 
 namespace YatriiWorld.MVC.Controllers
@@ -74,45 +76,122 @@ namespace YatriiWorld.MVC.Controllers
 
             return View("~/Views/Home/UserProfile.cshtml", userDetails);
         }
-    
 
-    [HttpPost]
+
+        [HttpPost]
+        [HttpPost]
         public async Task<IActionResult> UpdateProfile(UserDetailsVM model, IFormFile? ProfileImage)
         {
+            var token = Request.Cookies["JWTToken"];
+            if (string.IsNullOrEmpty(token)) return RedirectToAction("Login", "Home");
 
+            // 🚀 ACİL ÇÖZÜM: Kullanıcı ID'sini doğrudan token claim'lerinden çekip zorla Modele atıyoruz.
+            var userIdString = User.Claims.FirstOrDefault(c => c.Type == ClaimTypes.NameIdentifier || c.Type == "nameid" || c.Type == "sub")?.Value;
+            if (long.TryParse(userIdString, out long loggedInUserId))
+            {
+                model.Id = loggedInUserId;
+            }
+
+            try
+            {
+                if (ProfileImage != null && ProfileImage.Length > 0)
+                {
+                    var uploadDirectory = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot", "assets", "images", "UserPP");
+                    if (!Directory.Exists(uploadDirectory)) Directory.CreateDirectory(uploadDirectory);
+
+                    var fileName = Guid.NewGuid().ToString() + Path.GetExtension(ProfileImage.FileName);
+                    var filePath = Path.Combine(uploadDirectory, fileName);
+
+                    using (var stream = new FileStream(filePath, FileMode.Create))
+                    {
+                        await ProfileImage.CopyToAsync(stream);
+                    }
+                    model.ProfileImageUrl = "images/UserPP/" + fileName;
+                }
+
+                using var client = new HttpClient();
+                client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", token);
+                using var content = new MultipartFormDataContent();
+
+                // 🎯 EKSİK OLAN KRİTİK SATIR BURASIYDI! (ID'yi API'ye gönderiyoruz)
+                content.Add(new StringContent(model.Id.ToString()), "Id");
+
+                content.Add(new StringContent(model.FirstName ?? ""), "FirstName");
+                content.Add(new StringContent(model.LastName ?? ""), "LastName");
+                content.Add(new StringContent(model.Email ?? ""), "Email");
+                content.Add(new StringContent(model.PhoneNumber ?? ""), "PhoneNumber");
+                content.Add(new StringContent(model.Bio ?? ""), "Bio");
+                content.Add(new StringContent(model.Address ?? ""), "Address");
+                content.Add(new StringContent(model.City ?? ""), "City");
+                content.Add(new StringContent(model.Region ?? ""), "Region");
+                content.Add(new StringContent(model.Country ?? ""), "Country");
+                content.Add(new StringContent(model.ZipCode ?? ""), "ZipCode");
+
+                if (!string.IsNullOrEmpty(model.ProfileImageUrl))
+                {
+                    content.Add(new StringContent(model.ProfileImageUrl), "ProfileImageUrl");
+                }
+
+                var response = await client.PutAsync("https://localhost:7029/api/Users/UpdateProfile", content);
+
+                if (response.IsSuccessStatusCode)
+                {
+                    TempData["SuccessMessage"] = "Profile updated successfully!";
+                    return RedirectToAction("Profile");
+                }
+
+                var errorMsg = await response.Content.ReadAsStringAsync();
+                ModelState.AddModelError("", "API Error: " + errorMsg);
+            }
+            catch (Exception ex)
+            {
+                ModelState.AddModelError("", "System Error: " + ex.Message);
+            }
+
+            return View("~/Views/Home/UserProfile.cshtml", model);
+        }
+
+
+
+
+
+        [HttpGet]
+        public async Task<IActionResult> MyTickets()
+        {
             var token = Request.Cookies["JWTToken"];
             if (string.IsNullOrEmpty(token))
             {
                 return RedirectToAction("Login", "Home");
             }
 
+            List<TicketDetailsDto> tickets = new List<TicketDetailsDto>();
+
             try
             {
-
-
                 using var client = new HttpClient();
                 client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", token);
 
-                var response = await client.PutAsJsonAsync("https://localhost:7029/api/Users/UpdateProfile", model);
+                var response = await client.GetAsync("https://localhost:7029/api/Users/MyTickets");
 
                 if (response.IsSuccessStatusCode)
                 {
-                
-                    TempData["SuccessMessage"] = "Your profile has been successfully updated!";
-                    return RedirectToAction("Profile");
-                }
-                else
-                {
-                    var errorContent = await response.Content.ReadAsStringAsync();
-                    ModelState.AddModelError("", $"Update failed: {errorContent}");
+                    tickets = await response.Content.ReadFromJsonAsync<List<TicketDetailsDto>>();
                 }
             }
             catch (Exception ex)
             {
-                ModelState.AddModelError("", "An error occurred:" + ex.Message);
+                Console.WriteLine("Ticket API error: " + ex.Message);
+                TempData["ErrorMessage"] = "Biletler yüklenirken bir sorun oluştu.";
             }
 
-            return View("~/Views/Home/UserProfile.cshtml", model);
+            return View("~/Views/Home/UserTickets.cshtml", tickets);
         }
+
+
+
+
+
+
+
     } 
 }

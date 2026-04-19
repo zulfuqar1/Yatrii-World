@@ -1,0 +1,229 @@
+﻿@model ProductUpdateVM
+
+<div class="row">
+    <div class="col-12 grid-margin stretch-card">
+        <div class="card">
+            <div class="card-body">
+                <h4 class="card-title">Update Product</h4>
+                <p class="card-description">
+                    Update product details and manage images
+                </p>
+                <form class="forms-sample" asp-controller="Product" asp-action="Update" method="post" enctype="multipart/form-data">
+                    @Html.AntiForgeryToken()
+                    <input type="hidden" asp-for="Id" />
+
+                    <div id="deletedImagesContainer"></div>
+
+                    <div class="form-group">
+                        <label asp-for="Name">Name</label>
+                        <input asp-for="Name" class="form-control" placeholder="Product Name">
+                        <span asp-validation-for="Name" class="text-danger"></span>
+                    </div>
+
+                    <div class="form-group">
+                        <label asp-for="Description">Description</label>
+                        <textarea asp-for="Description" class="form-control" rows="4" placeholder="Product Description"></textarea>
+                        <span asp-validation-for="Description" class="text-danger"></span>
+                    </div>
+
+                    <div class="form-group">
+                        <label asp-for="Price">Price</label>
+                        <input asp-for="Price" type="number" step="0.01" class="form-control" placeholder="0.00">
+                        <span asp-validation-for="Price" class="text-danger"></span>
+                    </div>
+
+                    <div class="form-group">
+                        <label>Select Category</label>
+                        <select asp-for="CategoryId" class="form-control">
+                            <option value="">-- Select a Category --</option>
+                            @if (Model.AvailableCategories != null)
+                            {
+                                @foreach (var cat in Model.AvailableCategories)
+                                {
+                                    <option value="@cat.Id">@cat.Name</option>
+                                }
+                            }
+                        </select>
+                        <span asp-validation-for="CategoryId" class="text-danger"></span>
+                    </div>
+
+                    <div class="form-group">
+                        <label>Select Tags</label>
+                        <select asp-for="TagIds" class="form-control" multiple style="height: 120px;">
+                            @if (Model.AvailableTags != null)
+                            {
+                                @foreach (var tag in Model.AvailableTags)
+                                {
+                                    <option value="@tag.Id">@tag.Name</option>
+                                }
+                            }
+                        </select>
+                        <span asp-validation-for="TagIds" class="text-danger"></span>
+                        <small class="text-muted">Birden fazla etiket seçmek için CTRL (veya Mac için CMD) tuşuna basılı tutarak tıklayın.</small>
+                    </div>
+
+                    @if (Model.ImageUrls != null && Model.ImageUrls.Any())
+                    {
+                        <div class="form-group">
+                            <label>Existing Photos</label>
+                            <div class="d-flex flex-wrap gap-2" id="existingImagesContainer">
+                                @foreach (var url in Model.ImageUrls)
+                                {
+                                    <div class="preview-wrapper existing-image">
+                                        <img src="/assets/@url" class="preview-image">
+                                        <button type="button" class="remove-btn" onclick="removeExistingImage(this, '@url')">×</button>
+                                    </div>
+                                }
+                            </div>
+                        </div>
+                    }
+
+                    <div class="form-group">
+                        <label>Add New Photos (Optional)</label>
+                        <input type="file" name="UploadedImages" class="file-upload-default" multiple id="imageInput" accept="image/*">
+
+                        <div class="input-group col-xs-12">
+                            <input type="text" class="form-control file-upload-info" disabled placeholder="Resimleri Seçiniz">
+                            <span class="input-group-append">
+                                <button class="file-upload-browse btn btn-primary" type="button">Dosyaları Bul</button>
+                            </span>
+                        </div>
+                    </div>
+
+                    <div id="imagePreviewContainer" class="row mt-3 ml-1"></div>
+
+                    <style>
+                        #imagePreviewContainer, #existingImagesContainer {
+                            display: flex;
+                            flex-wrap: wrap;
+                            gap: 12px;
+                            margin-top: 15px;
+                        }
+
+                        .preview-wrapper {
+                            position: relative;
+                            width: 110px;
+                            height: 110px;
+                            border-radius: 10px;
+                            overflow: hidden;
+                            border: 1px solid #e0e0e0;
+                            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+                        }
+
+                        .preview-image {
+                            width: 100%;
+                            height: 100%;
+                            object-fit: cover;
+                            display: block;
+                        }
+
+                        .remove-btn {
+                            position: absolute;
+                            top: 5px;
+                            right: 5px;
+                            width: 22px;
+                            height: 22px;
+                            background: rgba(255, 0, 0, 0.8);
+                            color: white;
+                            border: none;
+                            border-radius: 50%;
+                            cursor: pointer;
+                            display: flex;
+                            align-items: center;
+                            justify-content: center;
+                            font-weight: bold;
+                            font-size: 14px;
+                            line-height: 1;
+                            z-index: 99;
+                        }
+
+                            .remove-btn:hover {
+                                background: rgba(200, 0, 0, 1);
+                            }
+                    </style>
+
+                    <button type="submit" class="btn btn-primary me-2">Update</button>
+                    <a asp-action="Index" class="btn btn-light">Cancel</a>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+        const browseButton = document.querySelector('.file-upload-browse');
+        const fileInput = document.querySelector('.file-upload-default');
+        const infoInput = document.querySelector('.file-upload-info');
+        const previewContainer = document.getElementById('imagePreviewContainer');
+        const deletedImagesContainer = document.getElementById('deletedImagesContainer');
+        const mainForm = document.querySelector('.forms-sample');
+
+        let allSelectedFiles = [];
+
+        browseButton.addEventListener('click', () => fileInput.click());
+
+        fileInput.addEventListener('change', function () {
+            const newFiles = Array.from(this.files);
+
+            const existingCount = document.querySelectorAll('.existing-image').length;
+
+            if (existingCount + allSelectedFiles.length + newFiles.length > 3) {
+                alert(`You can have a maximum of 3 photos in total. (Existing: ${existingCount})`);
+                return;
+            }
+
+            allSelectedFiles = allSelectedFiles.concat(newFiles);
+            renderPreviews();
+            updateInputInfo();
+        });
+
+        function renderPreviews() {
+            previewContainer.innerHTML = '';
+            allSelectedFiles.forEach((file, index) => {
+                const reader = new FileReader();
+                reader.onload = function (e) {
+                    const wrapper = document.createElement('div');
+                    wrapper.className = 'preview-wrapper';
+
+                    wrapper.innerHTML = `
+                        <img src="${e.target.result}" class="preview-image">
+                        <button type="button" class="remove-btn" onclick="removeFile(${index})">×</button>`;
+                    previewContainer.appendChild(wrapper);
+                }
+                reader.readAsDataURL(file);
+            });
+        }
+
+        function updateInputInfo() {
+            infoInput.value = allSelectedFiles.length > 0 ? allSelectedFiles.length + " new file(s) selected" : "Select Image";
+        }
+
+        window.removeFile = function(index) {
+            allSelectedFiles.splice(index, 1);
+            renderPreviews();
+            updateInputInfo();
+        };
+
+        window.removeExistingImage = function(btn, fileUrl) {
+            if (confirm("Are you sure you want to delete this existing image?")) {
+                btn.closest('.existing-image').remove();
+
+                const hiddenInput = document.createElement("input");
+                hiddenInput.type = "hidden";
+                hiddenInput.name = "DeletedImageUrls"; 
+                hiddenInput.value = fileUrl;
+                deletedImagesContainer.appendChild(hiddenInput);
+            }
+        };
+
+
+        mainForm.addEventListener('submit', function (e) {
+            const dataTransfer = new DataTransfer();
+            allSelectedFiles.forEach(file => {
+                dataTransfer.items.add(file);
+            });
+            fileInput.files = dataTransfer.files;
+        });
+    });
+</script>

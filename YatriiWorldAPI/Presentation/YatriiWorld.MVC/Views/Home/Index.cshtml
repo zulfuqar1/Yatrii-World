@@ -14,10 +14,10 @@
                 <div class="swiper-content">
                     <h4 class="white">Amazing Places</h4>
                     <h1 class="white mb-4">Explore Your Life Travel Where You Want</h1>
-                    <a href="#" class="per-btn">
-                        <span class="white">Discover</span>
-                        <i class="fa fa-arrow-right white"></i>
-                    </a>
+                <a asp-controller="Shop" asp-action="TourShop" class="per-btn">
+                    <span class="white">Discover</span>
+                    <i class="fa fa-arrow-right white"></i>
+                </a>
                 </div>
             </div>
         </div>
@@ -42,84 +42,10 @@
                                 <h3 class="form-title text-center m-0 p-3 white">Find a Places</h3>
                                 <div class="form-content-inner p-4">
                                     <div class="row">
-                                        <div class="col-lg-12">
-                                            <div class="form-group">
-                                                <div class="input-box">
-                                                    <i class="fa fa-map-marker"></i>
-                                                    <select class="niceSelect">
-                                                        <option value="1">Your Destination</option>
-                                                        <option value="2">Argentina</option>
-                                                        <option value="3">Belgium</option>
-                                                        <option value="4">Canada</option>
-                                                        <option value="5">Denmark</option>
-                                                    </select>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="col-lg-12">
-                                            <div class="form-group">
-                                                <div class="input-box">
-                                                    <i class="fa fa-calendar"></i>
-                                                    <input id="date-range0" type="text" placeholder="Check In">
-                                                </div>
-                                            </div>
-                                        </div>
-
-                                        <div class="col-lg-12">
-                                            <div class="form-group">
-                                                <div class="input-box">
-                                                    <i class="fa fa-calendar"></i>
-                                                    <input id="date-range1" type="text" placeholder="Check Out">
-                                                </div>
-                                            </div>
-                                        </div>
-
-                                        <div class="col-lg-6">
-                                            <div class="form-group">
-                                                <div class="input-box">
-                                                    <i class="fa fa-user"></i>
-                                                    <select class="niceSelect">
-                                                        <option value="1">Adult</option>
-                                                        <option value="2">2</option>
-                                                        <option value="3">3</option>
-                                                        <option value="4">4</option>
-                                                        <option value="5">5</option>
-                                                    </select>
-                                                </div>
-                                            </div>
-                                        </div>
-
-                                        <div class="col-lg-6">
-                                            <div class="form-group">
-                                                <div class="input-box">
-                                                    <i class="fa fa-user"></i>
-                                                    <select class="niceSelect">
-                                                        <option value="1">Children</option>
-                                                        <option value="2">2</option>
-                                                        <option value="3">3</option>
-                                                        <option value="4">4</option>
-                                                        <option value="5">5</option>
-                                                    </select>
-                                                </div>
-                                            </div>
-                                        </div>
-
-                                        <div class="col-lg-12">
-                                            <div class="form-group">
-                                                <div class="input-box">
-                                                    <i class="fa fa-clock"></i>
-                                                    <select class="niceSelect">
-                                                        <option value="1">Packages</option>
-                                                        <option value="2">1 Day/ Night</option>
-                                                        <option value="3">2 Days/ 1 Night</option>
-                                                    </select>
-                                                </div>
-                                            </div>
-                                        </div>
-
+                                
                                         <div class="col-lg-12">
                                             <div class="form-group m-0 w-100 text-center">
-                                                <a href="#" class="nir-btn"><i class="fa fa-search"></i> Check Availability</a>
+                                            <a asp-controller="Shop" asp-action="TourShop" class="nir-btn"><i class="fa fa-search"></i> Check Availability</a>
                                             </div>
                                         </div>
                                     </div>
@@ -177,168 +103,78 @@
     <!-- form ends -->
 
     <!-- top destination starts -->
-    <section class="top-destination overflow-hidden bg-navy pt-9">
-        <div class="container">
-            <div class="section-title section-title-w text-center mb-5 pb-2 w-50 mx-auto">
-                <h2 class="m-0 white"><span>Best Holidays Trips</span> In The World</h2>
-                <p class="mb-0 white">Travel has helped us to understand the meaning of life and it has helped us become better people. Each time we travel, we see the world with new eyes.</p>
-            </div>
+<section class="top-destination overflow-hidden bg-navy pt-9">
+    <div class="container">
+        <div class="section-title section-title-w text-center mb-5 pb-2 w-50 mx-auto">
+            <h2 class="m-0 white"><span>Best Holidays Trips</span> In The World</h2>
+            <p class="mb-0 white">Travel has helped us to understand the meaning of life and it has helped us become better people. Each time we travel, we see the world with new eyes.</p>
+        </div>
 
+        <div class="desti-inner">
+            <div class="row d-flex align-items-center">
 
-            <div class="desti-inner">
-                <div class="row d-flex align-items-center">
-                    <div class="col-lg-4 col-md-6 p-1">
-                        <div class="desti-image">
-                            <img src="~/assets/images/destination/destination9.jpg" alt="desti">
+                @{
+                    int count = 0;
+                }
+                @foreach (TourListVM tour in Model.Take(7))
+                {
+                    string colClass = "col-lg-4 col-md-6 p-1"; 
+                    int mod = count % 7;
+
+                    if (mod >= 3 && mod < 6)
+                    {
+                        colClass = "col-lg-3 col-md-6 p-1"; 
+                    }
+                    else if (mod == 6)
+                    {
+                        colClass = "col-lg-3 col-md-12 p-1"; 
+                    }
+
+                    <div class="@colClass">
+                        <div class="desti-image" style="height: 100%;">
+                            @{
+                                var mainImage = tour.Images?.FirstOrDefault(x => x.IsMain)?.ImageUrl;
+                            }
+                            <img src="@(string.IsNullOrEmpty(mainImage) ? "/assets/images/destination/destination9.jpg" : "/assets/" + mainImage.TrimStart('/'))"
+                                 alt="@tour.Title"
+                                 style="width: 100%; height: 100%; object-fit: cover; min-height: 250px;">
+
                             <div class="desti-content">
                                 <div class="rating mb-1">
-                                    <span class="fa fa-star checked"></span>
-                                    <span class="fa fa-star checked"></span>
-                                    <span class="fa fa-star checked"></span>
-                                    <span class="fa fa-star checked"></span>
-                                    <span class="fa fa-star checked"></span>
+                                    @for (int i = 1; i <= 5; i++)
+                                    {
+                                        if (i <= tour.Rating)
+                                        {
+                                            <span class="fa fa-star checked" style="color: #ffc107;"></span>
+                                        }
+                                        else if (i - 0.5 <= tour.Rating)
+                                        {
+                                            <span class="fa fa-star-half-alt checked" style="color: #ffc107;"></span>
+                                        }
+                                        else
+                                        {
+                                            <span class="fa fa-star" style="color: #dfe6e9;"></span>
+                                        }
+                                    }
                                 </div>
-                                <h4 class="white mb-0">New York Tour</h4>
+                                <h4 class="white mb-0">@tour.Title</h4>
                             </div>
                             <div class="desti-overlay">
-                                <a href="#" class="nir-btn">
+                                <a asp-controller="Home" asp-action="TourDetails" asp-route-id="@tour.Id" class="nir-btn">
                                     <span class="white">Book Now</span>
                                     <i class="fa fa-arrow-right white pl-1"></i>
                                 </a>
                             </div>
                         </div>
                     </div>
-                    <div class="col-lg-4 col-md-6 p-1">
-                        <div class="desti-image">
-                            <img src="~/assets/images/destination/destination3.jpg" alt="desti">
-                            <div class="desti-content">
-                                <div class="rating mb-1">
-                                    <span class="fa fa-star checked"></span>
-                                    <span class="fa fa-star checked"></span>
-                                    <span class="fa fa-star checked"></span>
-                                    <span class="fa fa-star checked"></span>
-                                    <span class="fa fa-star checked"></span>
-                                </div>
-                                <h4 class="white mb-0">New York Tour</h4>
-                            </div>
-                            <div class="desti-overlay">
-                                <a href="#" class="nir-btn">
-                                    <span class="white">Book Now</span>
-                                    <i class="fa fa-arrow-right white pl-1"></i>
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-4 col-md-6 p-1">
-                        <div class="desti-image">
-                            <img src="~/assets/images/destination/destination4.jpg" alt="desti">
-                            <div class="desti-content">
-                                <div class="rating mb-1">
-                                    <span class="fa fa-star checked"></span>
-                                    <span class="fa fa-star checked"></span>
-                                    <span class="fa fa-star checked"></span>
-                                    <span class="fa fa-star checked"></span>
-                                    <span class="fa fa-star checked"></span>
-                                </div>
-                                <h4 class="white mb-0">Armania Tour</h4>
-                            </div>
-                            <div class="desti-overlay">
-                                <a href="#" class="nir-btn">
-                                    <span class="white">Book Now</span>
-                                    <i class="fa fa-arrow-right white pl-1"></i>
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-3 col-md-6 p-1">
-                        <div class="desti-image">
-                            <img src="~/assets/images/destination/destination5.jpg" alt="desti">
-                            <div class="desti-content">
-                                <div class="rating mb-1">
-                                    <span class="fa fa-star checked"></span>
-                                    <span class="fa fa-star checked"></span>
-                                    <span class="fa fa-star checked"></span>
-                                    <span class="fa fa-star checked"></span>
-                                    <span class="fa fa-star checked"></span>
-                                </div>
-                                <h4 class="white mb-0">Manchester Tour</h4>
-                            </div>
-                            <div class="desti-overlay">
-                                <a href="#" class="nir-btn">
-                                    <span class="white">Book Now</span>
-                                    <i class="fa fa-arrow-right white pl-1"></i>
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-3 col-md-6 p-1">
-                        <div class="desti-image">
-                            <img src="~/assets/images/destination/destination7.jpg" alt="desti">
-                            <div class="desti-content">
-                                <div class="rating mb-1">
-                                    <span class="fa fa-star checked"></span>
-                                    <span class="fa fa-star checked"></span>
-                                    <span class="fa fa-star checked"></span>
-                                    <span class="fa fa-star checked"></span>
-                                    <span class="fa fa-star checked"></span>
-                                </div>
-                                <h4 class="white mb-0">kathmandu Tour</h4>
-                            </div>
-                            <div class="desti-overlay">
-                                <a href="#" class="nir-btn">
-                                    <span class="white">Book Now</span>
-                                    <i class="fa fa-arrow-right white pl-1"></i>
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-3 col-md-6 p-1">
-                        <div class="desti-image">
-                            <img src="~/assets/images/destination/destination8.jpg" alt="desti">
-                            <div class="desti-content">
-                                <div class="rating mb-1">
-                                    <span class="fa fa-star checked"></span>
-                                    <span class="fa fa-star checked"></span>
-                                    <span class="fa fa-star checked"></span>
-                                    <span class="fa fa-star checked"></span>
-                                    <span class="fa fa-star checked"></span>
-                                </div>
-                                <h4 class="white mb-0">Tokyo Tour</h4>
-                            </div>
-                            <div class="desti-overlay">
-                                <a href="#" class="nir-btn">
-                                    <span class="white">Book Now</span>
-                                    <i class="fa fa-arrow-right white pl-1"></i>
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-3 col-md-12 p-1">
-                        <div class="desti-image">
-                            <img src="~/assets/images/destination/destination9.jpg" alt="desti">
-                            <div class="desti-content">
-                                <div class="rating mb-1">
-                                    <span class="fa fa-star checked"></span>
-                                    <span class="fa fa-star checked"></span>
-                                    <span class="fa fa-star checked"></span>
-                                    <span class="fa fa-star checked"></span>
-                                    <span class="fa fa-star checked"></span>
-                                </div>
-                                <h4 class="white mb-0">Norwich Tour</h4>
-                            </div>
-                            <div class="desti-overlay">
-                                <a href="#" class="nir-btn">
-                                    <span class="white">Book Now</span>
-                                    <i class="fa fa-arrow-right white pl-1"></i>
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+                    count++;
+                }
+
             </div>
         </div>
-        <div id="particles-js"></div>
-    </section>
+    </div>
+    <div id="particles-js"></div>
+</section>
     <!-- top destination ends -->
     
     
@@ -435,204 +271,91 @@
     
     
   
-    
-    <!-- Trending Starts -->
-    <section class="latest-tour pb-5 pt-0">
-        <div class="container">
-            <div class="section-title text-center mb-5 pb-2 w-50 mx-auto">
-                <h2 class="m-0">Amazing <span>Latest Tour</span></h2>
-                <p class="mb-0">Travel has helped us to understand the meaning of life and it has helped us become better people. Each time we travel, we see the world with new eyes.</p>
-            </div>
-            <div class="tour-box">
-                <div class="row">
-                    <div class="col-lg-4 col-md-6 col-xs-12 mb-4">
-                        <div class="tour-item">
-                            <div class="tour-image">
-                                <img src="~/assets/images/destination/destination4.jpg" alt="Image">
-                            </div>
-                            <div class="tour-content">
-                                <div class="rating-main d-flex align-items-center mb-1">
-                                    <div class="rating">
-                                        <span class="fa fa-star checked"></span>
-                                        <span class="fa fa-star checked"></span>
-                                        <span class="fa fa-star checked"></span>
-                                        <span class="fa fa-star checked"></span>
-                                        <span class="fa fa-star checked"></span>
-                                    </div>
-                                    <span class="ml-2 white">38 Reviews</span>
-                                </div>
-                                <h3 class="mb-1"><a href="#" class="white">Hills and Beach Tour</a></h3>
-                                <div class="user-main d-flex align-items-center justify-content-between mb-2 pb-2 border-b">
-                                    <p class="white mb-0 mr-"><i class="fa fa-clock white mr-1"></i> 5 days</p>
-                                    <p class="white mb-0"><i class="fa fa-user-plus white mr-1"></i> 51</p>
-                                </div>
-                                <p class="white mb-3">A wonderful little cottage right on the seashore - perfect for exploring with the little boat.</p>
-                                <a href="tour-detail.html" class="nir-btn" tabindex="0">View More</a>
-                            </div>
-                            <div class="tour-tag">
-                                <span class="old-price white">$1449</span>
-                                <span class="new-price white"> $900</span>
-                            </div>
-                            <div class="color-overlay"></div>
-                        </div>
-                    </div>
 
-                    <div class="col-lg-4 col-md-6 col-xs-12 mb-4">
-                        <div class="tour-item">
-                            <div class="tour-image">
-                                <img src="~/assets/images/destination/destination5.jpg" alt="Image">
-                            </div>
-                            <div class="tour-content">
-                                <div class="rating-main d-flex align-items-center mb-1">
-                                    <div class="rating">
-                                        <span class="fa fa-star checked"></span>
-                                        <span class="fa fa-star checked"></span>
-                                        <span class="fa fa-star checked"></span>
-                                        <span class="fa fa-star checked"></span>
-                                        <span class="fa fa-star checked"></span>
-                                    </div>
-                                    <span class="ml-2 white">18 Reviews</span>
-                                </div>
-                                <h3 class="mb-1"><a href="#" class="white">Special Asia Tour</a></h3>
-                                <div class="user-main d-flex align-items-center justify-content-between mb-2 pb-2 border-b">
-                                    <p class="white mb-0 mr-"><i class="fa fa-clock white mr-1"></i> 5 days</p>
-                                    <p class="white mb-0"><i class="fa fa-user-plus white mr-1"></i> 51</p>
-                                </div>
-                                <p class="white mb-3">A wonderful little cottage right on the seashore - perfect for exploring with the little boat.</p>
-                                <a href="tour-detail.html" class="nir-btn" tabindex="0">View More</a>
-                            </div>
-                            <div class="tour-tag">
-                                <span class="new-price white"> $800</span>
-                            </div>
-                            <div class="color-overlay"></div>
-                        </div>
-                    </div>
 
-                    <div class="col-lg-4 col-md-12 col-xs-12 mb-4">
-                        <div class="tour-item">
-                            <div class="tour-image">
-                                <img src="~/assets/images/destination/destination8.jpg" alt="Image">
-                            </div>
-                            <div class="tour-content">
-                                <div class="rating-main d-flex align-items-center mb-1">
-                                    <div class="rating">
-                                        <span class="fa fa-star checked"></span>
-                                        <span class="fa fa-star checked"></span>
-                                        <span class="fa fa-star checked"></span>
-                                        <span class="fa fa-star checked"></span>
-                                        <span class="fa fa-star checked"></span>
+
+
+
+
+<section class="latest-tour pb-5 pt-0">
+    <div class="container">
+        <div class="section-title text-center mb-5 pb-2 w-50 mx-auto">
+            <h2 class="m-0">Amazing <span>Latest Tour</span></h2>
+            <p class="mb-0">Travel has helped us to understand the meaning of life and it has helped us become better people. Each time we travel, we see the world with new eyes.</p>
+        </div>
+        <div class="tour-box">
+            <div class="row">
+
+                @if (Model != null && Model.Any())
+                {
+                    @* Sadece ilk 3 tur *@
+                    @foreach (var tour in Model.Take(3))
+                    {
+                        <div class="col-lg-4 col-md-6 col-xs-12 mb-4">
+                            <div class="tour-item">
+                                <div class="tour-image">
+                                    @{
+                                        var mainImage = tour.Images?.FirstOrDefault(x => x.IsMain)?.ImageUrl ?? tour.ImageUrl;
+                                    }
+                                    @* Sadece resmin boyutunu sabitledik, orijinal tasarıma dokunmadık *@
+                                    <img src="@(string.IsNullOrEmpty(mainImage) ? "/assets/images/destination/destination4.jpg" : "/assets/" + mainImage.TrimStart('/'))"
+                                         alt="@tour.Title"
+                                         style="width: 100%; height: 400px; object-fit: cover;">
+                                </div>
+
+                                <div class="tour-content">
+                                    <div class="rating-main d-flex align-items-center mb-1">
+                                        <div class="rating">
+                                            @for (int i = 1; i <= 5; i++)
+                                            {
+                                                if (i <= tour.Rating)
+                                                {
+                                                    <span class="fa fa-star checked" style="color: #ffc107;"></span>
+                                                }
+                                                else if (i - 0.5 <= tour.Rating)
+                                                {
+                                                    <span class="fa fa-star-half-alt checked" style="color: #ffc107;"></span>
+                                                }
+                                                else
+                                                {
+                                                    <span class="fa fa-star white"></span>
+                                                }
+                                            }
+                                        </div>
+                                        <span class="ml-2 white">@tour.ReviewCount Reviews</span>
                                     </div>
-                                    <span class="ml-2 white">21 Reviews</span>
+
+                                    <h3 class="mb-1">
+                                        <a asp-controller="Home" asp-action="TourDetails" asp-route-id="@tour.Id" class="white">@tour.Title</a>
+                                    </h3>
+
+                                    <div class="user-main d-flex align-items-center justify-content-between mb-2 pb-2 border-b">
+                                        <p class="white mb-0 mr-"><i class="fa fa-clock white mr-1"></i> @tour.DurationInDays days</p>
+                                        <p class="white mb-0"><i class="fa fa-user-plus white mr-1"></i> @tour.Capacity</p>
+                                    </div>
+
+                                    <p class="white mb-3">
+                                        @(tour.Description?.Length > 75 ? tour.Description.Substring(0, 75) + "..." : tour.Description)
+                                    </p>
+
+                                    <a asp-controller="Home" asp-action="TourDetails" asp-route-id="@tour.Id" class="nir-btn" tabindex="0">View More</a>
                                 </div>
-                                <h3 class="mb-1"><a href="#" class="white">Couple & Holidays Tour</a></h3>
-                                <div class="user-main d-flex align-items-center justify-content-between mb-2 pb-2 border-b">
-                                    <p class="white mb-0 mr-"><i class="fa fa-clock white mr-1"></i> 5 days</p>
-                                    <p class="white mb-0"><i class="fa fa-user-plus white mr-1"></i> 51</p>
+
+                                <div class="tour-tag">
+                                    <span class="new-price white">$@tour.Price</span>
                                 </div>
-                                <p class="white mb-3">A wonderful little cottage right on the seashore - perfect for exploring with the little boat.</p>
-                                <a href="tour-detail.html" class="nir-btn" tabindex="0">View More</a>
+                                <div class="color-overlay"></div>
                             </div>
-                            <div class="tour-tag">
-                                <span class="old-price white">$549</span>
-                                <span class="new-price white"> $400</span>
-                            </div>
-                            <div class="color-overlay"></div>
                         </div>
-                    </div>
-                </div>
+                    }
+                }
+
             </div>
         </div>
-    </section>
-    <!-- Trending Ends -->
-    
-    
+    </div>
+</section>
  
     
-    
-    
-    <!-- News Starts -->
-    <section class="news pb-6 bg-grey pt-9">
-        <div class="container">
-            <div class="section-title text-center mb-5 pb-2 w-50 mx-auto">
-                <h2 class="m-0">Latest Some <span>Tips & Articles</span></h2>
-                <p class="mb-0 ">Travel has helped us to understand the meaning of life and it has helped us become better people. Each time we travel, we see the world with new eyes.</p>
-            </div>
-            <div class="news-outer">
-                <div class="row">
-                    <div class="col-lg-4 col-md-12 col-xs-12 mb-4">
-                        <div class="news-item overflow-hidden bg-white p-4">
-                            <div class="news-image">
-                                <img src="~/assets/images/blog/blog1.jpg" alt="image">
-                            </div>
-                            <div class="news-list mt-2 border-b pb-2 mb-2">
-                                <ul>
-                                    <li><a href="single-right.html" class="pr-3"><i class="fa fa-calendar pink pr-1"></i> 4th AUg 2020 </a></li>
-                                    <li><a href="single-right.html" class="pr-3"><i class="fa fa-comment pink pr-1"></i> 3</a></li>
-                                    <li><a href="single-right.html" class=""><i class="fa fa-tag pink pr-1"></i> Tour, Tourism, Travel</a></li>
-                                </ul>
-                            </div>
-                            <div class="news-content mt-2">
-                                <h4 class="pb-2 mb-2 border-b"><a href="single-right.html">The real voyage does not consist in seeking new landscapes</a></h4>
-                                <p class="mb-3">Excited him now natural saw passage offices you minuter. At by asked being court hopes.</p>
-
-                                <div class="author-img">
-                                    <img src="~/assets/images/reviewer/1.jpg" alt="Demo Image">
-                                    <span>By - Jack Well Fardez</span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-4 col-md-6 col-xs-12 mb-4">
-                        <div class="news-item overflow-hidden bg-white p-4">
-                            <div class="news-image">
-                                <img src="~/assets/images/blog/blog2.jpg" alt="image">
-                            </div>
-                            <div class="news-list mt-2 border-b pb-2 mb-2">
-                                <ul>
-                                    <li><a href="single-right.html" class="pr-3"><i class="fa fa-calendar pink pr-1"></i> 4th AUg 2020 </a></li>
-                                    <li><a href="single-right.html" class="pr-3"><i class="fa fa-comment pink pr-1"></i> 3</a></li>
-                                    <li><a href="single-right.html" class=""><i class="fa fa-tag pink pr-1"></i> Tour, Tourism, Travel</a></li>
-                                </ul>
-                            </div>
-                            <div class="news-content mt-2">
-                                <h4 class="pb-2 mb-2 border-b"><a href="single-right.html">The real voyage does not consist in seeking new landscapes</a></h4>
-                                <p class="mb-3">Excited him now natural saw passage offices you minuter. At by asked being court hopes.</p>
-
-                                <div class="author-img">
-                                    <img src="~/assets/images/reviewer/2.jpg" alt="Demo Image">
-                                    <span>By - Jack Well Fardez</span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-4 col-md-6 col-xs-12 mb-4">
-                        <div class="news-item overflow-hidden bg-white p-4">
-                            <div class="news-image">
-                                <img src="~/assets/images/blog/blog3.jpg" alt="image">
-                            </div>
-                            <div class="news-list mt-2 border-b pb-2 mb-2">
-                                <ul>
-                                    <li><a href="single-right.html" class="pr-3"><i class="fa fa-calendar pink pr-1"></i> 4th AUg 2020 </a></li>
-                                    <li><a href="single-right.html" class="pr-3"><i class="fa fa-comment pink pr-1"></i> 3</a></li>
-                                    <li><a href="single-right.html" class=""><i class="fa fa-tag pink pr-1"></i> Tour, Tourism, Travel</a></li>
-                                </ul>
-                            </div>
-                            <div class="news-content mt-2">
-                                <h4 class="pb-2 mb-2 border-b"><a href="single-right.html">The real voyage does not consist in seeking new landscapes</a></h4>
-                                <p class="mb-3">Excited him now natural saw passage offices you minuter. At by asked being court hopes.</p>
-
-                                <div class="author-img">
-                                    <img src="~/assets/images/reviewer/1.jpg" alt="Demo Image">
-                                    <span>By - Jack Well Fardez</span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-    <!-- News Ends -->
 
 
 @section Scripts {

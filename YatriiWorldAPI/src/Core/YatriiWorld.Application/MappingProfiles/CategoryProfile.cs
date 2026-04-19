@@ -23,6 +23,7 @@ namespace YatriiWorld.Application.MappingProfiles
             CreateMap<Category, CategoryUpdateDto>().ReverseMap();
 
             CreateMap<Category, CategoryWithToursDto>().ReverseMap();
+
         }
     }
 }

@@ -40,7 +40,7 @@ namespace YatriiWorld.API.Controllers
 
 
         [HttpGet("{id}")]
-        public async Task<IActionResult> GetById([FromForm] long id)
+        public async Task<IActionResult> GetById(long id)
         {
             var result = await _categoryService.GetCategoryByIdAsync(id);
             return Ok(result);
@@ -64,7 +64,7 @@ namespace YatriiWorld.API.Controllers
 
 
         [HttpDelete("{id}")]
-        public async Task<IActionResult> Delete([FromForm] long id)
+        public async Task<IActionResult> Delete(long id)
         {
             await _categoryService.RemoveCategoryAsync(id);
             return Ok(new { message = "The category was successfully deleted (Soft Delete)." });

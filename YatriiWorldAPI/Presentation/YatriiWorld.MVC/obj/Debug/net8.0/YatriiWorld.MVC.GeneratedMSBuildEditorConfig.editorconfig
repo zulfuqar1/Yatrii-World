@@ -28,12 +28,60 @@ build_property._RazorSourceGeneratorDebug =
 build_property.EffectiveAnalysisLevelStyle = 8.0
 build_property.EnableCodeStyleSeverity = 
 
+[C:/Users/zulfu/OneDrive/Desktop/Z's/Code/projects/Final_Project/YatriiWorldAPI/Yatrii-World/YatriiWorldAPI/Presentation/YatriiWorld.MVC/Areas/Admin/Views/Category/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcQ2F0ZWdvcnlcQ3JlYXRlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/zulfu/OneDrive/Desktop/Z's/Code/projects/Final_Project/YatriiWorldAPI/Yatrii-World/YatriiWorldAPI/Presentation/YatriiWorld.MVC/Areas/Admin/Views/Category/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcQ2F0ZWdvcnlcSW5kZXguY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/zulfu/OneDrive/Desktop/Z's/Code/projects/Final_Project/YatriiWorldAPI/Yatrii-World/YatriiWorldAPI/Presentation/YatriiWorld.MVC/Areas/Admin/Views/Category/Update.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcQ2F0ZWdvcnlcVXBkYXRlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
 [C:/Users/zulfu/OneDrive/Desktop/Z's/Code/projects/Final_Project/YatriiWorldAPI/Yatrii-World/YatriiWorldAPI/Presentation/YatriiWorld.MVC/Areas/Admin/Views/Home/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcSG9tZVxJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
+[C:/Users/zulfu/OneDrive/Desktop/Z's/Code/projects/Final_Project/YatriiWorldAPI/Yatrii-World/YatriiWorldAPI/Presentation/YatriiWorld.MVC/Areas/Admin/Views/ProductTag/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcUHJvZHVjdFRhZ1xDcmVhdGUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/zulfu/OneDrive/Desktop/Z's/Code/projects/Final_Project/YatriiWorldAPI/Yatrii-World/YatriiWorldAPI/Presentation/YatriiWorld.MVC/Areas/Admin/Views/ProductTag/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcUHJvZHVjdFRhZ1xJbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/zulfu/OneDrive/Desktop/Z's/Code/projects/Final_Project/YatriiWorldAPI/Yatrii-World/YatriiWorldAPI/Presentation/YatriiWorld.MVC/Areas/Admin/Views/ProductTag/Update.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcUHJvZHVjdFRhZ1xVcGRhdGUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/zulfu/OneDrive/Desktop/Z's/Code/projects/Final_Project/YatriiWorldAPI/Yatrii-World/YatriiWorldAPI/Presentation/YatriiWorld.MVC/Areas/Admin/Views/Product/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcUHJvZHVjdFxDcmVhdGUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/zulfu/OneDrive/Desktop/Z's/Code/projects/Final_Project/YatriiWorldAPI/Yatrii-World/YatriiWorldAPI/Presentation/YatriiWorld.MVC/Areas/Admin/Views/Product/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcUHJvZHVjdFxJbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/zulfu/OneDrive/Desktop/Z's/Code/projects/Final_Project/YatriiWorldAPI/Yatrii-World/YatriiWorldAPI/Presentation/YatriiWorld.MVC/Areas/Admin/Views/Product/Update.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcUHJvZHVjdFxVcGRhdGUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
 [C:/Users/zulfu/OneDrive/Desktop/Z's/Code/projects/Final_Project/YatriiWorldAPI/Yatrii-World/YatriiWorldAPI/Presentation/YatriiWorld.MVC/Areas/Admin/Views/Shared/_AdminLayout.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcU2hhcmVkXF9BZG1pbkxheW91dC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/zulfu/OneDrive/Desktop/Z's/Code/projects/Final_Project/YatriiWorldAPI/Yatrii-World/YatriiWorldAPI/Presentation/YatriiWorld.MVC/Areas/Admin/Views/TourTag/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcVG91clRhZ1xDcmVhdGUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/zulfu/OneDrive/Desktop/Z's/Code/projects/Final_Project/YatriiWorldAPI/Yatrii-World/YatriiWorldAPI/Presentation/YatriiWorld.MVC/Areas/Admin/Views/TourTag/index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcVG91clRhZ1xpbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/zulfu/OneDrive/Desktop/Z's/Code/projects/Final_Project/YatriiWorldAPI/Yatrii-World/YatriiWorldAPI/Presentation/YatriiWorld.MVC/Areas/Admin/Views/TourTag/Update.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcVG91clRhZ1xVcGRhdGUuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Users/zulfu/OneDrive/Desktop/Z's/Code/projects/Final_Project/YatriiWorldAPI/Yatrii-World/YatriiWorldAPI/Presentation/YatriiWorld.MVC/Areas/Admin/Views/Tour/Create.cshtml]
@@ -60,6 +108,10 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRXJyb3JcRXJyb3I0MDQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
+[C:/Users/zulfu/OneDrive/Desktop/Z's/Code/projects/Final_Project/YatriiWorldAPI/Yatrii-World/YatriiWorldAPI/Presentation/YatriiWorld.MVC/Views/Home/Basket.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxCYXNrZXQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
 [C:/Users/zulfu/OneDrive/Desktop/Z's/Code/projects/Final_Project/YatriiWorldAPI/Yatrii-World/YatriiWorldAPI/Presentation/YatriiWorld.MVC/Views/Home/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
@@ -78,6 +130,10 @@ build_metadata.AdditionalFiles.CssScope =
 
 [C:/Users/zulfu/OneDrive/Desktop/Z's/Code/projects/Final_Project/YatriiWorldAPI/Yatrii-World/YatriiWorldAPI/Presentation/YatriiWorld.MVC/Views/Home/UserProfile.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxVc2VyUHJvZmlsZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/zulfu/OneDrive/Desktop/Z's/Code/projects/Final_Project/YatriiWorldAPI/Yatrii-World/YatriiWorldAPI/Presentation/YatriiWorld.MVC/Views/Home/UserTickets.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxVc2VyVGlja2V0cy5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Users/zulfu/OneDrive/Desktop/Z's/Code/projects/Final_Project/YatriiWorldAPI/Yatrii-World/YatriiWorldAPI/Presentation/YatriiWorld.MVC/Views/Shared/_ValidationScriptsPartial.cshtml]

@@ -15,6 +15,8 @@ namespace YatriiWorld.Application.MappingProfiles
         {
           
             CreateMap<Tag, TourTagDto>().ReverseMap();
+
+            CreateMap<TagCreateDto, Tag>();
         }
     }
 }

@@ -1,2 +1,1 @@
-C:\Users\zulfu\OneDrive\Desktop\Z's\Code\projects\Final_Project\YatriiWorldAPI\Yatrii-World\YatriiWorldAPI\Presentation\YatriiWorld.API\wwwroot\uploads\tours\056864c4-686f-422c-8405-873a47d30291.jpg
-C:\Users\zulfu\OneDrive\Desktop\Z's\Code\projects\Final_Project\YatriiWorldAPI\Yatrii-World\YatriiWorldAPI\Presentation\YatriiWorld.API\wwwroot\uploads\tours\a58a05c6-b7dd-47a0-b999-0008d2e006c4.webp
+C:\Users\zulfu\OneDrive\Desktop\Z's\Code\projects\Final_Project\YatriiWorldAPI\Yatrii-World\YatriiWorldAPI\Presentation\YatriiWorld.API\wwwroot\assets\images\UserPP\ac5541a6-9482-45e7-9e6b-6fbd4c1cbbad.jpg

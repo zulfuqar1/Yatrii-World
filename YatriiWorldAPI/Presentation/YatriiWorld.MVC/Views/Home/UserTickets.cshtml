@@ -1,0 +1,159 @@
+﻿@model List<YatriiWorld.Application.DTOs.Tickets.TicketDetailsDto>
+
+@{
+    ViewData["Title"] = "My Tours";
+}
+
+<div class="container-fluid p-0 mb-5">
+    <section class="breadcrumb-main pb-0" style="background-image: url(/assets/images/bg/bg8.jpg); background-size: cover; background-position: center; min-height: 300px;">
+        <div class="breadcrumb-outer pt-10">
+            <div class="container">
+                <div class="breadcrumb-content d-md-flex align-items-center pt-10">
+                    <div class="text-white">
+                        <h1 class="fw-bold text-white">My Bookings</h1>
+                        <nav aria-label="breadcrumb">
+                            <ul class="breadcrumb bg-transparent p-0">
+                                <li class="breadcrumb-item"><a href="/" class="text-white">Home</a></li>
+                                <li class="breadcrumb-item active text-white" aria-current="page">User Tours</li>
+                            </ul>
+                        </nav>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="dot-overlay" style="background: rgba(0,0,0,0.5);"></div>
+    </section>
+
+    <div class="container mt-5">
+        <div class="row">
+            @if (Model != null && Model.Any())
+            {
+                @foreach (var ticket in Model)
+                {
+                    <div class="col-lg-6 mb-4">
+                        <div class="card h-100 shadow-sm border-0 position-relative overflow-hidden ticket-card">
+                            <div class="position-absolute h-100 bg-primary" style="width: 6px; left: 0; top: 0;"></div>
+
+                            <div class="card-body p-4">
+                                <div class="d-flex justify-content-between align-items-start mb-3">
+                                    <div>
+                                        <h5 class="card-title fw-bold text-primary mb-1">@ticket.TourName</h5>
+                                        <span class="badge bg-light text-dark border">
+                                            <i class="fas fa-hashtag me-1"></i>PNR: @ticket.Id.ToString().PadLeft(6, '0')
+                                        </span>
+                                    </div>
+                                    <div class="text-end">
+                                        <h4 class="fw-bold text-success mb-0">@ticket.TotalPrice.ToString("C2")</h4>
+                                        <small class="text-muted">Total Payment</small>
+                                    </div>
+                                </div>
+
+                                <hr class="text-muted opacity-25">
+
+                                <div class="row g-3 my-2">
+                                    <div class="col-sm-6">
+                                        <div class="d-flex align-items-center">
+                                            <div class="icon-box bg-light rounded p-2 me-3 text-primary">
+                                                <i class="fas fa-calendar-check fa-lg"></i>
+                                            </div>
+                                            <div>
+                                                <small class="text-muted d-block small-text">Departure Date</small>
+                                                <span class="fw-bold">@ticket.CheckInDate.ToString("dd MMM yyyy")</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-6">
+                                        <div class="d-flex align-items-center">
+                                            <div class="icon-box bg-light rounded p-2 me-3 text-danger">
+                                                <i class="fas fa-calendar-times fa-lg"></i>
+                                            </div>
+                                            <div>
+                                                <small class="text-muted d-block small-text">Return Date</small>
+                                                <span class="fw-bold">@ticket.CheckOutDate.ToString("dd MMM yyyy")</span>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-sm-6">
+                                        <div class="d-flex align-items-center">
+                                            <div class="icon-box bg-light rounded p-2 me-3 text-info">
+                                                <i class="fas fa-users fa-lg"></i>
+                                            </div>
+                                            <div>
+                                                <small class="text-muted d-block small-text">Travelers</small>
+                                                <span class="fw-bold">@(ticket.AdultCount) Persons</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-6">
+                                        <div class="d-flex align-items-center">
+                                            <div class="icon-box bg-light rounded p-2 me-3 text-warning">
+                                                <i class="fas fa-user-circle fa-lg"></i>
+                                            </div>
+                                            <div>
+                                                <small class="text-muted d-block small-text">Booking Holder</small>
+                                                <span class="fw-bold text-truncate" style="max-width: 120px; display: inline-block;">@ticket.UserFullName</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="card-footer bg-light border-0 d-flex justify-content-between p-3">
+                                <button class="btn btn-sm btn-white border shadow-sm rounded-pill px-3" onclick="window.print()">
+                                    <i class="fas fa-print me-1"></i>Print Ticket
+                                </button>
+                          
+                            </div>
+                        </div>
+                    </div>
+                }
+            }
+            else
+            {
+                <div class="col-12">
+                    <div class="text-center py-5 bg-white shadow-sm rounded-3">
+                        <div class="mb-4">
+                            <i class="fas fa-plane-departure fa-4x text-light"></i>
+                        </div>
+                        <h4 class="text-dark">You don't have any bookings yet.</h4>
+                        <p class="text-muted">Ready to explore the world? Buy your first tour now.</p>
+                        <a asp-controller="Home" asp-action="Index" class="btn btn-primary px-5 mt-3 rounded-pill">Explore Tours</a>
+                    </div>
+                </div>
+            }
+        </div>
+    </div>
+</div>
+
+<style>
+    .breadcrumb-main {
+        position: relative;
+        width: 100% !important;
+        left: 0;
+        right: 0;
+    }
+
+    .ticket-card {
+        transition: transform 0.3s ease, shadow 0.3s ease;
+    }
+
+        .ticket-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.1) !important;
+        }
+
+    .small-text {
+        font-size: 0.75rem;
+        text-transform: uppercase;
+        letter-spacing: 0.5px;
+    }
+
+    .icon-box {
+        width: 40px;
+        height: 40px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+</style>

@@ -1,0 +1,27 @@
+﻿@model YatriiWorld.MVC.ViewModels.Categories.CategoryCreateVM
+
+<div class="row">
+    <div class="col-12 grid-margin stretch-card">
+        <div class="card">
+            <div class="card-body">
+                <h4 class="card-title">Create Category</h4>
+                <p class="card-description">
+                    Yeni bir kategori eklemek için aşağıdaki formu doldurun.
+                </p>
+
+                <form class="forms-sample" asp-action="Create" method="post">
+
+                    <div class="form-group">
+                        <label asp-for="Name">Name</label>
+                        <input asp-for="Name" class="form-control" placeholder="Category Name">
+                        <span asp-validation-for="Name" class="text-danger"></span>
+                    </div>
+
+                    <button type="submit" class="btn btn-primary me-2">Submit</button>
+                    <a asp-action="Index" class="btn btn-light">Cancel</a>
+                </form>
+
+            </div>
+        </div>
+    </div>
+</div>

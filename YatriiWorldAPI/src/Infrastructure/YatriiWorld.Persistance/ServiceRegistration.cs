@@ -49,6 +49,8 @@ namespace YatriiWorld.Persistence
 
             services.AddScoped<ITagRepository, TagRepository>();
 
+            services.AddScoped<IProductTagRepository, ProductTagRepository>();
+
             services.AddScoped<ICategoryRepository, CategoryRepository>();
 
             services.AddScoped<IReviewRepository, ReviewRepository>();
@@ -57,9 +59,14 @@ namespace YatriiWorld.Persistence
           
             services.AddScoped<IWishlistRepository, WishlistRepository>();
 
-          
+            services.AddScoped<IProductRepository, ProductRepository>();
+
+            services.AddScoped<IBasketRepository, BasketRepository>();
+
+            services.AddScoped<ITicketRepository, TicketRepository>();
 
             services.AddScoped<AppDbContextInitializer>();
+         
 
             //others.....=>
 

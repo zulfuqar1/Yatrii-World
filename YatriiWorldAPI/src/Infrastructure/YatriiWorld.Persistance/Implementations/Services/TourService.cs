@@ -1,16 +1,14 @@
 ﻿using AutoMapper;
-using Microsoft.AspNetCore.Http.HttpResults;
 using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
-using System.Text;
 using System.Threading.Tasks;
 using YatriiWorld.Application.DTOs.Tours;
 using YatriiWorld.Application.Interfaces.Repositories;
 using YatriiWorld.Application.Interfaces.Services;
 using YatriiWorld.Domain.Entities;
-using YatriiWorld.Persistance.Implementations.Repositories;
 
 namespace YatriiWorld.Persistance.Implementations.Services
 {
@@ -19,31 +17,26 @@ namespace YatriiWorld.Persistance.Implementations.Services
         private readonly ITagRepository _tagRepository;
         private readonly ITourRepository _tourRepository;
         private readonly IMapper _mapper;
+
         public TourService(ITourRepository tourRepository, ITagRepository tagRepository, IMapper mapper)
         {
             _tourRepository = tourRepository;
-            _tagRepository = tagRepository; 
+            _tagRepository = tagRepository;
             _mapper = mapper;
         }
 
         public async Task<List<TourListDto>> GetAllToursWithDetailsAsync()
         {
-           
             var tours = await _tourRepository.GetToursWithDetailsAsync();
-
-          
             return _mapper.Map<List<TourListDto>>(tours);
         }
 
-        //top rated tours
         public async Task<List<TourListDto>> GetTopRatedToursAsync(int count)
         {
             var tours = await _tourRepository.GetTopRatedToursAsync(count);
             return _mapper.Map<List<TourListDto>>(tours);
         }
 
-
-        // ID
         public async Task<TourDetailDto> GetTourByIdAsync(long id)
         {
             var tour = await _tourRepository.GetTourByIdWithDetailsAsync(id);
@@ -53,23 +46,17 @@ namespace YatriiWorld.Persistance.Implementations.Services
             return _mapper.Map<TourDetailDto>(tour);
         }
 
-
-
         public async Task CreateTourAsync(TourCreateDto dto)
         {
-           
             var tour = _mapper.Map<Tour>(dto);
 
-        
             tour.CreatedAt = DateTime.Now;
             tour.UpdatedAt = DateTime.Now;
             tour.IsDeleted = false;
 
-          
             await _tourRepository.AddAsync(tour);
             await _tourRepository.SaveAsync();
 
-          
             if (dto.SelectedTagIds != null && dto.SelectedTagIds.Any())
             {
                 foreach (var tagId in dto.SelectedTagIds)
@@ -81,7 +68,6 @@ namespace YatriiWorld.Persistance.Implementations.Services
                         tour.Tags.Add(tag);
                     }
                 }
-             
                 await _tourRepository.SaveAsync();
             }
 
@@ -117,30 +103,20 @@ namespace YatriiWorld.Persistance.Implementations.Services
             }
         }
 
-
-
-
-
-
-
-
         public async Task UpdateTourAsync(TourUpdateDto dto)
         {
-         
             var existTour = await _tourRepository.GetAll()
                 .Include(x => x.Tags)
                 .FirstOrDefaultAsync(x => x.Id == dto.Id);
 
             if (existTour == null) throw new Exception("Tour not found");
 
-          
             _mapper.Map(dto, existTour);
-         
-            existTour.Tags.Clear(); 
+
+            existTour.Tags.Clear();
 
             foreach (var tagId in dto.SelectedTagIds)
             {
-
                 var tag = await _tagRepository.GetByIdAsync(tagId);
 
                 if (tag != null)
@@ -149,14 +125,9 @@ namespace YatriiWorld.Persistance.Implementations.Services
                 }
             }
 
-
             _tourRepository.Update(existTour);
             await _tourRepository.SaveAsync();
         }
-
-
-
-
 
         public async Task RemoveTourAsync(long id)
         {
@@ -169,21 +140,57 @@ namespace YatriiWorld.Persistance.Implementations.Services
         }
 
 
-
-
-
         public async Task<List<TourTagDto>> GetAllTagsAsync()
         {
-
             var tags = await _tagRepository.GetAll().ToListAsync();
-
-          
             return _mapper.Map<List<TourTagDto>>(tags);
         }
 
+        public async Task<TourTagDto> GetTagByIdAsync(long id)
+        {
+            var tag = await _tagRepository.GetByIdAsync(id);
+            if (tag == null) return null;
 
+            return _mapper.Map<TourTagDto>(tag);
+        }
 
+        public async Task<bool> CreateTagAsync(TagCreateDto dto)
+        {
+            var newTag = _mapper.Map<Tag>(dto);
 
+            await _tagRepository.AddAsync(newTag);
+
+            await _tourRepository.SaveAsync();
+
+            return true;
+        }
+
+        public async Task<bool> UpdateTagAsync(TagUpdateDto dto)
+        {
+            var tag = await _tagRepository.GetByIdAsync(dto.Id);
+            if (tag == null) return false;
+
+            tag.Name = dto.Name;
+
+            _tagRepository.Update(tag);
+            await _tourRepository.SaveAsync();
+
+            return true;
+        }
+
+        public async Task<bool> DeleteTagAsync(long id)
+        {
+            var tag = await _tagRepository.GetByIdAsync(id);
+            if (tag == null) return false;
+
+            tag.IsDeleted = true;
+
+            _tagRepository.Update(tag);
+            await _tourRepository.SaveAsync();
+
+            return true;
+        }
+
+     
     }
 }
-

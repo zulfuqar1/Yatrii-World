@@ -1,0 +1,236 @@
+﻿@model ProductCreateVM
+
+<div class="row">
+
+    <div class="col-12 grid-margin stretch-card">
+        <div class="card">
+            <div class="card-body">
+                <h4 class="card-title">Create New Product</h4>
+                <p class="card-description">
+                    Basic product details and images
+                </p>
+                <form class="forms-sample" asp-controller="Product" asp-action="Create" method="post" enctype="multipart/form-data">
+
+                    <div class="form-group">
+                        <label asp-for="Name">Name</label>
+                        <input asp-for="Name" class="form-control" placeholder="Product Name">
+                        <span asp-validation-for="Name" class="text-danger"></span>
+                    </div>
+
+                    <div class="form-group">
+                        <label asp-for="Description">Description</label>
+                        <textarea asp-for="Description" class="form-control" rows="4" placeholder="Product Description"></textarea>
+                        <span asp-validation-for="Description" class="text-danger"></span>
+                    </div>
+
+                    <div class="form-group">
+                        <label asp-for="Price">Price</label>
+                        <input asp-for="Price" class="form-control" placeholder="0.00">
+                        <span asp-validation-for="Price" class="text-danger"></span>
+                    </div>
+
+                    <div class="form-group">
+                        <label asp-for="StockQuantity">Stock Quantity</label>
+                        <input asp-for="StockQuantity" type="number" class="form-control" placeholder="Stock Capacity">
+                        <span asp-validation-for="StockQuantity" class="text-danger"></span>
+                    </div>
+
+                    <div class="form-group">
+                        <label>Select Category</label>
+                        <select asp-for="CategoryId" class="form-control">
+                            <option value="">-- Select a Category --</option>
+                            @if (Model.AvailableCategories != null)
+                            {
+                                @foreach (var cat in Model.AvailableCategories)
+                                {
+                                    <option value="@cat.Id">@cat.Name</option>
+                                }
+                            }
+                        </select>
+                        <span asp-validation-for="CategoryId" class="text-danger"></span>
+                    </div>
+
+
+                    <div class="form-group">
+                        <label>Select Tags</label>
+                        <select asp-for="SelectedTagIds" class="form-control" multiple style="height: 120px;">
+                            @if (Model.AvailableTags != null)
+                            {
+                                @foreach (var tag in Model.AvailableTags)
+                                {
+                                    <option value="@tag.Id">@tag.Name</option>
+                                }
+                            }
+                        </select>
+                        <span asp-validation-for="SelectedTagIds" class="text-danger"></span>
+                        <small class="text-muted">Birden fazla etiket seçmek için CTRL (veya Mac için CMD) tuşuna basılı tutarak tıklayın.</small>
+                    </div>
+
+
+
+
+
+
+
+
+
+
+                    <div class="form-group">
+                        <label>Product Photos</label>
+                        <input type="file" asp-for="UploadedImages" class="file-upload-default" multiple id="imageInput">
+
+                        <div class="input-group col-xs-12">
+                            <input type="text" class="form-control file-upload-info" disabled placeholder="Resimleri Seçiniz">
+                            <span class="input-group-append">
+                                <button class="file-upload-browse btn btn-primary" type="button">Dosyaları Bul</button>
+                            </span>
+                        </div>
+                    </div>
+                    <div id="imagePreviewContainer" class="row mt-3 ml-1">
+                    </div>
+
+                    <style>
+                        #imagePreviewContainer {
+                            display: flex;
+                            flex-wrap: wrap;
+                            gap: 12px;
+                            margin-top: 15px;
+                        }
+
+                        .preview-wrapper {
+                            position: relative;
+                            width: 110px;
+                            height: 110px;
+                            border-radius: 10px;
+                            overflow: hidden;
+                            border: 1px solid #e0e0e0;
+                            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+                        }
+
+                        .preview-image {
+                            width: 100%;
+                            height: 100%;
+                            object-fit: cover;
+                            display: block;
+                        }
+
+                        .remove-btn {
+                            position: absolute;
+                            top: 5px;
+                            right: 5px;
+                            width: 22px;
+                            height: 22px;
+                            background: rgba(0, 0, 0, 0.6);
+                            color: white;
+                            border: none;
+                            border-radius: 50%;
+                            cursor: pointer;
+                            display: none;
+                            align-items: center;
+                            justify-content: center;
+                            font-weight: bold;
+                            font-size: 14px;
+                            line-height: 1;
+                            transition: background 0.2s;
+                            z-index: 99;
+                        }
+
+                            .remove-btn:hover {
+                                background: rgba(255, 0, 0, 0.8);
+                            }
+
+                        .preview-wrapper:hover .remove-btn {
+                            display: flex;
+                        }
+
+                        .main-badge {
+                            position: absolute;
+                            bottom: 0;
+                            left: 0;
+                            right: 0;
+                            background: rgba(75, 73, 172, 0.8);
+                            color: white;
+                            font-size: 9px;
+                            text-align: center;
+                            padding: 2px 0;
+                        }
+                    </style>
+
+                    <button type="submit" class="btn btn-primary me-2">Submit</button>
+                    <button type="button" class="btn btn-light" onclick="window.history.back();">Cancel</button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+        const browseButton = document.querySelector('.file-upload-browse');
+        const fileInput = document.querySelector('.file-upload-default');
+        const infoInput = document.querySelector('.file-upload-info');
+        const previewContainer = document.getElementById('imagePreviewContainer');
+        const mainForm = document.querySelector('.forms-sample');
+
+        let allSelectedFiles = [];
+
+        browseButton.addEventListener('click', () => fileInput.click());
+
+        fileInput.addEventListener('change', function () {
+            const newFiles = Array.from(this.files);
+
+            if (allSelectedFiles.length + newFiles.length > 3) {
+                alert("You can upload a maximum of 3 photos.");
+                return;
+            }
+
+            allSelectedFiles = allSelectedFiles.concat(newFiles);
+            renderPreviews();
+            updateInputInfo();
+        });
+
+        function renderPreviews() {
+            previewContainer.innerHTML = '';
+            allSelectedFiles.forEach((file, index) => {
+                const reader = new FileReader();
+                reader.onload = function (e) {
+                    const wrapper = document.createElement('div');
+                    wrapper.style.cssText = "position:relative; width:100px; height:100px; margin:10px; border-radius:8px; display:inline-block; border:2px solid #ddd;";
+
+                    const isMain = index === 0 ? '<div style="position:absolute; bottom:0; width:100%; background:rgba(75,73,172,0.8); color:white; font-size:10px; text-align:center;">MAIN</div>' : '';
+
+                    wrapper.innerHTML = `
+                        ${isMain}
+                        <img src="${e.target.result}" style="width:100%; height:100%; object-fit:cover; border-radius:6px;">
+                        <button type="button" onclick="removeFile(${index})"
+                                style="position:absolute; top:-8px; right:-8px; width:22px; height:22px; background:red; color:white; border:none; border-radius:50%; cursor:pointer; font-weight:bold; z-index:9999; display:flex; align-items:center; justify-content:center;">
+                            ×
+                        </button>`;
+                    previewContainer.appendChild(wrapper);
+                }
+                reader.readAsDataURL(file);
+            });
+        }
+
+        function updateInputInfo() {
+            infoInput.value = allSelectedFiles.length > 0 ? allSelectedFiles.length + " file selected" : "Select Image";
+        }
+
+        window.removeFile = function(index) {
+            allSelectedFiles.splice(index, 1);
+            renderPreviews();
+            updateInputInfo();
+        };
+
+        mainForm.addEventListener('submit', function (e) {
+
+            const dataTransfer = new DataTransfer();
+            allSelectedFiles.forEach(file => {
+                dataTransfer.items.add(file);
+            });
+
+            fileInput.files = dataTransfer.files;
+        });
+    });
+</script>

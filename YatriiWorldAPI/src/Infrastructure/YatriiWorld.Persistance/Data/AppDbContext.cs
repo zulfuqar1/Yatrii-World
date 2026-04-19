@@ -46,5 +46,14 @@ namespace YatriiWorld.Persistance.Data
         public DbSet<Wishlist> Wishlists { get; set; }
 
         public DbSet<TicketTraveler> TicketTravelers { get; set; }
+
+     
+        public DbSet<Product> Products { get; set; }
+        public DbSet<ProductImage> ProductImages { get; set; }
+        public DbSet<ProductReview> ProductReviews { get; set; }
+        public DbSet<Basket> Baskets { get; set; }
+        public DbSet<BasketItem> BasketItems { get; set; }
+
+        public DbSet<ProductTag> ProductTags { get; set; }
     }
 }

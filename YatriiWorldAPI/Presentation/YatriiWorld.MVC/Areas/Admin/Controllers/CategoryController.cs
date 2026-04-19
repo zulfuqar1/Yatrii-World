@@ -1,0 +1,160 @@
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
+using RestSharp;
+using System.Text.Json;
+using YatriiWorld.MVC.ViewModels.Categories;
+
+namespace YatriiWorld.MVC.Areas.Admin.Controllers
+{
+    [Area("Admin")]
+    // Eğer Kategori tarafında da admin yetkisi lazımsa bunu açabilirsin:
+    // [Authorize(Roles = "Admin")] 
+    public class CategoryController : Controller
+    {
+        private readonly RestClient _client;
+
+        public CategoryController()
+        {
+            _client = new RestClient("https://localhost:7029/");
+        }
+
+        [HttpGet]
+        public async Task<IActionResult> Index()
+        {
+            var token = Request.Cookies["jwt"];
+            var request = new RestRequest("api/categories", Method.Get);
+            if (!string.IsNullOrEmpty(token)) request.AddHeader("Authorization", $"Bearer {token}");
+
+            var response = await _client.ExecuteAsync(request);
+            if (response.IsSuccessful && !string.IsNullOrEmpty(response.Content))
+            {
+                var options = new JsonSerializerOptions { PropertyNameCaseInsensitive = true };
+                var categories = JsonSerializer.Deserialize<List<CategoryUpdateVM>>(response.Content, options);
+                return View(categories ?? new List<CategoryUpdateVM>());
+            }
+
+            return View(new List<CategoryUpdateVM>());
+        }
+
+        [HttpGet]
+        public IActionResult Create()
+        {
+            return View();
+        }
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> Create(CategoryCreateVM model)
+        {
+            if (!ModelState.IsValid)
+            {
+                return View(model);
+            }
+
+            try
+            {
+                var token = Request.Cookies["jwt"];
+                var request = new RestRequest("api/categories", Method.Post);
+
+                // API [FromForm] beklediği için bu satır zorunlu!
+                request.AlwaysMultipartFormData = true;
+
+                if (!string.IsNullOrEmpty(token)) request.AddHeader("Authorization", $"Bearer {token}");
+
+                // Form datalarını ekliyoruz
+                request.AddParameter("Name", model.Name);
+
+                var response = await _client.ExecuteAsync(request);
+
+                if (response.IsSuccessful)
+                    return RedirectToAction(nameof(Index));
+
+                ModelState.AddModelError("", "API Error: " + response.ErrorMessage);
+            }
+            catch (Exception ex)
+            {
+                ModelState.AddModelError("", "System Error: " + ex.Message);
+            }
+
+            return View(model);
+        }
+
+        [HttpGet]
+        public async Task<IActionResult> Update(long id)
+        {
+            var token = Request.Cookies["jwt"];
+            var request = new RestRequest($"api/categories/{id}", Method.Get);
+            if (!string.IsNullOrEmpty(token)) request.AddHeader("Authorization", $"Bearer {token}");
+
+            var response = await _client.ExecuteAsync(request);
+
+            if (response.IsSuccessful && !string.IsNullOrEmpty(response.Content))
+            {
+                var options = new JsonSerializerOptions { PropertyNameCaseInsensitive = true };
+                var model = JsonSerializer.Deserialize<CategoryUpdateVM>(response.Content, options);
+                return View(model);
+            }
+
+            TempData["Error"] = $"API Hatası (Update Açılamadı): {response.StatusCode} - {response.ErrorMessage}";
+            return RedirectToAction(nameof(Index));
+        }
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> Update(CategoryUpdateVM model)
+        {
+            if (!ModelState.IsValid)
+            {
+                return View(model);
+            }
+
+            try
+            {
+                var token = Request.Cookies["jwt"];
+                var request = new RestRequest("api/categories", Method.Put);
+
+                // API [FromForm] beklediği için bu satır zorunlu!
+                request.AlwaysMultipartFormData = true;
+
+                if (!string.IsNullOrEmpty(token)) request.AddHeader("Authorization", $"Bearer {token}");
+
+                // Form datalarını ekliyoruz
+                request.AddParameter("Id", model.Id);
+                request.AddParameter("Name", model.Name);
+
+                var response = await _client.ExecuteAsync(request);
+
+                if (response.IsSuccessful)
+                    return RedirectToAction(nameof(Index));
+
+                ModelState.AddModelError("", "Update Error: " + response.ErrorMessage);
+            }
+            catch (Exception ex)
+            {
+                ModelState.AddModelError("", "System Error: " + ex.Message);
+            }
+
+            return View(model);
+        }
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> Delete(long id)
+        {
+            var token = Request.Cookies["jwt"];
+            var request = new RestRequest($"api/categories/{id}", Method.Delete);
+
+            if (!string.IsNullOrEmpty(token))
+                request.AddHeader("Authorization", $"Bearer {token}");
+
+            var response = await _client.ExecuteAsync(request);
+
+            if (!response.IsSuccessful)
+            {
+                TempData["Error"] = $"Silme işlemi başarısız. Hata: {response.StatusCode}";
+            }
+
+            return RedirectToAction(nameof(Index));
+        }
+    }
+}

@@ -53,6 +53,11 @@
                 </div>
             </div>
         </div>
+
+
+
+
+
         <!-- Navigation Bar -->
         <div class="header_menu" id="header_menu">
             <nav class="navbar navbar-default">
@@ -73,9 +78,8 @@
                                 <li><a href="about.html">About Us</a></li>
                                 <li><a asp-controller="Shop" asp-action="TourShop">Tour Shop</a></li>
                                 <li><a href="contact.html">Contact Us</a></li>
-                                <li><a href="contact.html">User Messages</a></li>
-
-                                <li><a href="contact.html">User Wishlist</a></li>
+                                <li><a asp-controller="User" asp-action="MyTickets">User Tours</a></li>
+                
 
      
                             </ul>
@@ -83,14 +87,20 @@
 
 
 
-                            <div class="header_sidemenu">
-                                <div class="mhead">
-                                    <span class="menu-ham">
-                                        <a href="#" class="cart-icon d-flex align-items-center ml-1"><i class="icon-basket-loaded"></i><span class="cart-label">3</span></a>
-                                    </span>
-                                </div>
-                            </div>
+                          
+
+
+
                         </div>
+
+
+
+
+
+
+
+
+
 
 
                         <div class="register-login d-flex align-items-center" style="position: relative; z-index: 1050;">
@@ -152,7 +162,6 @@
                                 </a>
                             }
                         </div>
-
                         <script>
                             window.addEventListener('click', function(e){
                               var dropdown = document.getElementById('userDropdownMenu');
@@ -409,6 +418,33 @@
     <script src="~/assets/js/main.js"></script>
     <script src="~/assets/js/custom-nav.js"></script>
 
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+        function addToBasket(productId, quantity) {
+            $.ajax({
+                url: '/Basket/AddToBasket',
+                type: 'POST',
+                data: {
+                    productId: productId,
+                    quantity: quantity
+                },
+                success: function (response) {
+                    if (response.success) {
+                        // Layout'taki sepet ikonunun sayısını günceller
+                        $('.cart-label').text(response.cartCount);
+
+                        // Kullanıcıya şık bir bildirim gösterebilirsin (SweetAlert vb.)
+                        alert(response.message);
+                    } else {
+                        alert("Hata: " + response.message);
+                    }
+                },
+                error: function () {
+                    alert("İşlem sırasında bir hata oluştu. Lütfen giriş yaptığınızdan emin olun.");
+                }
+            });
+        }
+    </script>
 
 
     @await RenderSectionAsync("Scripts", required: false)
